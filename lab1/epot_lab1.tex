@@ -14,10 +14,11 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[font=footnotesize]{caption}
-
 \usepackage[hypcap]{caption}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{enumerate}
+
+\setcounter{tocdepth}{2}
 
 \numberwithin{equation}{section}
 \addto\captionsportuguese{\renewcommand{\contentsname}{Índice}}
@@ -79,6 +80,8 @@ Atualmente existe tendência para usar como alternativa IGBT's ou GTO's.
 
 \section{Circuito de Disparo}
 
+\subsection{Funcionamento}
+
 De forma a estudar o comportamento de circuitos com semicondutores de potência é necessário, em primeira instância, realizar o circuito de “drive” ou ataque ao terminal de controlo ou, no caso de tiristores, o circuito de disparo. Este circuito tem a função de estabelecer o sinal de comando do tiristor, sendo este aplicado entre a \textit{gate} e o cátodo, assim como estabelecer o isolamento galvânico entre o circuito de potência e o circuito de controlo. Pode observar-se este circuito na \autoref{fig:circuit_1}.
 
 \begin{figure}[h]
@@ -91,7 +94,7 @@ De forma a estudar o comportamento de circuitos com semicondutores de potência 
 
 O objetivo neste trabalho é assim realizar este circuito com uma frequência de 2 kHz, fazendo para isso uso de um sinal com esta frequência originado por um gerador de impulsos (GI). O circuito de disparo será então composto por uma monoestável que reage ao flanco ascendente do sinal originado pelo GI; tem-se assim à saída da monoestável um impulso cuja duração será função da resistência $R$ e condensador $C$. 
 
-A duração deste impulso deve ser definida consoante as características da \textit{gate} do tiristor que se está a utilizar, sendo neste caso de 10 $\mu$s. Este impulso tem, no entanto, que ser amplificado para que seja injetada corrente suficiente na \textit{gate} do tiristor. Usa-se assim um transístor de ganho elevado transitando da saturação ao corte, estabelecendo uma tensão no primário do transformador, sempre que surja o impulso na saída da monoestável. As formas de onda destes impulsos podem ser observadas na \autoref{fig:circuit_2}.
+A duração deste impulso deve ser definida consoante as características da \textit{gate} do tiristor que se está a utilizar, sendo neste caso de 10 $\mu$s. Este impulso tem, no entanto, que ser amplificado para que seja injetada corrente suficiente na \textit{gate} do tiristor. Usa-se assim um transístor de ganho elevado, transitando da saturação ao corte, estabelecendo uma tensão no primário do transformador, sempre que surja o impulso na saída da monoestável. As formas de onda destes impulsos podem ser observadas na \autoref{fig:circuit_2}.
 
 \begin{figure}[h]
 	\centering
@@ -103,9 +106,7 @@ A duração deste impulso deve ser definida consoante as características da \te
 
 O transformador serve também para que se obtenha o isolamento galvânico entre os circuitos de disparo e de potência.
 
-\pagebreak
-
-\section{Montagem e equipamento}
+\subsection{Montagem e equipamento}
 
 A montagem presente na placa impressa utilizada no laboratório pode ser observada na \autoref{fig:circuit_3}.
 
@@ -148,7 +149,7 @@ O equipamento a utilizar na condução do trabalho é assim:
 
 \section{Condução do Trabalho}
 
-\subsection{circuito de disparo}
+\subsection{Estudo do circuito de disparo}
 
 Em primeira instância apenas se realizam as ligações do circuito de disparo à fonte de alimentação. Após as ligações feitas sintoniza-se o GI para que se obtenha na saída uma onda retangular de amplitude $0$ a $15$ a uma frequência de $1$ kHz com fator de ciclo de 50\%.
 
@@ -192,5 +193,48 @@ Na \autoref{fig:photo 2} pode concluir-se que o tempo de desmagnetização é re
 
 A tensão de \textit{Zenner} tem um valor de $-17$ V em oposição à tensão VAK de um díodo normal, $0,7$ V, o que leva a uma dissipação muito mais rápida e por consequência acelera a desmagnetização. Pode observar-se assim graficamente a magnetização pelo área no quadrante positivo e a desmagnetização no quadrante negativo, sendo esta iguais.
 
- 
+\subsubsection{Formas de onda da tensão entre o ponto A e a massa e entre o ponto B e a massa}
+
+\subsubsection{Díodos no primário do transformador}
+
+\subsubsection{Tensão no primário do transformador em função do díodo de Zenner}
+
+\subsubsection{Tensão entre a \textit{gate} e o cátodo do tiristor}
+
+\subsection{Estudo do circuito de potência}
+
+\subsubsection{Variações da corrente e tensão na carga em função do GI}
+
+\subsubsection{Corrente de lançamento e corrente de manutenção}
+
+\subsubsection{Formas de onda da tensão no condensador e da corrente na bobine}
+
+\subsubsection{Formas de onda da tensão e corrente no díodo rápido em antiparalelo}
+
+\subsubsection{Formas de onda da tensão e corrente no tiristor}
+
+\subsubsection{Formas de onda da tensão e corrente no díodo lento em antiparalelo}
+
+\subsubsection{Comparação entre o díodo rápido e lento}
+
+\subsubsection{Funcionamento do circuito}
+
+\subsubsection{Circuito de potência sem díodo em antiparalelo}
+
+\subsubsection{Circuito de potência sem a resistência de carga}
+
+\subsubsection{Expressão analítica da corrente e da tensão no condensador}
+
+\pagebreak
+
+\section{Simulação do Trabalho de Laboratório}
+
+\subsection{Circuito de disparo}
+
+\subsection{Circuito de potência com comutação do tiristor por acção da carga}
+
+\pagebreak
+
+\section{Conclusão}
+
 \end{document}
