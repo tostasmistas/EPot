@@ -170,7 +170,7 @@ Feito isto, podem observar-se as formas de onda entre o ponto A e a massa e o po
 	\vspace{-0.8em}
 \end{figure}
 
-Tem-se assim no canal $1$ (amarelo) a tensão no ponto A e no canal $2$ (azul) a tensão no ponto B. Para o canal 1 observa-se uma onda quadrada compreendida entre 0 e 14,8 V, frequência de $2$ kHz, duração de impulso de $13$ $\mu$s e um fator de ciclo de 2,6\%. O canal $2$ apresenta uma onda retangular com $1,5$ V no qual existe um pico de tensão no flanco ascendente com $3,4$ V estabilizando ao fim de aproximadamente $15$ $\mu$s. A duração da onda retangular no canal 2 é de aproximadamente 480 $\mu$s o que leva a um fator de ciclo de 96\%. \unsure{o que queres dizer com "onda com 1.5V" e para o duty cycle contaste com aquele pedaço que tem a fase invertida?}
+Tem-se assim no canal $1$ (amarelo) a tensão no ponto A e no canal $2$ (azul) a tensão no ponto B. Para o canal 1 observa-se uma onda quadrada compreendida entre 0 e 14,8 V, frequência de $2$ kHz, duração de impulso de $13$ $\mu$s e um fator de ciclo de 2,6\%. O canal $2$ apresenta uma onda retangular com $1,5$ V no qual existe um pico de tensão no flanco ascendente com $3,4$ V estabilizando ao fim de aproximadamente $15$ $\mu$s. A duração do sinal retangular no canal 2 é de aproximadamente 470 $\mu$s o que leva a um fator de ciclo de 94\%. \unsure{onda nao fazia sentido, era sinal que queria dizer. meti duraçao de 470 para descnotar o pico aquele transitorio final}
 
 Na \autoref{fig:photo 2} fez-se \textit{zoom} de forma a que o pico de tensão da onda retangular no canal 2 se possa observar melhor, assim como a relação entre as tensões em A e B.
 
@@ -192,7 +192,8 @@ Existe também um atraso apreciável entre a tensão em A e B que se deve ao tem
 
 Considera-se agora relevante enunciar a funcionalidade dos díodos presentes no circuito. Em primeiro tem-se o díodo ligado ao primário do transformador cuja função é essencialmente garantir a continuidade da corrente quando o transístor passa ao corte, ficando assim a bobina salvaguardada de potenciais descontinuidades na corrente (o que é essencial uma vez que, na bobina, a corrente é variável de estado), garantindo o bom funcionamento do circuito. 
 
-Tem-se ainda o díodo Zenner cujo objetivo é diminuir o tempo de desmagnetização da bobina. Isto é devido à superior tensão imposta por este díodo aos terminais do transformador (tensão de Zenner), elevando assim a corrente que ali circula. Sendo assim, a corrente irá circular nos díodos até que a desmagnetização na bobina seja completa. \change{esta frase ficou um pouco estranha, nao percebi bem o que querias dizer}
+Tem-se ainda o díodo Zenner cujo objetivo é diminuir o tempo de desmagnetização da bobina. Isto é devido à superior tensão imposta por este díodo aos terminais do transformador (tensão de Zenner), elevando assim a corrente que ali circula. A circulação de corrente pelos díodos acontece até que haja a total desmagnetização da
+bobina. \change{estava a tentar nao copiar a frase do outro relatorio mas realmente é a forma mais expedita de explicar o que acontece}
 
 \subsubsection{Tensão no primário do transformador em função do díodo Zenner}
 
