@@ -156,14 +156,7 @@ O equipamento a utilizar na condução do trabalho é assim:
 
 \subsection{Estudo do circuito de disparo}
 
-<<<<<<< HEAD
 Em primeira instância apenas se realizam as ligações do circuito de disparo à fonte de alimentação. Após as ligações feitas sintoniza-se o GI para que se obtenha na saída uma onda retangular de amplitude $0$ a $15$ a uma frequência de $2$ kHz.
-
-
-\subsubsection{Formas de onda da tensão entre o ponto A e a massa e entre o ponto B e a massa}
-=======
-Em primeira instância apenas se realizam as ligações do circuito de disparo à fonte de alimentação. Após as ligações feitas sintoniza-se o GI para que se obtenha na saída uma onda retangular de amplitude 0 a 15 a uma frequência de 1 kHz com fator de ciclo de 50\%.
->>>>>>> origin/master
 
 \subsubsection{Formas de onda da tensão entre o ponto A e a massa e entre o ponto B e a massa}
 
@@ -171,11 +164,7 @@ Feito isto, podem observar-se as formas de onda entre o ponto A e a massa e o po
 
 \begin{figure}[h]
 	\centering
-<<<<<<< HEAD
 	\includegraphics[keepaspectratio=true, scale=0.8]{img/fig4}
-=======
-	\includegraphics[keepaspectratio=true, scale=0.14]{img/DSC0116}
->>>>>>> origin/master
 	\caption{Tensões nos pontos A e B.}
 	\label{fig:photo 1}
 	\vspace{-0.8em}
@@ -183,7 +172,6 @@ Feito isto, podem observar-se as formas de onda entre o ponto A e a massa e o po
 
 Tem-se assim no canal $1$ (amarelo) a tensão no ponto A e no canal $2$ (azul) a tensão no ponto B. Para o canal 1 observa-se uma onda quadrada compreendida entre 0 e 14,8 V, frequência de $2$ kHz, duração de impulso de $13$ $\mu$s e um fator de ciclo de 2,6\%. O canal $2$ apresenta uma onda retangular com $1,5$ V no qual existe um pico de tensão no flanco ascendente com $3,4$ V estabilizando ao fim de aproximadamente $15$ $\mu$s. A duração da onda retangular no canal 2 é de aproximadamente 480 $\mu$s o que leva a um fator de ciclo de 96\%. \unsure{o que queres dizer com "onda com 1.5V" e para o duty cycle contaste com aquele pedaço que tem a fase invertida?}
 
-<<<<<<< HEAD
 Na \autoref{fig:photo 2} fez-se zoom de forma a que o pico de tensão da onda retangular no canal 2 se possa observar melhor, assim como a relação entre as tensões em A e B.
 
 \begin{figure}[h]
@@ -198,73 +186,39 @@ Este pico deve-se a que no momento em que o transístor entra em condução, a b
 
 Existe também um atraso apreciável entre a tensão em A e B que se deve ao tempo de passagem do transístor da saturação para o corte.
 
-
-\subsubsection{Díodos no primário do transformador}
-
-Considera-se agora relevante enunciar a funcionalidade dos díodos presentes no circuito. Em primeiro tem-se o díodo ligado ao primário do transformador cuja função é essencialmente garantir a continuidade da corrente quando o transístor passa ao corte, ficando assim a bobina salvaguardada de potenciais descontinuidades na corrente, garantindo o bom funcionamento do circuito. Tem-se ainda o díodo \textit{Zenner} cujo objetivo é diminuir o tempo de desmagnetização da bobina. Isto é devido à superior tensão imposta por este díodo aos terminais do transformador (tensão de \textit{Zenner}), elevando assim a corrente que ali circula. Sendo assim a corrente irá circular nos díodos até que a desmagnetização na bobina seja completada.
-
-
-\subsubsection{Tensão no primário do transformador em função do díodo de Zenner}
-
-A alteração provocada pelo díodo \textit{Zenner} no comportamento do circuito é evidenciada na \autoref{fig:photo 3} e \autoref{fig:photo 4}.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[keepaspectratio=true, scale=0.15]{img/DSC0118}
-	\caption{Tensão no ponto B com o díodo \textit{Zenner}.}
-	\label{fig:photo 3}
-=======
-Este pico de tensão deve-se a que, no momento em que o transístor entra em condução, a bobina encontra-se magnetizada, ficando os díodos diretamente polarizados, sendo que a tensão no ponto B será então a soma entre a tensão no primário do transformador e VCC. Após o período de desmagnetização esta estabiliza no valor devido, VCC. 
-
-Existe também um atraso apreciável entre a tensão em A e B que se deve ao tempo de passagem do transístor da saturação para o corte.
-
 \subsubsection{Díodos no primário do transformador}
 
 Considera-se agora relevante enunciar a funcionalidade dos díodos presentes no circuito. Em primeiro tem-se o díodo ligado ao primário do transformador cuja função é essencialmente garantir a continuidade da corrente quando o transístor passa ao corte, ficando assim a bobina salvaguardada de potenciais descontinuidades na corrente (o que é essencial uma vez que, na bobina, a corrente é variável de estado), garantindo o bom funcionamento do circuito. 
 
 Tem-se ainda o díodo de Zenner cujo objetivo é diminuir o tempo de desmagnetização da bobina. Isto é devido à superior tensão imposta por este díodo aos terminais do transformador (tensão de Zenner), elevando assim a corrente que ali circula. Sendo assim, a corrente irá circular nos díodos até que a desmagnetização na bobina seja completa. \change{esta frase ficou um pouco estranha, nao percebi bem o que querias dizer}
 
-\subsubsection{Tensão no primário do transformador em função do díodo de Zenner}
+\subsubsection{Tensão no primário do transformador em função do díodo Zenner}
 
-A alteração provocada pelo díodo Zenner no comportamento do circuito é evidenciada pelas seguintes figuras.
+A alteração provocada pelo díodo \textit{Zenner} no comportamento do circuito é evidenciada na \autoref{fig:photo 3} e \autoref{fig:photo 4}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.14]{img/DSC0118}
-	\caption{Tensão no ponto B com o díodo de Zenner.}
+	\caption{Tensão no ponto B com o díodo Zenner.}
 	\label{fig:photo 2}
->>>>>>> origin/master
 	\vspace{-0.8em}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-<<<<<<< HEAD
 	\includegraphics[keepaspectratio=true, scale=0.8]{img/fig7}
-	\caption{Tensão no ponto B sem o díodo \textit{Zenner}.}
+	\caption{Tensão no ponto B sem o díodo Zenner.}
 	\label{fig:photo 4}
 	\vspace{-0.8em}
 \end{figure}
 
-Na \autoref{fig:photo 3} pode concluir-se que o tempo de desmagnetização é relativamente curto, cerca de $30$ $\mu$s em oposição ao tempo de desmagnetização observável na \autoref{fig:photo 4}, onde será aproximadamente $225$ $\mu$s, valor muito superior ao caso em que se faz uso do díodo \textit{Zenner}.
+Na \autoref{fig:photo 3} pode concluir-se que o tempo de desmagnetização é relativamente curto, cerca de $30$ $\mu$s em oposição ao tempo de desmagnetização observável na \autoref{fig:photo 4}, onde será aproximadamente $225$ $\mu$s, valor muito superior ao caso em que se faz uso do díodo Zenner.
 
-A tensão de \textit{Zenner} tem um valor de $-17$ V em oposição à tensão VAK de um díodo normal, $0,7$ V, o que leva a uma dissipação muito mais rápida e por consequência acelera a desmagnetização. Pode observar-se assim graficamente a magnetização pelo área no quadrante positivo e a desmagnetização no negativo, tendo estas que ser iguais.
-
+A tensão de Zenner tem um valor de $-17$ V em oposição à tensão VAK de um díodo normal, $0,7$ V, o que leva a uma dissipação muito mais rápida e por consequência acelera a desmagnetização. O díodo Zenner conduz quando inversamente polarizado (neste caso, a tensão de Zenner é de $-17$ V), o que leva a uma dissipação muito mais rápida, e consequentemente acelera o processo de desmagnetização. Verifica-se que, em ambos os casos, a área da curva de magnetização é idêntica à área da curva de desmagnetização. Sem Zenner, o valor da curva de desmagnetização é mais baixo, pelo que leva mais tempo a satisfazer este requisito. 
 
 \subsubsection{Tensão entre a \textit{gate} e o cátodo do tiristor}
 
 Seguidamente visualizou-se a tensão aos terminais da resistência R$3$,  V\textsubscript{GK} tal como se tem na \autoref{fig:photo 5}.
-=======
-	\includegraphics[keepaspectratio=true, scale=0.14]{img/DSC0119}
-	\caption{Tensão no ponto B sem o díodo de Zenner.}
-	\label{fig:photo 3}
-	\vspace{-0.8em}
-\end{figure}
-
-Na \autoref{fig:photo 2} pode concluir-se que o tempo de desmagnetização é relativamente curto, cerca de $30$ $\mu$s, em oposição ao tempo de desmagnetização observável na \autoref{fig:photo 3}, onde será mais de $50$ $\mu$s.
-
-O díodo Zenner conduz quando inversamente polarizado (neste caso, a tensão de Zenner é de $-17$ V), o que leva a uma dissipação muito mais rápida, e consequentemente acelera o processo de desmagnetização. Verifica-se que, em ambos os casos, a área da curva de magnetização é idêntica à área da curva de desmagnetização. Sem Zenner, o valor da curva de desmagnetização é mais baixo, pelo que leva mais tempo a satisfazer este requisito. 
->>>>>>> origin/master
 
 \begin{figure}[h]
 	\centering
