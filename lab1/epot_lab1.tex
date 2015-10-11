@@ -228,7 +228,7 @@ Seguidamente visualizou-se a tensão aos terminais da resistência R$3$,  V\text
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.67]{img/fig8}
+	\includegraphics[keepaspectratio=true, scale=0.63]{img/fig8}
 	\caption{Tensão V\textsubscript{GK} na resistência R$3$.}
 	\label{fig:photo 5}
 	\vspace{-0.8em}
@@ -239,6 +239,22 @@ Trata-se portanto de um sinal retangular com duração de impulso de 13 $\mu$s, 
 De forma a que a primeira parte do trabalho esteja concluída passou-se a desligar os terminais da resistência, seguido da realização das ligação dos pontos G e K à \textit{gate} e cátodo do tiristor, respetivamente.
 
 \subsection{Estudo do circuito de potência}
+
+Pretende-se agora verificar, como já foi referido, que o tiristor é um dispositivo que, por si só, não tem a capacidade de cortar a corrente que conduz. Assim, efetuam-se duas montagens distintas, tal como se tem na \autoref{fig:teorica1}.
+
+\begin{figure}[H]
+	\centering
+	\subfloat[]{\includegraphics[keepaspectratio=true, scale=0.17]{teoricas/no_cut}}
+	\hspace{8mm}
+	\subfloat[]{\includegraphics[keepaspectratio=true, scale=0.17]{teoricas/yes_cut}}
+	\caption{Circuito de potência sem comutação do tiristor (a) e circuito de potência com comutação do tiristor por ação da carga (b).}
+	\label{fig:teorica1}
+	\vspace{-0.8em}
+\end{figure}
+
+No circuito da \autoref{fig:teorica1}(a), o tiristor depois de disparado não volta a passar ao corte, mesmo depois de retirado o impulso de \textit{gate}. Já no circuito da \autoref{fig:teorica1}(b) o tiristor comuta por ação da carga.
+
+\unsure{tenho de explicar porque nao respondemos à pergunta 5?}
 
 \subsubsection{Variações da corrente e tensão na carga em função do GI}
 
