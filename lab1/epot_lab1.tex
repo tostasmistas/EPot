@@ -34,7 +34,7 @@
 \begin{document}
 \begin{titlepage}
 \begin{center}
-	
+
 \hfill \break
 \hfill \break
 
@@ -346,6 +346,34 @@ Considera-se no entanto de interesse mencionar o pico de tensão observável em 
 J
 
 \subsubsection{Funcionamento do circuito}
+O funcionamento deste circuito dividi-se em três zonas, como se pode verificar na fugira seguinte:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/funcionamento_tir}
+	\caption{Resultado da simulação do circuito.}
+	\label{fig:figura 1}
+	\vspace{-0.8em}
+\end{figure}
+
+\subsubsection*{Zona 1}
+	Zona onde o tirístor está a conduzir e o díodo ao corte.
+	Analisando a simulação verifica-se que quando ocorre o impulso na \textit{gate}, sinal a cinza, a corrente no tirístor tem um comportamento imposto pela bobine, cresce até atingir o seu valor máximo e em seguida decresce até se anular, sinal a roxo. Este comportamento também influência a carga no condensador, como a corrente é no sentido da carga, este carrega até que a corrente se anula, sinal azul. Neste ponto o tirístor entra em corte.
+	   
+\subsubsection*{Zona 2}
+	Zona onde o díodo está a conduzir e o tirístor ao corte. 
+	Com a bobine carregada é necessário a sua desmagnetização, para isso coloca-se um díodo anti-paralelo com o tirístor para criar o circuito de desmagnetização. 
+	Observando a simulação verifica-se que a corrente na bobine é idêntica à situação anterior mas no sentido inverso, ou seja, a desmagnetização da bobine. Com corrente a ter este comportamento é de esperar a descarga do condensador até que a corrente se anula. Neste ponto o díodo entre em corte.
+	
+\subsubsection*{Zona 3}
+	Zona onde o díodo e o tirístor estão ao corte.
+	A corrente na bobine é nula até que haja outro impulso de \textit{gate} de forma a ativar o tirístor. A tensão no condensador decresce até atingir o seu valor mínimo (período de descarga do condensador por entrega de energia à carga).
+	
+	Os valores máximos de corrente e tensão são determinados pelos parâmetros do circuito de disparo (período do impulso de \textit{gate}) e do circuito de potência (valores da resistência, condensador e bobine).
+	A potência entregue à carga é controla através da frequência  do impulso de \textit{gate} (frequência de disparo do tirístor).
+
+
+
 
 N
 
