@@ -439,14 +439,28 @@ Na \autoref{fig:imagem5} pode ver-se a tensão e corrente no tirístor.
 	\label{fig:imagem5}
 	\vspace{-0.8em}
 \end{figure}
- 
+O sinal a amarelo representa a tensão entre o catado e o anodo, V\textsubscript{KA} e o sinal a rosa representa a corrente no tirístor.
 Analisando a figura pode-se dividir o comportamento da tensão em três fases. A primeira fase é definida pela condução do tirístor, a tensão V\textsubscript{KA} é constante e igual à tensão de polarização direta do tirístor, como se pode visualizar no sinal a amarelo. 
-A segunda fase representa o momento de corte do tirístor, a falta do díodo em antiparalelo representa a inexistência do circuito desmagnetização como já foi anteriormente referido a existência da bobine no circuito obriga a que o exista um circuito de desmagnetização. 
-O sinal a amarelo representa a tensão entre o catado e o anodo, V\textsubscript{KA}
+A segunda fase representa o momento de corte do tirístor, intervalo desde que a corrente se anula até que o tirístor realmente entra em corte. Pode-se verificar o que já tinha sido referenciado, o tirístor têm um tempo de corte muito elevado. 
+
+Devido á existência da bobine no circuito e corrente neste no momento de corte a tensão  V\textsubscript{KA} tende para infinito, como se pode identificar no sinal amarelo da \autoref{fig:imagem5}. Confirma-se segundo a seguinte expressão:
+ 
+ \begin{equation}
+ 	\label{eq:ex_1}
+ 	V = L\,\frac{d}{d\,t}\,i_L + \frac{1}{C}\,\int i_C\,dt
+ \end{equation}
+
+Com $i_L = I$ e $i_C = I$ e um $dt = 0$ temos:
+
+ \begin{equation}
+ 	\label{eq:ex_2}
+ 	V = L\,\frac{d}{d\,t = 0}\,I + \frac{1}{C}\,\int I\,dt = 0 \Leftrightarrow V \rightarrow \infty
+ \end{equation}	
 
 \subsubsection{Circuito de potência sem a resistência de carga}
+A inexistência da resistência de carga origina um circuito oscilatório amortecido entre tensão máxima e mínima, 20V e 0V. Este amortecimento deve-se ao facto de o tirístor e o díodo não serem ideias, têm resistências internas.
 
-N
+Se os componentes fossem ideais, a tensão no condensador e a corrente na bobine apresentaria comportamento oscilatório não amortecido.
 
 \subsubsection{Expressão analítica da corrente e da tensão no condensador}
 
