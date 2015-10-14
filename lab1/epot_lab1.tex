@@ -22,6 +22,7 @@
 \usepackage[hypcap]{caption}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{enumerate}
+\usepackage[siunitx,american]{circuitikz}
 
 \setcounter{tocdepth}{2}
 
@@ -401,7 +402,106 @@ N
 
 \subsubsection{Expressão analítica da corrente e da tensão no condensador}
 
-N
+% For future reference, aqui há circuitos fixes de potências: http://www.texample.net/tikz/examples/power-electronics-converter-inverter/
+
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+			\draw
+			(0,0) to[Ty, scale=0.5, transform shape, mirror] (2,0) {}
+			(0,0) -- (0,0.5)
+			(1,0) -- (1,0.5)
+			(2,1) to[D*, scale=0.5, transform shape] (0,1)
+			(0,0) -- (-1,0)
+			(-1,0) to[battery1] (-1,-2)
+			(1,0) -- (2,0)
+			(2,0) to[L] (4,0)
+			(4,0) to[C] (4,-2)
+			(4,0) -- (6,0)
+			(6,0) to[R] (6,-2)
+			(6,-2) -- (-1,-2)
+			(2,-2) node[ground] {}
+			;
+		\end{tikzpicture}
+
+		\caption{Circuito em análise}
+		\label{fig:circuit_e18}
+	\end{figure}
+
+Durante o troço em que o tirístor e o díodo conduzem, a aplicação da lei de Kirchoff das Tensões leva às Equações \ref{eq:KVL_1} e \ref{eq:KVL_2}, e a aplicação da lei de Kirchoff das Correntes leva à Equação \ref{eq:KCL_1}.
+
+\begin{equation}
+\label{eq:KVL_1}
+V = L\,\frac{d}{d\,t}\,i_L + \frac{1}{C}\,\int i_C\,dt
+\end{equation}
+
+\begin{equation}
+\label{eq:KVL_2}
+R\,i_R = \frac{1}{C}\,\int i_C\,dt
+\end{equation}
+
+\begin{equation}
+\label{eq:KCL_1}
+i_L = i_C + i_R
+\end{equation}
+
+Derivando as duas equações da lei das malhas em ordem ao tempo, obtêm-se as Equações \ref{eq:KVL_1d} e \ref{eq:KVL_2d}.
+
+\begin{equation}
+\label{eq:KVL_1d}
+0 = L\,\frac{d^2}{d\,t^2}\,i_L + \frac{1}{C}\,i_C
+\end{equation}
+
+\begin{equation}
+\label{eq:KVL_2d}
+R\,\frac{d}{d\,t}\,i_R = \frac{1}{C}\,i_C
+\end{equation}
+
+Resolvendo o sistema diferencial de segunda ordem, obtém-se um resultado na forma da \autoref{eq:current_simp}.
+
+\begin{equation}
+\label{eq:current_simp}
+i_L = A\, e^{-\frac{t}{\tau}}\,(B\,\sin{(\omega\,t)}+C\cos{(\omega\,t)}) + I_{L0}
+\end{equation}
+
+\begin{equation}
+\label{eq:time_constant}
+\tau = 2\,R\,C
+\end{equation}
+
+\begin{equation}
+\label{eq:freq}
+\omega = \frac{\sqrt{L\,(4\,R^2\,C-L)}}{2\,R\,L\,C}
+\end{equation}
+
+
+% Isto é a mãe de todas as equações, cabe numa página A2 (sim, A2, não é A3), portanto vai ser estripada, mas fica aqui para referência futura.
+%\begin{equation}
+%\label{eq:current}
+%{{i_L}}\left(t\right)={{e^ {- {{t}\over{2\,C\,R}} }\,\left({{ \left(2\,C\,L\,\left(\left(\left.{{d}\over{d\,t}}\,{{i_L}}\left(t \right)\right|_{t=0}\right)\,C\,L\,R^2+\left({{i_L}}\left(0\right)- {{i_R}}\left(0\right)\right)\,L\,R-\left(\left.{{d}\over{d\,t}}\, {{i_L}}\left(t\right)\right|_{t=0}\right)\,L^2\right)-L\,\left( \left({{i_L}}\left(0\right)-{{i_R}}\left(0\right)\right)\,C\,L\,R- \left(\left.{{d}\over{d\,t}}\,{{i_L}}\left(t\right)\right|_{t=0} \right)\,C\,L^2\right)\right)\,\sin \left({{t\,\sqrt{L\,\left(4\,C\, R^2-L\right)}}\over{2\,C\,L\,R}}\right)}\over{\sqrt{L\,\left(4\,C\,R ^2-L\right)}}}+\left(\left({{i_L}}\left(0\right)-{{i_R}}\left(0 \right)\right)\,C\,L\,R-\left(\left.{{d}\over{d\,t}}\,{{i_L}}\left( t\right)\right|_{t=0}\right)\,C\,L^2\right)\,\cos \left({{t\,\sqrt{L \,\left(4\,C\,R^2-L\right)}}\over{2\,C\,L\,R}}\right)\right)}\over{C \,L\,R}}+{{{{i_R}}\left(0\right)\,R+\left(\left.{{d}\over{d\,t}}\, {{i_L}}\left(t\right)\right|_{t=0}\right)\,L}\over{R}}
+%\end{equation}
+
+Quando o tirístor deixa de conduzir (depois da corrente se anular), as equações diferenciais que descrevem o circuito são as mesmas, sendo que a diferença está nas condições iniciais que impõem os valores das constantes.
+
+Quando o díodo deixa de conduzir, $i_L = 0$, pelo que $i_C = -i_R$ e o condensador descarregará exponencialmente graças à resistência. Antes da tensão no díodo caír demasiado, o tirístor volta a disparar, e todo o processo recomeça.
+
+Caso a resistência não existisse, teríamos apenas uma equação diferencial (\autoref{eq:no_resistor}), cuja solução seria a \autoref{eq:current_no_resistor}.
+
+\begin{equation}
+\label{eq:no_resistor}
+0 = L\,\frac{d^2}{d\,t^2}\,i_L + \frac{1}{C}\,i_L
+\end{equation}
+
+\begin{equation}
+\label{eq:current_no_resistor}
+i_L = I_{L0}\,\cos{(\omega'\,t)} + V_{L0}\,\sqrt{\frac{C}{L}}\,\sin{(\omega'\,t)}
+\end{equation}
+
+\begin{equation}
+\omega'=\sqrt{C\,L}^-1
+\end{equation}
+
+Isto verificar-se-ia quer com o tirístor a conduzir, quer com o tirístor ao corte, e quando o díodo estivesse ao corte, o condensador manteria a sua tensão constante.
 
 \pagebreak
 

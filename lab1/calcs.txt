@@ -1,0 +1,526 @@
+Maxima 5.35.1 http://maxima.sourceforge.net
+using Lisp SBCL 1.2.12
+Distributed under the GNU Public License. See the file COPYING.
+Dedicated to the memory of William Schelter.
+The function bug_report() provides bug reporting information.
+(%i1) eqn_1: L*'diff(il(x),x) + (1/C)*'integrate(ic(x),x)=V;
+                                         /
+                                         [
+                                         I ic(x) dx
+                                         ]
+                         d               /
+(%o1)                   (-- (il(x))) L + ---------- = V
+                         dx                  C
+(%i2) eqn_1: L*'diff(il(t),t) + (1/C)*'integrate(ic(t),t)=V;
+                                         /
+                                         [
+                                         I ic(t) dt
+                                         ]
+                         d               /
+(%o2)                   (-- (il(t))) L + ---------- = V
+                         dt                  C
+(%i3) eqn_2: il(t)=ic(t)+ir(t);
+(%o3)                        il(t) = ir(t) + ic(t)
+(%i4) eqn_3: R*ir(t)= (1/C)*integrate(ic(t),t);
+                                       /
+                                       [
+                                       I ic(t) dt
+                                       ]
+                                       /
+(%o4)                        ir(t) R = ----------
+                                           C
+(%i5) desolve([eqn_1,eqn_2,eqn_3],[il(t),ic(t),ir(t)]);
+
+desolve: can't handle this case.
+ -- an error. To debug this try: debugmode(true);
+(%i6) debugmode(true);
+(%o6)                                true
+(%i7) desolve([eqn_1,eqn_2,eqn_3],[il(t),ic(t),ir(t)]);
+
+desolve: can't handle this case.
+ -- an error.  Entering the Maxima debugger.
+Enter ':h' for help.
+(dbm:1) :h
+Break commands start with ':'. Any unique substring may be used,
+eg :r :re :res all work for :resume.
+
+Command      Description
+-----------  --------------------------------------
+ :break      Set a breakpoint in the specified FUNCTION at the
+             specified LINE offset from the beginning of the function.
+             If FUNCTION is given as a string, then it is presumed to be
+             a FILE and LINE is the offset from the beginning of the file.
+ :bt         Print a backtrace of the stack frames
+ :continue   Continue the computation.
+ :delete     Delete all breakpoints, or if arguments are supplied delete the
+             specified breakpoints
+ :disable    Disable the specified breakpoints, or all if none are specified
+ :enable     Enable the specified breakpoints, or all if none are specified
+ :frame      With an argument print the selected stack frame.
+             Otherwise the current frame.
+ :help       Print help on a break command or with no arguments on
+             all break commands
+ :info       Print information about item
+ :lisp       Evaluate the lisp form following on the line
+ :lisp-quiet Evaluate the lisp form without printing a prompt
+ :next       Like :step, except that subroutine calls are stepped over
+ :quit       Quit this level
+ :resume     Continue the computation.
+ :step       Step program until it reaches a new source line
+ :top        Throw to top level
+ :_none      Undocumented(dbm:1) 
+Break commands start with ':'. Any unique substring may be used,
+eg :r :re :res all work for :resume.
+
+Command      Description
+-----------  --------------------------------------
+ :break      Set a breakpoint in the specified FUNCTION at the
+             specified LINE offset from the beginning of the function.
+             If FUNCTION is given as a string, then it is presumed to be
+             a FILE and LINE is the offset from the beginning of the file.
+ :bt         Print a backtrace of the stack frames
+ :continue   Continue the computation.
+ :delete     Delete all breakpoints, or if arguments are supplied delete the
+             specified breakpoints
+ :disable    Disable the specified breakpoints, or all if none are specified
+ :enable     Enable the specified breakpoints, or all if none are specified
+ :frame      With an argument print the selected stack frame.
+             Otherwise the current frame.
+ :help       Print help on a break command or with no arguments on
+             all break commands
+ :info       Print information about item
+ :lisp       Evaluate the lisp form following on the line
+ :lisp-quiet Evaluate the lisp form without printing a prompt
+ :next       Like :step, except that subroutine calls are stepped over
+ :quit       Quit this level
+ :resume     Continue the computation.
+ :step       Step program until it reaches a new source line
+ :top        Throw to top level
+ :_none      Undocumented(dbm:1) :r
+
+first: empty argument.
+ -- an error.  Entering the Maxima debugger.
+Enter ':h' for help.
+(dbm:1) desolve([eqn_1,eqn_2,eqn_3],[il(t),ic(t),ir(t)]);
+desolve: can't handle this case.
+ -- an error.  Entering the Maxima debugger.
+Enter ':h' for help.
+(dbm:2) :r
+first: empty argument.
+ -- an error.  Entering the Maxima debugger.
+Enter ':h' for help.
+(dbm:2) :resume
+map: improper argument: false
+ -- an error.  Entering the Maxima debugger.
+Enter ':h' for help.
+(dbm:2) :continue
+false
+(dbm:1) :continue
+map: improper argument: false
+ -- an error.  Entering the Maxima debugger.
+Enter ':h' for help.
+(dbm:1) (%i8) debugmode(false);
+(%o8)                                false
+(%i9) desolve([eqn_1,eqn_2,eqn_3],[il(t),ic(t),ir(t)]);
+
+desolve: can't handle this case.
+ -- an error. To debug this try: debugmode(true);
+(%i10) eqn_1
+;
+                                         /
+                                         [
+                                         I ic(t) dt
+                                         ]
+                         d               /
+(%o10)                  (-- (il(t))) L + ---------- = V
+                         dt                  C
+(%i11) eqn_2;
+(%o11)                       il(t) = ir(t) + ic(t)
+(%i12) eqn_3;
+                                       /
+                                       [
+                                       I ic(t) dt
+                                       ]
+                                       /
+(%o12)                       ir(t) R = ----------
+                                           C
+(%i13) eqn_1: L*'diff(diff(il(t),t),t) + (1/C)*ic(t)=0;
+                            2
+                           d                ic(t)
+(%o13)                    (--- (il(t))) L + ----- = 0
+                             2                C
+                           dt
+(%i14) eqn_3: R*diff(ir(t),t)= (1/C)*ic(t);
+                             d               ic(t)
+(%o14)                      (-- (ir(t))) R = -----
+                             dt                C
+(%i15) desolve([eqn_1,eqn_2,eqn_3],[il(t),ic(t),ir(t)]);
+           2
+Is L (4 C R  - L) positive, negative or zero?
+
+positive;
+                       t
+                   - -----                      !
+                     2 C R            d         !            2
+(%o15) [il(t) = (%e        (((2 C L ((-- (il(t))!     ) C L R
+                                      dt        !
+                                                !t = 0
+                                    !
+                          d         !        2
+ + (il(0) - ir(0)) L R - (-- (il(t))!     ) L )
+                          dt        !
+                                    !t = 0
+                                         !
+                               d         !          2
+ - L ((il(0) - ir(0)) C L R - (-- (il(t))!     ) C L ))
+                               dt        !
+                                         !t = 0
+                    2
+     t sqrt(L (4 C R  - L))                2
+ sin(----------------------))/sqrt(L (4 C R  - L))
+            2 C L R
+                                       !
+                             d         !          2
+ + ((il(0) - ir(0)) C L R - (-- (il(t))!     ) C L )
+                             dt        !
+                                       !t = 0
+                                                              !
+                                                    d         !
+                                         ir(0) R + (-- (il(t))!     ) L
+                    2                               dt        !
+     t sqrt(L (4 C R  - L))                                   !t = 0
+ cos(----------------------)))/(C L R) + ------------------------------, 
+            2 C L R                                    R
+               t
+           - -----                 !
+             2 C R       d         !        2  2  2                      2
+ic(t) = (%e        (((2 (-- (il(t))!     ) C  L  R  - (il(0) - ir(0)) C L  R)
+                         dt        !
+                                   !t = 0
+                    2
+     t sqrt(L (4 C R  - L))                2
+ sin(----------------------))/sqrt(L (4 C R  - L))
+            2 C L R
+                                            2
+                             t sqrt(L (4 C R  - L))
+ + (il(0) - ir(0)) C L R cos(----------------------)))/(C L R), 
+                                    2 C L R
+               t
+           - -----               !
+             2 C R     d         !          3
+ir(t) = (%e        ((((-- (il(t))!     ) C L
+                       dt        !
+                                 !t = 0
+                                           !
+                                 d         !        2
+ - 2 C L ((ir(0) - il(0)) L R + (-- (il(t))!     ) L ))
+                                 dt        !
+                                           !t = 0
+                    2
+     t sqrt(L (4 C R  - L))                2
+ sin(----------------------))/sqrt(L (4 C R  - L))
+            2 C L R
+              !                               2
+    d         !          2     t sqrt(L (4 C R  - L))
+ - (-- (il(t))!     ) C L  cos(----------------------)))/(C L R)
+    dt        !                       2 C L R
+              !t = 0
+                        !
+              d         !
+   ir(0) R + (-- (il(t))!     ) L
+              dt        !
+                        !t = 0
+ + ------------------------------]
+                 R
+(%i16) %[1];
+                      t
+                  - -----                      !
+                    2 C R            d         !            2
+(%o16) il(t) = (%e        (((2 C L ((-- (il(t))!     ) C L R
+                                     dt        !
+                                               !t = 0
+                                    !
+                          d         !        2
+ + (il(0) - ir(0)) L R - (-- (il(t))!     ) L )
+                          dt        !
+                                    !t = 0
+                                         !
+                               d         !          2
+ - L ((il(0) - ir(0)) C L R - (-- (il(t))!     ) C L ))
+                               dt        !
+                                         !t = 0
+                    2
+     t sqrt(L (4 C R  - L))                2
+ sin(----------------------))/sqrt(L (4 C R  - L))
+            2 C L R
+                                       !
+                             d         !          2
+ + ((il(0) - ir(0)) C L R - (-- (il(t))!     ) C L )
+                             dt        !
+                                       !t = 0
+                                                              !
+                                                    d         !
+                                         ir(0) R + (-- (il(t))!     ) L
+                    2                               dt        !
+     t sqrt(L (4 C R  - L))                                   !t = 0
+ cos(----------------------)))/(C L R) + ------------------------------
+            2 C L R                                    R
+(%i17) tex(%);
+$${\it il}\left(t\right)={{e^ {- {{t}\over{2\,C\,R}} }\,\left({{
+ \left(2\,C\,L\,\left(\left(\left.{{d}\over{d\,t}}\,{\it il}\left(t
+ \right)\right|_{t=0}\right)\,C\,L\,R^2+\left({\it il}\left(0\right)-
+ {\it ir}\left(0\right)\right)\,L\,R-\left(\left.{{d}\over{d\,t}}\,
+ {\it il}\left(t\right)\right|_{t=0}\right)\,L^2\right)-L\,\left(
+ \left({\it il}\left(0\right)-{\it ir}\left(0\right)\right)\,C\,L\,R-
+ \left(\left.{{d}\over{d\,t}}\,{\it il}\left(t\right)\right|_{t=0}
+ \right)\,C\,L^2\right)\right)\,\sin \left({{t\,\sqrt{L\,\left(4\,C\,
+ R^2-L\right)}}\over{2\,C\,L\,R}}\right)}\over{\sqrt{L\,\left(4\,C\,R
+ ^2-L\right)}}}+\left(\left({\it il}\left(0\right)-{\it ir}\left(0
+ \right)\right)\,C\,L\,R-\left(\left.{{d}\over{d\,t}}\,{\it il}\left(
+ t\right)\right|_{t=0}\right)\,C\,L^2\right)\,\cos \left({{t\,\sqrt{L
+ \,\left(4\,C\,R^2-L\right)}}\over{2\,C\,L\,R}}\right)\right)}\over{C
+ \,L\,R}}+{{{\it ir}\left(0\right)\,R+\left(\left.{{d}\over{d\,t}}\,
+ {\it il}\left(t\right)\right|_{t=0}\right)\,L}\over{R}}$$
+(%o17)                               false
+(%i18) tex(%o1)
+;
+$${{d}\over{d\,x}}\,{\it il}\left(x\right)\,L+{{\int {{\it ic}\left(x
+ \right)}{\;dx}}\over{C}}=V\leqno{\tt (\%o1)}$$
+(%o18)                              (\%o1)
+(%i19) desolve([eqn_1,eqn_2,eqn_3],[il(t),ic(t),ir(t)]);
+           2
+Is L (4 C R  - L) positive, negative or zero?
+
+positive;
+                       t
+                   - -----                      !
+                     2 C R            d         !            2
+(%o15) [il(t) = (%e        (((2 C L ((-- (il(t))!     ) C L R
+                                      dt        !
+                                                !t = 0
+                                    !
+                          d         !        2
+ + (il(0) - ir(0)) L R - (-- (il(t))!     ) L )
+                          dt        !
+                                    !t = 0
+                                         !
+                               d         !          2
+ - L ((il(0) - ir(0)) C L R - (-- (il(t))!     ) C L ))
+                               dt        !
+                                         !t = 0
+                    2
+     t sqrt(L (4 C R  - L))                2
+ sin(----------------------))/sqrt(L (4 C R  - L))
+            2 C L R
+                                       !
+                             d         !          2
+ + ((il(0) - ir(0)) C L R - (-- (il(t))!     ) C L )
+                             dt        !
+                                       !t = 0
+                                                              !
+                                                    d         !
+                                         ir(0) R + (-- (il(t))!     ) L
+                    2                               dt        !
+     t sqrt(L (4 C R  - L))                                   !t = 0
+ cos(----------------------)))/(C L R) + ------------------------------, 
+            2 C L R                                    R
+               t
+           - -----                 !
+             2 C R       d         !        2  2  2                      2
+ic(t) = (%e        (((2 (-- (il(t))!     ) C  L  R  - (il(0) - ir(0)) C L  R)
+                         dt        !
+                                   !t = 0
+                    2
+     t sqrt(L (4 C R  - L))                2
+ sin(----------------------))/sqrt(L (4 C R  - L))
+            2 C L R
+                                            2
+                             t sqrt(L (4 C R  - L))
+ + (il(0) - ir(0)) C L R cos(----------------------)))/(C L R), 
+                                    2 C L R
+               t
+           - -----               !
+             2 C R     d         !          3
+ir(t) = (%e        ((((-- (il(t))!     ) C L
+                       dt        !
+                                 !t = 0
+                                           !
+                                 d         !        2
+ - 2 C L ((ir(0) - il(0)) L R + (-- (il(t))!     ) L ))
+                                 dt        !
+                                           !t = 0
+                    2
+     t sqrt(L (4 C R  - L))                2
+ sin(----------------------))/sqrt(L (4 C R  - L))
+            2 C L R
+              !                               2
+    d         !          2     t sqrt(L (4 C R  - L))
+ - (-- (il(t))!     ) C L  cos(----------------------)))/(C L R)
+    dt        !                       2 C L R
+              !t = 0
+                        !
+              d         !
+   ir(0) R + (-- (il(t))!     ) L
+              dt        !
+                        !t = 0
+ + ------------------------------]
+                 R
+(%i16) %[1];
+                      t
+                  - -----                      !
+                    2 C R            d         !            2
+           2
+Is L (4 C R  - L) positive, negative or zero?
+(%i21) %o15[2];
+                      t
+                  - -----                 !
+                    2 C R       d         !        2  2  2
+(%o21) ic(t) = (%e        (((2 (-- (il(t))!     ) C  L  R
+                                dt        !
+                                          !t = 0
+                                              2
+                      2        t sqrt(L (4 C R  - L))                2
+ - (il(0) - ir(0)) C L  R) sin(----------------------))/sqrt(L (4 C R  - L))
+                                      2 C L R
+                                            2
+                             t sqrt(L (4 C R  - L))
+ + (il(0) - ir(0)) C L R cos(----------------------)))/(C L R)
+                                    2 C L R
+(%i22) eqn_stuff: vc(t) = integrate(ic(t),t);
+                                      /
+                                      [
+(%o22)                        vc(t) = I ic(t) dt
+                                      ]
+                                      /
+(%i23) desolve([%o15[2],eqn_stuff],[vc(t)]);
+                                          2
+           atan2(0, L)      atan2(0, 4 C R  - L)
+Is - ((sin(-----------) cos(--------------------)
+                2                    2
+                                      2
+       atan2(0, L)      atan2(0, 4 C R  - L)        !     2    !
+ - cos(-----------) sin(--------------------)) sqrt(!4 C R  - L!))
+            2                    2
+/(2 C sqrt(abs(L)) R) - g2169 positive, negative or zero?
+
+negative;
+                                        2
+         atan2(0, L)      atan2(0, 4 C R  - L)
+Is ((sin(-----------) cos(--------------------)
+              2                    2
+                                      2
+       atan2(0, L)      atan2(0, 4 C R  - L)        !     2    !
+ - cos(-----------) sin(--------------------)) sqrt(!4 C R  - L!))
+            2                    2
+/(2 C sqrt(abs(L)) R) - g2169 positive, negative or zero?
+
+negative;
+                                          2
+           atan2(0, L)      atan2(0, 4 C R  - L)
+Is - ((sin(-----------) cos(--------------------)
+                2                    2
+                                      2
+       atan2(0, L)      atan2(0, 4 C R  - L)        !     2    !
+ - cos(-----------) sin(--------------------)) sqrt(!4 C R  - L!))
+            2                    2
+                          1
+/(2 C sqrt(abs(L)) R) - ----- - g2169 positive, negative or zero?
+                        2 C R
+
+negative;
+                                        2
+         atan2(0, L)      atan2(0, 4 C R  - L)
+Is ((sin(-----------) cos(--------------------)
+              2                    2
+                                      2
+       atan2(0, L)      atan2(0, 4 C R  - L)        !     2    !
+ - cos(-----------) sin(--------------------)) sqrt(!4 C R  - L!))
+            2                    2
+                          1
+/(2 C sqrt(abs(L)) R) - ----- - g2169 positive, negative or zero?
+                        2 C R
+
+negative;
+desolve: can't handle this case.
+ -- an error. To debug this try: debugmode(true);
+(%i24) desolve([%o15[2],eqn_stuff],[vc(t)]);
+                                          2
+           atan2(0, L)      atan2(0, 4 C R  - L)
+Is - ((sin(-----------) cos(--------------------)
+                2                    2
+                                      2
+       atan2(0, L)      atan2(0, 4 C R  - L)        !     2    !
+ - cos(-----------) sin(--------------------)) sqrt(!4 C R  - L!))
+            2                    2
+/(2 C sqrt(abs(L)) R) - g4451 positive, negative or zero?
+
+negative;
+                                        2
+         atan2(0, L)      atan2(0, 4 C R  - L)
+Is ((sin(-----------) cos(--------------------)
+              2                    2
+                                      2
+       atan2(0, L)      atan2(0, 4 C R  - L)        !     2    !
+ - cos(-----------) sin(--------------------)) sqrt(!4 C R  - L!))
+            2                    2
+/(2 C sqrt(abs(L)) R) - g4451 positive, negative or zero?
+
+positive;
+                                          2
+           atan2(0, L)      atan2(0, 4 C R  - L)
+Is - ((sin(-----------) cos(--------------------)
+                2                    2
+                                      2
+       atan2(0, L)      atan2(0, 4 C R  - L)        !     2    !
+ - cos(-----------) sin(--------------------)) sqrt(!4 C R  - L!))
+            2                    2
+                          1
+/(2 C sqrt(abs(L)) R) - ----- - g4451 positive, negative or zero?
+                        2 C R
+
+negative;
+                                        2
+         atan2(0, L)      atan2(0, 4 C R  - L)
+Is ((sin(-----------) cos(--------------------)
+              2                    2
+                                      2
+       atan2(0, L)      atan2(0, 4 C R  - L)        !     2    !
+ - cos(-----------) sin(--------------------)) sqrt(!4 C R  - L!))
+            2                    2
+                          1
+/(2 C sqrt(abs(L)) R) - ----- - g4451 positive, negative or zero?
+                        2 C R
+
+positive;
+desolve: can't handle this case.
+ -- an error. To debug this try: debugmode(true);
+(%i25) %o15[2];
+                      t
+                  - -----                 !
+                    2 C R       d         !        2  2  2
+(%o25) ic(t) = (%e        (((2 (-- (il(t))!     ) C  L  R
+                                dt        !
+                                          !t = 0
+                                              2
+                      2        t sqrt(L (4 C R  - L))                2
+ - (il(0) - ir(0)) C L  R) sin(----------------------))/sqrt(L (4 C R  - L))
+                                      2 C L R
+                                            2
+                             t sqrt(L (4 C R  - L))
+ + (il(0) - ir(0)) C L R cos(----------------------)))/(C L R)
+                                    2 C L R
+(%i26) desolve([0=L*diff(diff(il(t),t),t)+il(t)/C],[il(t)]);
+Is C L positive, negative or zero?
+
+positive;
+(%o26) il(t) = 
+                    !
+          d         !        2  2     t sqrt(C L)
+         (-- (il(t))!     ) C  L  sin(-----------)
+          dt        !                     C L
+                    !t = 0                                         t sqrt(C L)
+         ----------------------------------------- + il(0) C L cos(-----------)
+                         sqrt(C L)                                     C L
+         ----------------------------------------------------------------------
+                                          C L
+(%i27) 
