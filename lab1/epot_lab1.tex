@@ -255,7 +255,11 @@ Pretende-se agora verificar, como já foi referido, que o tiristor é um disposi
 
 No circuito da \autoref{fig:teorica1}(a), o tiristor depois de disparado não volta a passar ao corte, mesmo depois de retirado o impulso de \textit{gate}. Já no circuito da \autoref{fig:teorica1}(b) o tiristor comuta por ação da carga.
 
-\unsure{tenho de explicar porque nao respondemos à pergunta 5?}
+\subsubsection{Valores do voltímetro e amperímetro}
+
+Efetuada a montagem da \autoref{fig:teorica1}(a) leram-se os valores (DC) indicados no voltímetro e amperímetro.
+
+Regulada a fonte de alimentação para 20 V e descontando a queda de 1 V no tiristor, o valor registado na carga será de 19 V. A resistência na carga tem um valor 100 $\Omega$ e assim, de acordo com a lei de Ohm, tem-se uma corrente de 190 mA.
 
 \subsubsection{Variações da corrente e tensão na carga em função do GI}
 
@@ -266,7 +270,9 @@ Assim se percebe como o tiristor, uma vez que seja disparado, e tenha uma corren
 
 \subsubsection{Corrente de lançamento e corrente de manutenção}
 
-\unsure{aqui tambem nao anotámos o valor das correntes - o que digo?}
+Variando a tensão de alimentação do circuito de potência, e consequentemente a corrente na carga, determinou-se a corrente de lançamento e a corrente de manutenção.
+
+\hspace{30mm} I\textsubscript{lançamento} = 120 mA \hspace{5mm} I\textsubscript{manutenção} = 90 mA 
 
 A corrente de lançamento ($i_L$) corresponde à mínima corrente de ânodo necessária para manter o tiristor no estado de condução imediatamente após este ter sido disparado. Assim, uma vez que o dispositivo tenha sido ligado pelo terminal da \textit{gate} manter-se-á nesse \textit{on-state} desde que a corrente de ânodo seja maior que $i_L$.
 
@@ -275,6 +281,8 @@ Desde que o ânodo se mantenha polarizado positivamente, o tiristor não pode se
 A corrente de lançamento é maior que a corrente de manutenção.
 
 Na \autoref{fig:caracteristica} pode-se ver a característica $V\textsubscript{AK}(I)$ do tiristor, onde melhor se compreende os conceitos de corrente de lançamento e manutenção.
+
+\pagebreak
 
 \begin{figure}[h]
 	\centering
@@ -293,14 +301,14 @@ A forma dos sinais de tensão no condensador e corrente na bobine podem ser obse
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.17]{img/imagem1}
-	\caption{Tensão no condensador (a amarelo) e na bobine (a rosa).}
+	\caption{Tensão no condensador (a amarelo) e corrente na bobine (a rosa).}
 	\label{fig:imagem1}
 	\vspace{-0.8em}
 \end{figure}
 
-Como se pode verificar, no período de condução a corrente e a tensão apresentam forma sinusoidal. No período de corte a corrente na bobine é nula e a tensão no condensador decresce de forma exponencial, o que corresponde à sua descarga devido à resistência de carga que se encontra em paralelo com o condensador.
+Como se pode verificar, no período de condução a corrente e a tensão apresentam forma sinusoidal (sinusoidal amortecida no caso da corrente). No período de corte a corrente na bobine é nula e a tensão no condensador decresce de forma exponencial, o que corresponde à sua descarga devido à resistência de carga que se encontra em paralelo com o condensador.
 
-\unsure{help! nao sei o que comentar aqui! - porquê correntes em volt?}
+Também na \autoref{fig:imagem1} se pode verificar o comportamento oscilatório do circuito.
 
 \subsubsection{Formas de onda da tensão e corrente no díodo rápido em antiparalelo}
 
@@ -308,7 +316,7 @@ A forma dos sinais de corrente e tensão no díodo em antiparalelo podem ser obs
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.15]{img/imagem2}
+	\includegraphics[keepaspectratio=true, scale=0.12]{img/imagem2}
 	\caption{Tensão (a amarelo) e corrente (a rosa) no díodo rápido.}
 	\label{fig:imagem2}
 	\vspace{-0.8em}
@@ -324,12 +332,13 @@ Na \autoref{fig:imagem3} pode ver-se a tensão e corrente no tiristor.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.165]{img/imagem3}
+	\includegraphics[keepaspectratio=true, scale=0.12]{img/imagem3}
 	\caption{Tensão (a amarelo) e corrente (a rosa) no tiristor.}
 	\label{fig:imagem3}
 	\vspace{-0.8em}
 \end{figure}
 
+\pagebreak
 
 Tal como aos terminais do díodo em antiparalelo a corrente durante o período de condução do tiristor apresenta um comportamento sinusoidal, sendo neste caso o da alternância positiva da corrente na bobina, no entanto devido ao atraso da passagem ao corte do tiristor, ainda se pode observar um pouco da alternância negativa.
 
@@ -342,9 +351,9 @@ Considera-se no entanto de interesse mencionar o pico de tensão observável em 
 
 Ao utilizar o díodo lento em antiparalelo as formas de onda da corrente e tensão são as apresentadas na \autoref{fig:imagem4}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=1.25]{img/mentira}
+	\includegraphics[keepaspectratio=true, scale=1.2]{img/imagem4}
 	\caption{Tensão (a azul) e corrente (a amarelo) no diodo lento.}
 	\label{fig:imagem4}
 	\vspace{-0.8em}
