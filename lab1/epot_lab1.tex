@@ -370,40 +370,79 @@ Também se observa que o díodo rápido tem um tempo de condução inferior, pel
 Por fim tem-se no caso do díodo lento um atraso no tempo de passagem à condução maior, pelo que o período em que se pode observar a arcada negativa da corrente será também maior.
 
 \subsubsection{Funcionamento do circuito}
-O funcionamento deste circuito dividi-se em três zonas, como se pode verificar na fugira seguinte:
+O funcionamento deste circuito divide-se em três zonas:
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.4]{img/funcionamento_tir}
-	\caption{Resultado da simulação do circuito.}
-	\label{fig:figura 1}
+	\caption{Resultado das simulações.}
+	\label{fig:figura 0}
 	\vspace{-0.8em}
 \end{figure}
 
 \subsubsection*{Zona 1}
 	Zona onde o tirístor está a conduzir e o díodo ao corte.
-	Analisando a simulação verifica-se que quando ocorre o impulso na \textit{gate}, sinal a cinza, a corrente no tirístor tem um comportamento imposto pela bobine, cresce até atingir o seu valor máximo e em seguida decresce até se anular, sinal a roxo. Este comportamento também influência a carga no condensador, como a corrente é no sentido da carga, este carrega até que a corrente se anula, sinal azul. Neste ponto o tirístor entra em corte.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[keepaspectratio=true, scale=0.4]{img/Zona1}
+		\caption{Sinal de impluso(cinza), corrente no tirístor(azul), corrente na bobine (verde)e a tensão no condensador(castanho).}
+		\label{fig:figura 1}
+		\vspace{-0.8em}
+	\end{figure}
+	
+	
+	Analisando a simulação verifica-se que quando ocorre o impulso na \textit{gate}, sinal a cinza, a corrente no tirístor tem um comportamento imposto pela bobine, cresce até atingir o seu valor máximo e em seguida decresce até se anular, sinal a verde e sinal a azul. Este comportamento também influência a carga no condensador, como a corrente é no sentido da carga, este carrega até que a corrente se anula, sinal a castanho. Neste ponto o díodo entra em condução.
+	
+	\pagebreak
 	   
 \subsubsection*{Zona 2}
 	Zona onde o díodo está a conduzir e o tirístor ao corte. 
-	Com a bobine carregada é necessário a sua desmagnetização, para isso coloca-se um díodo anti-paralelo com o tirístor para criar o circuito de desmagnetização. 
-	Observando a simulação verifica-se que a corrente na bobine é idêntica à situação anterior mas no sentido inverso, ou seja, a desmagnetização da bobine. Com corrente a ter este comportamento é de esperar a descarga do condensador até que a corrente se anula. Neste ponto o díodo entre em corte.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[keepaspectratio=true, scale=0.4]{img/Zona2}
+		\caption{Corrente no díodo(roxo), corrente na bobine (verde), tensão no condensador(castanho) e a tensão no tirístor (vermelho).}
+		\label{fig:figura 2}
+		\vspace{-0.8em}
+	\end{figure}
+	
+	Como já  foi referenciado o tirístor tem um comportamento muito lento no corte. Como o objetivo é abrir o circuito exatamente no ponto em que a corrente no tirístor passa por zero, o tirístor não consegue ter esse comportamento, foi colocado um díodo anti-paralelo de forma a aproximar o corte do zero.    
+	
+	Com o díodo anti-paralelo a corrente têm o sentido contrário à situação anterior. Com corrente a ter este comportamento é de esperar a descarga do condensador até que a corrente se anula, sinal a castanho Neste ponto o díodo entre em corte.
+
 	
 \subsubsection*{Zona 3}
 	Zona onde o díodo e o tirístor estão ao corte.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[keepaspectratio=true, scale=0.4]{img/Zona3}
+		\caption{Tensão no tirístor(vermelho) e a tensão do condensador(castanho).}
+		\label{fig:figura 3}
+		\vspace{-0.8em}
+	\end{figure}
+	
 	A corrente na bobine é nula até que haja outro impulso de \textit{gate} de forma a ativar o tirístor. A tensão no condensador decresce até atingir o seu valor mínimo (período de descarga do condensador por entrega de energia à carga).
 	
 	Os valores máximos de corrente e tensão são determinados pelos parâmetros do circuito de disparo (período do impulso de \textit{gate}) e do circuito de potência (valores da resistência, condensador e bobine).
 	A potência entregue à carga é controla através da frequência  do impulso de \textit{gate} (frequência de disparo do tirístor).
 
 
-
-
-N
-
 \subsubsection{Circuito de potência sem díodo em antiparalelo}
+Na \autoref{fig:imagem5} pode ver-se a tensão e corrente no tirístor.
 
-N
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.165]{img/imagem5}
+	\caption{Tensão (a amarelo) e corrente (a rosa) no tiristor.}
+	\label{fig:imagem5}
+	\vspace{-0.8em}
+\end{figure}
+ 
+Analisando a figura pode-se dividir o comportamento da tensão em três fases. A primeira fase é definida pela condução do tirístor, a tensão V\textsubscript{KA} é constante e igual à tensão de polarização direta do tirístor, como se pode visualizar no sinal a amarelo. 
+A segunda fase representa o momento de corte do tirístor, a falta do díodo em antiparalelo representa a inexistência do circuito desmagnetização como já foi anteriormente referido a existência da bobine no circuito obriga a que o exista um circuito de desmagnetização. 
+O sinal a amarelo representa a tensão entre o catado e o anodo, V\textsubscript{KA}
 
 \subsubsection{Circuito de potência sem a resistência de carga}
 
