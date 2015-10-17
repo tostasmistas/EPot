@@ -568,13 +568,92 @@ Isto verificar-se-ia quer com o tirístor a conduzir, quer com o tirístor ao co
 \pagebreak
 
 \section{Simulação do Trabalho de Laboratório}
+Na figura seguinte está representado o circuito usado para realização da simulação:
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.565]{img/sim/circuit}
+	\caption{Circuito para simulação.}
+	\label{fig:circ}
+	\vspace{-0.8em}
+\end{figure}
 
 \subsection{Circuito de disparo}
 
+O circuito de disparo foi simulado usando um gerador de impulsos com 2$KHz$ de frequência, um factor de ciclo de 2\% e um amplitude de 10V.
+
+A \autoref{fig:sinal} está representado a seguir:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.365]{img/sim/sinalentrada}
+	\caption{Sinal de controlo de \textit{gate} em tensão.}
+	\label{fig:sinal}
+	\vspace{-0.8em}
+	\end{figure}
+	
+\pagebreak
+
 \subsection{Circuito de potência com comutação do tiristor por acção da carga}
+\subsubsection{Circuito de potência com díodo em antiparalelo}
+ A figura seguinte representa a tensão e corrente no tirístor e no díodo:
+ 
+ \begin{figure}[h]
+ 	\centering
+ 	\includegraphics[keepaspectratio=true, scale=0.365]{img/sim/CorrentTensaodiodoeTiristor}
+ 	\caption{A tensão no tirístor e no díodo(vermelho), corrente no tirístor (verde) e a corrente no díodo(azul).}
+ 	\label{fig:dio}
+ 	\vspace{-0.8em}
+ \end{figure}
+ 
+ Depois de verificarmos os sinais de corrente e tensão no díodo e no tirístor, pode-se observar os sinais de corrente e tensão na bobine e condensador respetivamente na \autoref{fig:condbobine}.
+ 
+ 
+ \begin{figure}[h]
+ 	\centering
+ 	\includegraphics[keepaspectratio=true, scale=0.365]{img/sim/TensaoCondCorrenBobine}
+ 	\caption{A tensão no condensador(verde)e a corrente na bobine(vermelho).}
+ 	\label{fig:condbobine}
+ 	\vspace{-0.8em}
+ \end{figure}
+ 
+ \pagebreak
+ 
+\subsubsection{Circuito de potência sem díodo em antiparalelo}
+ Na figura seguinte estão representados as formas de onda da corrente e tensão no tirístor.
+ 
+  \begin{figure}[h]
+  	\centering
+  	\includegraphics[keepaspectratio=true, scale=0.365]{img/sim/tiristorsemdiodo}
+  	\caption{A tensão no tirístor(vermelho)e a sua corrente(verde).}
+  	\label{fig:ondbobine}
+  	\vspace{-0.8em}
+  \end{figure}
+  
+ Também verificou-se as formas de onda da corrente e tensão na bobine e condensador, respetivamente.
+ 
+  \begin{figure}[h]
+  	\centering
+  	\includegraphics[keepaspectratio=true, scale=0.365]{img/sim/semdiodocond}
+  	\caption{A tensão no condensador(vermelho)e a corrente na bobine(verde).}
+  	\label{fig:bobine}
+  	\vspace{-0.8em}
+  \end{figure}
 
 \pagebreak
 
+\subsubsection{Circuito de potência sem resitência de carga.}
+
+Pode-se verificar o comportamento oscilatório amortecido visualizado nas formas de onde de corrente e tensão na bobine e condensador respetivamente.
+
+ \begin{figure}[h]
+ 	\centering
+ 	\includegraphics[keepaspectratio=true, scale=0.365]{img/sim/oscil}
+ 	\caption{A tensão no condensador(vermelho)e a corrente na bobine(azul).}
+ 	\label{fig:conbobine}
+ 	\vspace{-0.8em}
+ \end{figure}
 \section{Conclusão}
 
 \end{document}
