@@ -22,7 +22,7 @@
 \usepackage[hypcap]{caption}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{enumerate}
-%\usepackage[siunitx,american]{circuitikz}
+\usepackage[siunitx,american]{circuitikz}
 
 \setcounter{tocdepth}{2}
 
@@ -58,7 +58,7 @@
 
 \vspace{7mm}
 
-Grupo n.º TAL de segunda-feira das 17h00 - 2000
+Turno de Segunda-feira das 17h00 - 20h00
 
 \vfill
 
@@ -466,29 +466,29 @@ Se os componentes fossem ideais, a tensão no condensador e a corrente na bobine
 
 % For future reference, aqui há circuitos fixes de potências: http://www.texample.net/tikz/examples/power-electronics-converter-inverter/
 
-%	\begin{figure}[h]
-%		\centering
-%		\begin{tikzpicture}
-%			\draw
-%			(0,0) to[Ty, scale=0.5, transform shape, mirror] (2,0) {}
-%			(0,0) -- (0,0.5)
-%			(1,0) -- (1,0.5)
-%			(2,1) to[D*, scale=0.5, transform shape] (0,1)
-%			(0,0) -- (-1,0)
-%			(-1,0) to[battery1] (-1,-2)
-%			(1,0) -- (2,0)
-%			(2,0) to[L] (4,0)
-%			(4,0) to[C] (4,-2)
-%			(4,0) -- (6,0)
-%			(6,0) to[R] (6,-2)
-%			(6,-2) -- (-1,-2)
-%			(2,-2) node[ground] {}
-%			;
-%		\end{tikzpicture}
-%
-%		\caption{Circuito em análise}
-%		\label{fig:circuit_e18}
-%	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+			\draw
+			(0,0) to[Ty, scale=0.5, transform shape, mirror] (2,0) {}
+			(0,0) -- (0,0.5)
+			(1,0) -- (1,0.5)
+			(2,1) to[D*, scale=0.5, transform shape] (0,1)
+			(0,0) -- (-1,0)
+			(-1,0) to[battery1] (-1,-2)
+			(1,0) -- (2,0)
+			(2,0) to[L] (4,0)
+			(4,0) to[C] (4,-2)
+			(4,0) -- (6,0)
+			(6,0) to[R] (6,-2)
+			(6,-2) -- (-1,-2)
+			(2,-2) node[ground] {}
+			;
+		\end{tikzpicture}
+
+		\caption{Circuito em análise}
+		\label{fig:circuit_e18}
+	\end{figure}
 
 Durante o troço em que o tiristor e o díodo conduzem, a aplicação da lei de Kirchoff das Tensões leva às Equações \ref{eq:KVL_1} e \ref{eq:KVL_2}, e a aplicação da lei de Kirchoff das Correntes leva à Equação \ref{eq:KCL_1}.
 
@@ -631,7 +631,7 @@ A \autoref{fig:sinal} está representado a seguir:
   	\vspace{-0.8em}
   \end{figure}
   
- Também verificou-se as formas de onda da corrente e tensão na bobine e condensador, respetivamente.
+ Verificaram-se também as seguintes formas de onda da corrente e tensão na bobine e condensador, respetivamente.
  
   \begin{figure}[h]
   	\centering
