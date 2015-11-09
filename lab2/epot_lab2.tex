@@ -76,20 +76,35 @@ Turno de Segunda-feira das 17h00 - 20h00
 
 Com este trabalho pretende estudar-se o funcionamento do conversor CA/CC (Retificador) monofásico comandado de meia onda.
 
-Os Retificadores de meia onda comandados são constituídos por apenas um único tiristor. Estes sistemas não são no entanto perfeitos, sendo que a tensão de saída irá apresentar um tremor à frequência da entrada no lado CA, trazendo dificuldades na filtragem.
+Este tipo de retificadores tira o seu nome da capacidade que o Tiristor tem em controlar a sua tensão de saída através do ângulo de disparo. O Tiristor é levado à condução pela aplicação de um sinal na textit{Gate} e passa ao corte através de comutação natural na maioria dos casos, ou comutação forçada no caso de circuitos fortemente indutivos.
 
-Pode dizer-se que este trabalho está dividido em duas partes. Na primeira estuda-se o retificador de meia onda simples com carga R e RL. Na segunda parte trata-se da inclusão de um díodo de roda livre e estuda-se o comportamento deste novo circuito de potência com uma carga RL. 
+Pode dizer-se que este trabalho está dividido em duas partes. Na primeira estuda-se o retificador de meia onda simples com carga R e RL. Na segunda parte trata-se da inclusão de um díodo de roda livre e estuda-se o comportamento deste novo circuito de potência com uma carga RL.
+
+O comportamento do Retificador de meia onda com uma carga resistiva pura é tal que a corrente e a tensão na carga têm que apresentar a mesma polaridade em qualquer altura. Devido ao comportamento do Tiristor apenas existe tensão na saída durante alternâncias positivas, pois quando a corrente se anula no Tiristor este passa ao corte, sendo esta característica do comportamento que leva ao nome "de meia onda".
+
+Já no caso de uma carga RL existe uma ligeira desfasagem entre tensão e corrente, devido à presença da bobine, pelo que a corrente no Tiristor apenas se anula quando a tensão já se encontra na sua alternância negativa. Embora continuemos a ter apenas meia onda, já não existe uma distinção certa entre conduzir apenas durante uma das alternâncias.
+
+Na segunda parte deste trabalho inclui-se ao circuito um Díodo de Roda Livre. O Díodo de Roda Livre é também conhecido como Díodo \textit{Snubber} ou Díodo \textit{Flyback}. Este é utilizado para prevenir valores negativos de tensão na saída assim como eliminar os picos de tensão quando se têm cargas indutivas a sofrer comutação.
+
 
 
 \section{Condução do Trabalho}
 
 \subsection{Estudo do circuito de disparo}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/circuito_disparo.jpg}
+	\caption{Diagrama de blocos do Circuito de disparo.}
+	\label{fig:circuit_1}
+	\vspace{-0.8em}
+\end{figure}
+
 \subsubsection{Formas de onda dos sinais de disparo}
 
 \todo{5.1a}
 
-\unsure{a 5.1b é uma pergunta?}
+\unsure{a 5.1b é uma pergunta? acho que não, parece tar só a pedir mesmo para visualizar ondas}
 
 \subsubsection{Trem de impulsos}
 
@@ -150,5 +165,13 @@ Pode dizer-se que este trabalho está dividido em duas partes. Na primeira estud
 \subsection{Circuito de disparo}
 
 \subsection{Circuito de potência}
+
+\section{Referências}
+
+Kassakian, John G. et al (1992, June). Principles of Power Electronics. \textit{Addison-Wesley Publishing Company}
+
+Rashid, Muahammad H. (2004). Power Electronics - Circuits, Devices and Applications. \textit{Prentice Hall}
+
+\pagebreak
 
 \end{document}
