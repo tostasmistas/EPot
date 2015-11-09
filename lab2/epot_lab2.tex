@@ -92,23 +92,49 @@ Na segunda parte deste trabalho inclui-se ao circuito um Díodo de Roda Livre. O
 
 \subsection{Estudo do circuito de disparo}
 
+O circuito de disparo utilizado neste trabalho pode ser representado por um diagrama de blocos tal como se observa na \autoref{fig:circuit_1}.
+
+Como este está preparado para servir como circuito de disparo para um Retificador de Ponte Completa, inclui a capacidade para realizar o \textit{Trigger} de 4 Tiristores, sendo estes disparados aos pares e consecutivamente. O circuito é constituído por um transformador que amostra a tensão de entrada (TR\_SINC), garantindo a sincronia entre a geração dos impulsos e a tensão; um circuito integrado (UAA145), que detecta a passagem da tensão da rede por zero e gera impulsos em $\alpha$ e $\alpha + \pi$ e um circuito integrado (NE555) e duas portas lógicas $NAND$, que combinam os impulsos num trem e garantem que a potência da \textit{Gate} dos Tiristores não é excedida.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/circuito_disparo.jpg}
-	\caption{Diagrama de blocos do Circuito de disparo.}
+	\caption{Diagrama de blocos do Circuito de Disparo.}
 	\label{fig:circuit_1}
 	\vspace{-0.8em}
 \end{figure}
 
 \subsubsection{Formas de onda dos sinais de disparo}
 
-\todo{5.1a}
+Para que fosse possível estudar o funcionamento do circuito de disparo começou por se observar as formas de onda da tensão amostrada de entrada e dos impulsos gerados.
 
-\unsure{a 5.1b é uma pergunta? acho que não, parece tar só a pedir mesmo para visualizar ondas}
+\todo{inserir imagem AB 1}
+
+\todo{inserir imagem AC 1}
+
+Na \textcolor{red}{Figura AB 1} pode ver-se a amarelo a tensão amostrada pelo transformador e a azul o impulso de \textit{Trigger} gerado para $\alpha$. Já na \textcolor{red}{Figura AC 1} pode observar-se a amarelo novamente a tensão amostrada e a azul o impulso de \textit{Trigger} gerado para $\alpha + \pi$.
+
+A posição destes dois impulsos pode ser controlada através do valor do ângulo de disparo $\alpha$ rodando um manipulo presente na placa do Circuito de Disparo. Ao mudar este valor, as formas de onda são observáveis, tanto para a tensão amostrada e o impulso $\alpha$ como para a mesma tensão e o impulso  $\alpha + \pi$, na \textcolor{red}{Figura AB 2} e \textcolor{red}{Figura AC 2} respectivamente.
+
+\todo{inserir imagem AB 2}
+
+\todo{inserir imagem AC 2}
+
 
 \subsubsection{Trem de impulsos}
 
-\todo{5.1c e 5.1d}
+Como a frequência de operação é a frequência da rede, $50$ Hz, os impulsos de disparo devem ter durações de poucos milissegundos, evitando-se efeitos negativos de \textit{latching}, sendo estes especialmente prevalentes no caso de cargas indutivas em que o ângulo de disparo será elevado. No entanto estas durações podem saturar o transformador de impulsos ou provocar perdas elevadas na \textit{Gate} do Tiristor.
+
+Para resolver ambos estes problemas utiliza-se um trem de impulsos de \textit{Trigger}.
+
+\todo{inserir imagem trem de impulsos e A}
+
+Colocou-se entre a \textit{Gate} e o Cátodo uma resistência de $33$ $\Omega$ para simular a \textit{Gate} do tiristor. Na \textcolor{red}{Figura trem de impulsos e A} pode assim ver-se a azul a queda de tensão nessa resistência e a amarelo o trem de impulsos.
+
+\todo{inserir imagem trem de impulsos e B}
+
+Na \textcolor{red}{Figura trem de impulsos e B} pode também observar-se o trem de impulsos, a amarelo, face ao impulso original correspondente, a azul.
+
 
 \subsection{Estudo do circuito de potência}
 
