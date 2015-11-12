@@ -22,7 +22,7 @@
 \usepackage[hypcap]{caption}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{enumerate}
-\usepackage[siunitx,american]{circuitikz}
+%\usepackage[siunitx,american]{circuitikz}
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{4}
@@ -76,15 +76,15 @@ Turno de Segunda-feira das 17h00 - 20h00
 
 Com este trabalho pretende estudar-se o funcionamento do conversor CA/CC (Retificador) monofásico comandado de meia onda.
 
-Este tipo de retificadores tira o seu nome da capacidade que o Tiristor tem em controlar a sua tensão de saída através do ângulo de disparo. O Tiristor é levado à condução pela aplicação de um sinal na textit{Gate} e passa ao corte através de comutação natural na maioria dos casos, ou comutação forçada no caso de circuitos fortemente indutivos.
+Este tipo de retificadores tira o seu nome da capacidade que o Tiristor tem em controlar a sua tensão de saída através do ângulo de disparo. O Tiristor é levado à condução pela aplicação de um sinal na \textit{Gate} e passa ao corte através de comutação natural na maioria dos casos, ou comutação forçada no caso de circuitos fortemente indutivos. \cite{Rashid}
 
 Pode dizer-se que este trabalho está dividido em duas partes. Na primeira estuda-se o retificador de meia onda simples com carga R e RL. Na segunda parte trata-se da inclusão de um díodo de roda livre e estuda-se o comportamento deste novo circuito de potência com uma carga RL.
 
-O comportamento do Retificador de meia onda com uma carga resistiva pura é tal que a corrente e a tensão na carga têm que apresentar a mesma polaridade em qualquer altura. Devido ao comportamento do Tiristor apenas existe tensão na saída durante alternâncias positivas, pois quando a corrente se anula no Tiristor este passa ao corte, sendo esta característica do comportamento que leva ao nome "de meia onda".
+O comportamento do Retificador de meia onda com uma carga resistiva pura é tal que a corrente e a tensão na carga têm que apresentar a mesma polaridade em qualquer altura. Devido ao comportamento do Tiristor apenas existe tensão na saída durante alternâncias positivas, pois quando a corrente se anula no Tiristor este passa ao corte, sendo esta característica do comportamento que leva ao nome "de meia onda". \cite{Kassakian}
 
-Já no caso de uma carga RL existe uma ligeira desfasagem entre tensão e corrente, devido à presença da bobine, pelo que a corrente no Tiristor apenas se anula quando a tensão já se encontra na sua alternância negativa. Embora continuemos a ter apenas meia onda, já não existe uma distinção certa entre conduzir apenas durante uma das alternâncias.
+Já no caso de uma carga RL existe uma ligeira desfasagem entre tensão e corrente, devido à presença da bobine, pelo que a corrente no Tiristor apenas se anula quando a tensão já se encontra na sua alternância negativa. Embora continuemos a ter apenas meia onda, já não existe uma distinção certa entre conduzir apenas durante uma das alternâncias. \cite{Kassakian}
 
-Na segunda parte deste trabalho inclui-se ao circuito um Díodo de Roda Livre. O Díodo de Roda Livre é também conhecido como Díodo \textit{Snubber} ou Díodo \textit{Flyback}. Este é utilizado para prevenir valores negativos de tensão na saída assim como eliminar os picos de tensão quando se têm cargas indutivas a sofrer comutação.
+Na segunda parte deste trabalho inclui-se ao circuito um Díodo de Roda Livre. O Díodo de Roda Livre é também conhecido como Díodo \textit{Snubber} ou Díodo \textit{Flyback} \cite{Silva}. Este é utilizado para prevenir valores negativos de tensão na saída assim como eliminar os picos de tensão quando se têm cargas indutivas a sofrer comutação. \cite{Kassakian}
 
 
 
@@ -156,7 +156,31 @@ Na \textcolor{red}{Figura Carga Resistiva} observa-se o funcionamento do circuit
 \paragraph{Formas de onda da tensão e corrente no tiristor}
 
 
+
+\paragraph{Valores médio e eficaz da tensão e corrente na carga}
+
+Os valores médio e eficaz de tensão e corrente na carga podem ser obtidos através das seguintes expressões:
+
+\[v_i(t)=A \sin(\omega t)\]
+
+\[V_{oMED} (t) = \frac{1}{2\pi} \int_{\alpha}^{\pi} A \sin(\omega t) d \omega t = \frac{A}{2\pi} (1+ \cos\alpha)\]
+
+\[I_{oMED}= \frac{V_{omed}}{R}\]
+
+\[V_{oRMS} = \sqrt{ \frac{1}{2\pi} \int_{\alpha}^{\pi} A^2 \sin^2 (\omega t) d\omega t} = \sqrt{ \frac{A^2}{8 \pi} (2\pi - 2\alpha + \sin(2\alpha))} \]
+
+
+\todo{calcular valores teóricos}
+
+Os valores medidos no laboratório para cada uma dessas grandezas foi:
+
+\todo{por valores do lab e fazer comparaçoes}
+
 \paragraph{Característica de comando do conversor}
+
+Para se estudar convenientemente o funcionamento do circuito face a variações do ângulo de disparo $\alpha$, registaram-se os valores da tensão na carga em função deste tanto no caso experimental como teórico fazendo uso das expressões na secção anterior. Os resultados obtidos podem ser observados em \textcolor{red}{tabela e gráfico}. 
+
+\todo{inserir tabela, gráfico e comentar} 
 
 
 \subsubsection{Carga indutiva RL}
@@ -193,12 +217,24 @@ Na \textcolor{red}{Figura Carga Resistiva} observa-se o funcionamento do circuit
 
 \subsection{Circuito de potência}
 
-\section{Referências}
+\pagebreak
 
-Kassakian, John G. et al (1992, June). Principles of Power Electronics. \textit{Addison-Wesley Publishing Company}
+\begin{thebibliography}{2}
+	
+	\bibitem{Kassakian}
+	Kassakian, John G. et al (1992, June), Principles of Power Electronics, \textit{Addison-Wesley Publishing Company}
 
-Rashid, Muahammad H. (2004). Power Electronics - Circuits, Devices and Applications. \textit{Prentice Hall}
+	\bibitem{Rashid}
+	Rashid, Muahammad H. (2004), Power Electronics - Circuits, Devices and Applications, \textit{Prentice Hall}
+	
+	\bibitem{Silva}
+	Silva, Fernando (1998), Eletrónica Industrial, Fundação Calouste Gulbenkian
+	
+\end{thebibliography}
+
 
 \pagebreak
+
+
 
 \end{document}
