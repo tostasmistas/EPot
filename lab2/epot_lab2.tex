@@ -200,9 +200,24 @@ Sendo assim, considerando que o valor de $R$ considerado poderá ser diferente d
 
 \paragraph{Característica de comando do conversor}
 
-Para se estudar convenientemente o funcionamento do circuito face a variações do ângulo de disparo $\alpha$, registaram-se os valores da tensão na carga em função deste tanto no caso experimental como teórico fazendo uso das expressões da secção anterior. Os resultados obtidos podem ser observados em \textcolor{red}{tabela e gráfico}. 
+Para se estudar convenientemente o funcionamento do circuito face a variações do ângulo de disparo $\alpha$, registaram-se os valores da tensão na carga em função deste tanto no caso experimental como teórico fazendo uso das expressões da secção anterior. Os resultados obtidos podem ser observados na \autoref{fig:tabela1} e \autoref{fig:grafico1}. 
 
-\todo{inserir tabela, gráfico} 
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/tabela1.png}
+	\caption{Valores da tensão na carga teóricos e experimentais em função de $\alpha$}
+	\label{fig:tabela1}
+	\vspace{-0.8em}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/grafico1.png}
+	\caption{Formas de onda da Tensão na carga teóricas e experimentais em função de $\alpha$}
+	\label{fig:grafico1}
+	\vspace{-0.8em}
+\end{figure}
+
 
 Verifica-se que existe pouca diferença entre os valores, podendo estas dever-se maioritariamente com o facto de para os cálculos teóricos se considerar que todos os dispositivos são ideais, o que não é válido na realidade.
 
@@ -263,6 +278,12 @@ Nota-se que a corrente que percorre o díodo é zero até ao momento em que a te
 Na \textcolor{red}{Figura bobina com alfa zero} tem-se a tensão na entrada do retificador (a amarelo), a tensão na carga (a azul) e corrente na bobina (a rosa) para $\alpha = 0$. Na \textcolor{red}{Figura bobina com alfa diferente de zero} tem-se o comportamento para $\alpha$ diferente de $0$.
 
 Nota-se que embora a tensão na bobina não tenha sido lida, o seu comportamento é conhecido, devendo ter uma forma tal que o seu valor médio seja nulo. Já a corrente comporta-se tal como para o caso de uma carga indutiva até ao momento em que o díodo entra em condução. Nesse instante a corrente apresenta um comportamento exponencial decrescente; isto é similar ao comportamento da corrente que percorre o díodo de roda livre no mesmo período.
+
+Conhecendo agora o comportamento do circuito observa-se que existem duas fases de funcionamento distintas.
+
+Na primeira tem-se alternância positiva da tensão; o tiristor está diretamente polarizado e conduz assim que haja sinal de disparo, o díodo está inversamente polarizado e a tensão na carga é tal como a de entrada.
+
+A segunda fase corresponde à alternância negativa da tensão de entrada; o díodo de roda livre está diretamente polarizado, sendo percorrido pela corrente da carga, passando ao corte assim que a bobina fique descarregada. Já o tiristor está inversamente polarizado, ficando ao corte assim que a corrente passe por zero
 
 \section{Simulação do Trabalho de Laboratório}
 
