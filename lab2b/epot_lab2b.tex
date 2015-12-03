@@ -74,7 +74,36 @@ Turno de Segunda-feira das 17h00 - 20h00
 
 \section{Introdução}
 
+Este trabalho laboratorial é uma continuação do trabalho 2A em que se estudou o conversor CA/CC (retificador) de meia onda comandado e semi-comandado monofásico. Desta vez o objetivo é compreender o funcionamento do retificador monofásico comandado de onda completa.
 
+Este trabalho está separado em duas partes; na primeira estuda-se o funcionamento do conversor totalmente comandado e na segunda o semi-comandado.
+
+Aquilo que distingue o retificador de meia onda do de onda completa comandado é a presença de 4 tiristores, tal como pode ser observado na \autoref{fig:circuit_1}, em oposição a apenas 1 tiristor como se tinha no retificador de meia onda.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.8]{img/circuito.png}
+	\caption{Esquema do retificador de onda completa monofásico comandado.}
+	\label{fig:circuit_1}
+	\vspace{-0.8em}
+\end{figure}
+
+O funcionamento desta topologia depende de qual o par de tiristores que está a conduzir a uma dada altura. Fazendo uso da nomenclatura da \autoref{fig:circuit_1} observa-se que T1 e T2 podem ser disparados durante a alternância positiva da tensão de entrada, sendo que T4 e T3 podem ser disparados durante a alternância negativa. Para o primeiro caso tem-se que o ângulo de disparo, $\alpha$, pode variar entre $0$ e $\pi$ onde para o segundo caso se faz uso de $\alpha + \pi$. Tal como já foi visto no trabalho anterior a altura em que um tiristor entra ao corte depende do momento em que a corrente aos terminais deste passa por zero, pelo que o funcionamento para uma carga puramente resistiva difere do de uma carga indutiva.
+
+Espera-se assim que as formas de onda para a tensão e corrente numa carga indutiva seja tal como se vê na \autopageref{fig:andamento}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.8]{img/andamento.png}
+	\caption{Formas de onda para Carga Indutiva.}
+	\label{fig:andamento}
+	\vspace{-0.8em}
+\end{figure}
+
+O resultado é que, ao contrário do retificador de meia onda, tanto para a alternância positiva da tensão de entrada, como para a negativa, se irá ter corrente na carga. Observa-se também que devido a isto, o valor médio da corrente na entrada será zero.
+
+Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se substitui dois do retificadores por dois díodos. Isto pode ser feito caso a carga não exija inversão da tensão aos seus terminais. Neste caso é imposição da topologia que a tensão de saída tenha sempre o mesmo sinal, devido à presença dos díodos.
 
 
 \section{Condução do Trabalho}
