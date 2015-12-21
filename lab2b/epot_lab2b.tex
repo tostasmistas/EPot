@@ -244,6 +244,125 @@ Quando o dispositivo passa ao corte, cai sobre si toda a tensão de entrada.
 
 
 \pagebreak
+\section{Simulação}
+\subsection{Circuitos de Potência usados}
+Neste projeto foi utilizado três circuitos de potência, retificador de onda completa total comandado com carga resistiva e com carga \textit{RL}. E um retificador de onda completa semi-comandado com carga \textit{RL}. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito1}
+	\caption{Retificador de onda completa com comando total e carga resistica, \textit{R}.}
+	\label{fig:circuit_3}
+	\vspace{-0.8em}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito2}
+	\caption{Retificador de onda completa com comando total e carga \textit{RL}.}
+	\label{fig:circuit_4}
+	\vspace{-0.8em}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito3}
+	\caption{Retificador onda completa com comando parcial e carga \textit{RL}.}
+	\label{fig:circuit_5}
+	\vspace{-0.8em}
+\end{figure}
+\pagebreak 
+
+É importante referir que para simulação do circuito de disparos definiu-se que iria ser utilizado um \textit{drive} que impulsos com uma frequência  de $50Hz$, pode-se controlar o ângulo de  disparo com uma fonte DC interativa. Na figura \ref{fig:circuit_6} esta representado o sinal do gerador de impulsos com a tensão de entrada.
+\vspace{17mm}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito4}
+	\caption{Tensão de entrada (sinal vermelho)e sinal do drive do tiristor (sinal azul) como também o seu complementar (sinal a verde).}
+	\label{fig:circuit_6}
+	\vspace{-0.8em}
+\end{figure}
+
+\subsubsection{Retificador de onda completa com comando total e carga resistica, \textit{R}}
+
+A figura \ref{fig:circuit_7}  está representado as formas de onda para a tensão e corrente de entrada.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito5}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de entrada.}
+	\label{fig:circuit_7}
+	\vspace{-0.8em}
+\end{figure}
+
+\pagebreak
+As formas de onda referente a saída/carga do dispositivo podem ser visualizadas na figura seguinte.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito6}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\label{fig:circuit_8}
+	\vspace{-0.8em}
+\end{figure}
+
+Já as formas de onda da tensão e da corrente podem ser visualizadas na figura  \ref{fig:circuit_9}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito7}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) do tirístor.}
+	\label{fig:circuit_9}
+	\vspace{-0.8em}
+\end{figure}
+
+\vspace{12mm}
+
+\subsubsection{Retificador de onda completa com comando total e carga \textit{RL}}
+
+De igual forma é importante visualizar o comportamento da tensão e da corrente no dispositivo com uma carga \textit{RL}. É de referir que os sinais à saída estão representados na figura \ref{fig:circuit_10} e para o tirístor está representado na figura \ref{fig:circuit_11}.
+\pagebreak
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito8}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\label{fig:circuit_10}
+	\vspace{-0.8em}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito9}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de tirístor.}
+	\label{fig:circuit_11}
+	\vspace{-0.8em}
+\end{figure}
+
+\vspace{12mm}
+
+
+\subsubsection{Retificador de onda completa com comando parcial e carga \textit{RL}}
+De igual forma é importante visualizar o comportamento da tensão e da corrente no dispositivo com uma carga \textit{RL} e díodo roda livre. É de referir que os sinais à saída estão representados na figura \ref{fig:circuit_12} e para o tirístor está representado na figura \ref{fig:circuit_13}.
+
+\pagebreak
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito10}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\label{fig:circuit_12}
+	\vspace{-0.8em}
+\end{figure}
+\vspace{15mm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito11}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de tirístor.}
+	\label{fig:circuit_13}
+	\vspace{-0.8em}
+\end{figure}
+
 
 \begin{thebibliography}{2}
 	
