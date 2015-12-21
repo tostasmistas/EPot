@@ -22,7 +22,7 @@
 \usepackage[hypcap]{caption}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{enumerate}
-%\usepackage[siunitx,american]{circuitikz}
+\usepackage[siunitx,american]{circuitikz}
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{4}
@@ -83,7 +83,15 @@ Aquilo que distingue o retificador de onda completa do de meia onda é a presen�
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.8]{img/circuito}
+	%\includegraphics[keepaspectratio=true, scale=0.8]{img/circuito}
+	\begin{tikzpicture}
+	\draw
+		(0,0) node[] (origin) {} to[sV] ++(0,2) node[] (source) {}
+		(origin) to[short,-*] ++ (5,0) to[short] ++ (0,2) to[Ty,-*] ++ (0,2) to[short] ++ (2,0) to[generic,l=Carga] ++ (0,-6) to[short] ++ (-2,0) node[] (bottomty) {} to[short] ++(-2,0) to[Ty] ++ (0,2) to[short,-*] ++ (0,2) node[] (topty) {} to[short] (source)
+		(bottomty) to[Ty,*-*] ++ (0,2)
+		(topty) to[Ty] ++(0,2) to[short] ++ (2,0)
+		;
+	\end{tikzpicture}
 	\caption{Esquema do retificador de onda completa monofásico comandado.}
 	\label{fig:circuit_1}
 	\vspace{-0.8em}
