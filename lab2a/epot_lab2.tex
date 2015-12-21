@@ -22,7 +22,7 @@
 \usepackage[hypcap]{caption}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{enumerate}
-%\usepackage[siunitx,american]{circuitikz}
+\usepackage[siunitx,american]{circuitikz}
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{4}
@@ -280,8 +280,6 @@ Para estudar o comportamento de um retificador de meia onda com uma carga induti
 
 Na \autoref{fig:carga_indutiva} podem ser observadas as formas de onda da tensão (a amarelo) na entrada do retificador e a tensão (a azul) e corrente (a rosa) na carga.
 
-Ao contrário do que se tinha no caso da carga resistiva observa-se que a tensão na carga irá apresentar valores negativos; isto deve-se a que o tiristor apenas deixa de conduzir quando a corrente for zero e como a bobina introduz uma diferença de fase entre tensão e corrente pode observar-se valores de tensão negativos até que o dispositivo entre ao corte.
-
 \paragraph{Formas de onda da tensão e corrente no tiristor}
 
 A tensão no tirístor $V_{AK}$ é $0$ quando o dispositivo está a conduzir, e é igual à tensão de entrada quando o dispositivo está ao corte, isto é, $V_{AK} = V_I - V_O$.
@@ -292,6 +290,47 @@ Assim, a forma de onda da corrente no tirístor corresponde à corrente da \auto
 
 \paragraph{Análise teórica do circuito}
 
+A montagem pode ser simplificada para o circuito da \autoref{fig:ci_circuito}, considerando a saída do transformador como uma fonte de tensão alternada.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\draw
+		(0,0) node[] (sourcetop) {}
+		(0,-2) node[] (sourcebottom) {}		
+		
+		(sourcetop) to[sV,v=$ $] (sourcebottom)
+		
+		(sourcetop) to[Ty, n=thyr] ++(3,0) to[L, l=$10 mH$] ++ (3,0) to[R,l=$15 \Omega$]++(0,-2) to[short] (sourcebottom)
+		;
+	\end{tikzpicture}
+	\caption{Circuito em análise com carga indutiva}
+	\label{fig:ci_circuito}
+\end{figure}
+
+A partir de $\omega t = \alpha$, enquanto o tirístor está a conduzir, o comportamento do circuito é dado pela \autoref{eq:ci_eqdif}.
+
+\begin{equation}
+\label{eq:ci_eqdif}
+v_O = R\,i_{O} + L \frac{\mathrm{d}}{\mathrm{d}t}i_O
+\end{equation}
+
+A \autoref{eq:ci_eqdif} resulta nas \autoref{eq:ci_eqs}.
+
+\begin{subequations}
+\label{eq:ci_eqs}
+\begin{align}
+i_{O\;\text{livre}} &= A\,e^{-\frac{R}{L}(t - \frac{\alpha}{\omega})}\\
+i_{O\;\text{forçado}} &= \sqrt{2} \frac{V}{Z} \sin{(\omega t - \Phi)}\\
+i_O &= i_{O\;\text{livre}} + i_{O\;\text{forçado}}
+\end{align}
+\end{subequations}
+
+Quando a tensão de entrada passa à arcada negativa, o tirístor não pode passar ao corte, uma vez que a corrente na bobina é uma variável de estado e não se pode anular.
+
+Quando a corrente na bobina finalmente se anula ($\omega t = \beta$), o tirístor passa ao corte.
+
+Ao contrário do que se tinha no caso da carga resistiva, a tensão na carga irá consequentemente apresentar valores negativos.
 
 
 \subsubsection{Carga indutiva RL e díodo de roda livre}
