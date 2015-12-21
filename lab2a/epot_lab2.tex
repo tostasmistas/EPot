@@ -76,15 +76,15 @@ Turno de Segunda-feira das 17h00 - 20h00
 
 Com este trabalho pretende estudar-se o funcionamento do conversor CA/CC (Retificador) monofásico comandado de meia onda.
 
-Este tipo de retificadores tira o seu nome da capacidade que o Tiristor tem em controlar a sua tensão de saída através do ângulo de disparo. O Tiristor é levado à condução pela aplicação de um sinal na \textit{Gate} e passa ao corte através de comutação natural na maioria dos casos, ou comutação forçada no caso de circuitos fortemente indutivos. \cite{Rashid}
+Este tipo de retificadores tira o seu nome da capacidade que o tiristor tem em controlar a sua tensão de saída através do ângulo de disparo. O tiristor é levado à condução pela aplicação de um sinal na \textit{gate} e passa ao corte através de comutação natural na maioria dos casos, ou comutação forçada no caso de circuitos fortemente indutivos \cite{Rashid}. 
 
 Pode dizer-se que este trabalho está dividido em duas partes. Na primeira estuda-se o retificador de meia onda simples com carga R e RL. Na segunda parte trata-se da inclusão de um díodo de roda livre e estuda-se o comportamento deste novo circuito de potência com uma carga RL.
 
-O comportamento do Retificador de meia onda com uma carga resistiva pura é tal que a corrente e a tensão na carga têm que apresentar a mesma polaridade em qualquer altura. Devido ao comportamento do Tiristor apenas existe tensão na saída durante alternâncias positivas, pois quando a corrente se anula no Tiristor este passa ao corte, sendo esta característica do comportamento que leva ao nome "de meia onda". \cite{Kassakian}
+O comportamento do retificador de meia onda com uma carga resistiva pura é tal que a corrente e a tensão na carga têm que apresentar a mesma polaridade em qualquer altura. Devido ao comportamento do tiristor apenas existe tensão na saída durante alternâncias positivas, pois quando a corrente se anula no tiristor este passa ao corte, sendo esta característica do comportamento que leva ao nome de ``meia onda''  \cite{Kassakian}.
 
-Já no caso de uma carga RL existe uma ligeira desfasagem entre tensão e corrente, devido à presença da bobine, pelo que a corrente no Tiristor apenas se anula quando a tensão já se encontra na sua alternância negativa. Embora continuemos a ter apenas meia onda, já não existe uma distinção certa entre conduzir apenas durante uma das alternâncias. \cite{Kassakian}
+Já no caso de uma carga RL existe uma ligeira desfasagem entre tensão e corrente, devido à presença da bobine, pelo que a corrente no tiristor apenas se anula quando a tensão já se encontra na sua alternância negativa. Embora continuemos a ter apenas meia onda, já não existe uma distinção certa entre conduzir apenas durante uma das alternâncias \cite{Kassakian}. 
 
-Na segunda parte deste trabalho inclui-se ao circuito um Díodo de Roda Livre. O Díodo de Roda Livre é também conhecido como Díodo \textit{Snubber} ou Díodo \textit{Flyback} \cite{Silva}. Este é utilizado para prevenir valores negativos de tensão na saída assim como eliminar os picos de tensão quando se têm cargas indutivas a sofrer comutação. \cite{Kassakian}
+Na segunda parte deste trabalho inclui-se ao circuito um díodo de roda livre. O díodo de roda livre é também conhecido como díodo \textit{snubber} ou díodo \textit{flyback} \cite{Silva}. Este é utilizado para prevenir valores negativos de tensão na saída assim como eliminar os picos de tensão quando se têm cargas indutivas a sofrer comutação \cite{Kassakian}. 
 
 
 
@@ -94,12 +94,12 @@ Na segunda parte deste trabalho inclui-se ao circuito um Díodo de Roda Livre. O
 
 O circuito de disparo utilizado neste trabalho pode ser representado por um diagrama de blocos tal como se observa na \autoref{fig:circuit_1}.
 
-Como este está preparado para servir como circuito de disparo para um Retificador de Ponte Completa, inclui a capacidade para realizar o \textit{Trigger} de 4 Tiristores, sendo estes disparados aos pares e consecutivamente. O circuito é constituído por um transformador que amostra a tensão de entrada (TR\_SINC), garantindo a sincronia entre a geração dos impulsos e a tensão; um circuito integrado (UAA145), que detecta a passagem da tensão da rede por zero e gera impulsos em $\alpha$ e $\alpha + \pi$ e um circuito integrado (NE555) e duas portas lógicas $NAND$, que combinam os impulsos num trem e garantem que a potência da \textit{Gate} dos Tiristores não é excedida.
+Como este está preparado para servir como circuito de disparo para um retificador de ponte completa, inclui a capacidade de realizar o \textit{trigger} de 4 tiristores, sendo estes disparados aos pares e consecutivamente. O circuito é constituído por um transformador que amostra a tensão de entrada (TR\_SINC), garantindo a sincronia entre a geração dos impulsos e a tensão; um circuito integrado (UAA145), que detecta a passagem da tensão da rede por zero e gera impulsos em $\alpha$ e $\alpha + \pi$ e um circuito integrado (NE555) e duas portas lógicas NAND, que combinam os impulsos num trem e garantem que a potência da \textit{gate} dos tiristores não é excedida.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/circuito_disparo}
-	\caption{Diagrama de blocos do Circuito de Disparo.}
+	\caption{Diagrama de blocos do circuito de disparo.}
 	\label{fig:circuit_1}
 	\vspace{-0.8em}
 \end{figure}
@@ -124,9 +124,9 @@ Para que fosse possível estudar o funcionamento do circuito de disparo começou
 	\vspace{-0.8em}
 \end{figure}
 
-Na \autoref{fig:AB_1} pode ver-se a amarelo a tensão amostrada pelo transformador e a azul o impulso de \textit{Trigger} gerado para $\alpha$. Já na \autoref{fig:AC_1} pode observar-se a amarelo novamente a tensão amostrada e a azul o impulso de \textit{Trigger} gerado para $\alpha + \pi$.
+Na \autoref{fig:AB_1} pode ver-se a amarelo a tensão amostrada pelo transformador e a azul o impulso de \textit{trigger} gerado para $\alpha$. Já na \autoref{fig:AC_1} pode observar-se a amarelo novamente a tensão amostrada e a azul o impulso de \textit{trigger} gerado para $\alpha + \pi$.
 
-A posição destes dois impulsos pode ser controlada através do valor do ângulo de disparo $\alpha$ rodando um manipulo presente na placa do Circuito de Disparo. Ao mudar este valor, as formas de onda são observáveis, tanto para a tensão amostrada e o impulso $\alpha$ como para a mesma tensão e o impulso  $\alpha + \pi$, na \autoref{fig:AB_2} e \autoref{fig:AC_2} respectivamente.
+A posição destes dois impulsos pode ser controlada através do valor do ângulo de disparo $\alpha$ manipulando um potenciómetro presente na placa do circuito de disparo. Ao mudar este valor, as formas de onda são observáveis, tanto para a tensão amostrada e o impulso $\alpha$ como para a mesma tensão e o impulso  $\alpha + \pi$, na \autoref{fig:AB_2} e \autoref{fig:AC_2} respectivamente.
 
 \begin{figure}[H]
 	\centering
@@ -149,7 +149,7 @@ A posição destes dois impulsos pode ser controlada através do valor do ângul
 
 Como a frequência de operação é a da rede, $50$ Hz, os impulsos de disparo devem ter durações de poucos milissegundos, evitando-se efeitos negativos de \textit{latching}, sendo estes especialmente prevalentes no caso de cargas indutivas em que o ângulo de disparo será elevado. No entanto estas durações podem saturar o transformador de impulsos ou provocar perdas elevadas na \textit{Gate} do Tiristor.
 
-Para resolver ambos estes problemas utiliza-se um trem de impulsos de \textit{Trigger}.
+Para resolver ambos estes problemas utiliza-se um trem de impulsos de \textit{trigger}.
 
 \begin{figure}[H]
 	\centering
@@ -159,7 +159,7 @@ Para resolver ambos estes problemas utiliza-se um trem de impulsos de \textit{Tr
 	\vspace{-0.8em}
 \end{figure}
 
-Colocou-se entre a \textit{Gate} e o Cátodo uma resistência de $33$ $\Omega$ para simular a \textit{Gate} do tiristor. Na \autoref{fig:trem_impulsos_A} pode assim ver-se a azul a queda de tensão nessa resistência e a amarelo o trem de impulsos.
+Colocou-se entre a ``\textit{gate}'' e o cátodo do circuito de controlo uma resistência de $33$ $\Omega$ para simular a \textit{gate} do tiristor. Na \autoref{fig:trem_impulsos_A} pode assim ver-se a azul a queda de tensão nessa resistência e a amarelo o trem de impulsos.
 
 \begin{figure}[H]
 	\centering
@@ -176,7 +176,7 @@ Na \autoref{fig:trem_impulsos_B} pode também observar-se o trem de impulsos, a 
 
 \subsubsection{Carga resistiva pura (R)}
 
-Para que se possa estudar o funcionamento do Retificador para cargas Resistivas puras utilizou-se um reóstato como carga, regulando-o para perto de meio ficando-se com cerca de $16$ $\Omega$.
+Para que se possa estudar o funcionamento do retificador para cargas do tipo resistivas puras utilizou-se um reóstato como carga, regulando-o para uma carga de aproximadamente $16$ $\Omega$.
 
 \paragraph{Formas de onda da tensão e corrente na entrada}\mbox{}\
 
@@ -191,10 +191,10 @@ Para que se possa estudar o funcionamento do Retificador para cargas Resistivas 
 
 Na \autoref{fig:carga_resistiva} observa-se o funcionamento do circuito quando sujeito uma carga resistiva pura. A tensão de entrada pode ser vista a amarelo estando a tensão e corrente na carga a azul e roxo respetivamente.
 
-\paragraph{Formas de onda da tensão e corrente na saída}\mbox{}\
+%\paragraph{Formas de onda da tensão e corrente na saída}\mbox{}\
 
 
-\unsure{pode apagar-se esta secção porque a imagem ja foi mostrada na anterior}
+%\unsure{pode apagar-se esta secção porque a imagem ja foi mostrada na anterior}
 
 \paragraph{Formas de onda da tensão e corrente no tiristor}\mbox{}\
 
@@ -204,65 +204,76 @@ Na \autoref{fig:carga_resistiva} observa-se o funcionamento do circuito quando s
 
 Os valores médio e eficaz de tensão e corrente na carga podem ser obtidos através das seguintes expressões:
 
-\[v_i(t)=A \sin(\omega t)\]
 
-\[V_{oMED} (t) = \frac{1}{2\pi} \int_{\alpha}^{\pi} A \sin(\omega t) d \omega t = \frac{A}{2\pi} (1+ \cos\alpha)\]
+\begin{equation}
+v_i(t)=A \sin(\omega t)
+\end{equation}
 
-\[I_{oMED}= \frac{V_{omed}}{R}\]
+\begin{equation}
+V_{o_{MED}} (t) = \frac{1}{2\pi} \int_{\alpha}^{\pi} A \sin(\omega t) d \omega t = \frac{A}{2\pi} (1+ \cos\alpha)
+\end{equation}
 
-\[V_{oRMS} = \sqrt{ \frac{1}{2\pi} \int_{\alpha}^{\pi} A^2 \sin^2 (\omega t) d\omega t} = \sqrt{ \frac{A^2}{8 \pi} (2\pi - 2\alpha + \sin(2\alpha))} \]
+\begin{equation}
+I_{o_{MED}}= \frac{V_{o_{MED}}}{R}
+\end{equation}
 
-\[I_{oRMS}= \frac{V_{oRMS}}{R}\]
+\begin{equation}
+V_{o_{RMS}} = \sqrt{ \frac{1}{2\pi} \int_{\alpha}^{\pi} A^2 \sin^2 (\omega t) d\omega t} = \sqrt{ \frac{A^2}{8 \pi} (2\pi - 2\alpha + \sin(2\alpha))}
+\end{equation}
+
+\begin{equation}
+I_{o_{RMS}}= \frac{V_{o_{RMS}}}{R}
+\end{equation}
 
 
-\todo{calcular valores teóricos}
+\todo{calcular valores teóricos - isto ainda está por fazer ou sao os da tabela abaixo?}
 
 Infelizmente não se mediu os valores necessários no laboratório pelo que estes serão assumidos de forma a exemplificar como seria feito o cálculo teórico.
 
-Por observação da \autoref{fig:carga_resistiva} tem-se $A=52 V$ e $\alpha=0,55\pi rad$
+Por observação da \autoref{fig:carga_resistiva} tem-se $A=52$ V e $\alpha=0,55\pi$ rad. Assume-se também que a resistência na carga toma o valor $R=15~\Omega$.
 
-Assume-se também que a resistência na carga toma o valor $R=15 \Omega$.
+Os valores obtidos teoricamente são:
 
-Os valores obtidos teoricamente serão:
+\[V_{o_{MED}} (t) = \frac{52}{2\pi} \left(1+ \cos0,55\pi \right) = 6,98~\text{V}\]
 
-\[V_{oMED} (t) = \frac{52}{2\pi} (1+ \cos0,55\pi) = 6,98 V\]
+\[I_{o_{MED}}= \frac{6,98}{15} = 465~\text{mA}\]
 
-\[I_{oMED}= \frac{6,98}{15} = 465 mA\]
+\[V_{o_{RMS}} = \sqrt{ \frac{52^2}{8 \pi} \left(2\pi - 2\left(0,55\pi\right) + \sin\left(2(0,55\pi\right)\right)} = 20,26~\text{V} \]
 
-\[V_{oRMS} = \sqrt{ \frac{52^2}{8 \pi} (2\pi - 2(0,55\pi) + \sin(2(0,55\pi)))} = 20,26 V \]
+\[I_{o_{RMS}}= \frac{20,26}{15} = 1,35~\text{A}\]
 
-\[I_{oRMS}= \frac{20,26}{15} = 1,35 A\]
+Tal como foi mencionado, não foram registados os valores laboratoriais, no entanto, pode-se fazer uma estimativa grosseira dos valores médios de corrente e tensão na carga, considerando que durante três quartos do período ambas as grandezas estão a zero, que a forma da onda é perfeitamente triangular e que existe uma atenuação de 100 vezes na sonda de corrente.
 
-Tal como foi mencionado, não foram registados os valores laboratoriais, no entanto, pode fazer-se uma estimativa grosseira dos valores médios de corrente e tensão na carga, considerando que durante três quartos do período ambas as grandezas estão a zero, que a forma da onda é perfeitamente triangular e que existe uma atenuação de 100 vezes na sonda de corrente.
+\[V_{o_{MED}} (t) = \frac{\frac{48}{2}}{4} = 6~\text{V}\]
 
-\[V_{oMED} (t) = \frac{\frac{48}{2}}{4} = 6 V\]
+\[I_{o_{MED}}= \frac{\frac{0,036}{2}}{4} = 450~\text{mA}\]
 
-\[I_{oMED}= \frac{\frac{0,036}{2}}{4} = 450 mA\]
-
-Sendo assim, considerando que o valor de $R$ considerado poderá ser diferente do utilizado no laboratório, cujo máximo seria perto de $100 \Omega$, pode considerar-se que os valores teóricos serão próximos dos reais, fora algumas incertezas.
+Sendo assim, considerando que o valor de $R$ considerado poderá ser diferente do utilizado no laboratório, cujo máximo seria perto de $100~\Omega$, pode considerar-se que os valores teóricos serão próximos dos reais, fora algumas incertezas.
 
 \paragraph{Característica de comando do conversor}\mbox{}\
 
-Para se estudar convenientemente o funcionamento do circuito face a variações do ângulo de disparo $\alpha$, registaram-se os valores da tensão na carga em função deste tanto no caso experimental como teórico fazendo uso das expressões da secção anterior. Os resultados obtidos podem ser observados na \autoref{fig:tabela1} e \autoref{fig:grafico1}. 
+Para se estudar convenientemente o funcionamento do circuito face a variações do ângulo de disparo $\alpha$, registaram-se os valores da tensão na carga em função deste tanto no caso experimental como teórico fazendo uso das expressões da secção anterior. Os resultados obtidos podem ser observados na \autoref{tab:tabela1} e \autoref{fig:grafico1}. 
 
-\begin{figure}[H]
+\begin{table}[!htb]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/tabela1}
-	\caption{Valores da tensão na carga teóricos e experimentais em função de $\alpha$}
-	\label{fig:tabela1}
-	\vspace{-0.8em}
-\end{figure}
+	\caption{Valores da tensão na carga, teóricos e experimentais, em função de $\alpha$.}
+	\vspace{-3mm}
+	\includegraphics[width=0.8\linewidth]{teoricas/tabela1}
+	\label{tab:tabela1}
+\end{table}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/grafico1}
-	\caption{Formas de onda da Tensão na carga teóricas e experimentais em função de $\alpha$}
+	\vspace{-3mm}
+	\caption{Formas de onda da tensão na carga, teóricas e experimentais, em função de $\alpha$.}
 	\label{fig:grafico1}
 	\vspace{-0.8em}
 \end{figure}
 
+\todo{falta por a lengeda nos eixos do grafico e as unidades}
 
-Verifica-se que existe pouca diferença entre os valores, podendo estas dever-se maioritariamente com o facto de para os cálculos teóricos se considerar que todos os dispositivos são ideais, o que não é válido na realidade.
+Verifica-se que existe pouca diferença entre os valores, podendo estas dever-se maioritariamente com o facto de, para os cálculos teóricos, se considerar que todos os dispositivos são ideais, o que não é válido na realidade.
 
 \subsubsection{Carga indutiva RL}
 
@@ -280,15 +291,15 @@ Para estudar o comportamento de um retificador de meia onda com uma carga induti
 
 Na \autoref{fig:carga_indutiva} podem ser observadas as formas de onda da tensão (a amarelo) na entrada do retificador e a tensão (a azul) e corrente (a rosa) na carga.
 
-\paragraph{Formas de onda da tensão e corrente no tiristor}
+\paragraph{Formas de onda da tensão e corrente no tiristor}\mbox{}\
 
-A tensão no tirístor $V_{AK}$ é $0$ quando o dispositivo está a conduzir, e é igual à tensão de entrada quando o dispositivo está ao corte, isto é, $V_{AK} = V_I - V_O$.
+A tensão no tiristor $V_{AK}$ é $0$ quando o dispositivo está a conduzir, e é igual à tensão de entrada quando o dispositivo está ao corte, isto é, $V_{AK} = V_I - V_O$.
 
-Uma vez que o tirístor se encontra em série com a carga (trata-se de um rectificador de meia onda), a corrente no tirístor é idêntica à corrente da carga.
+Uma vez que o tiristor se encontra em série com a carga (trata-se de um rectificador de meia onda), a corrente no tiristor é idêntica à corrente da carga.
 
-Assim, a forma de onda da corrente no tirístor corresponde à corrente da \autoref{fig:carga_indutiva}, e a tensão no dispositivo corresponde à forma de onda complementar à tensão da mesma Figura.
+Assim, a forma de onda da corrente no tiristor corresponde à corrente da \autoref{fig:carga_indutiva}, e a tensão no dispositivo corresponde à forma de onda complementar à tensão da mesma figura.
 
-\paragraph{Análise teórica do circuito}
+\paragraph{Análise teórica do circuito}\mbox{}\
 
 A montagem pode ser simplificada para o circuito da \autoref{fig:ci_circuito}, considerando a saída do transformador como uma fonte de tensão alternada.
 
@@ -308,7 +319,7 @@ A montagem pode ser simplificada para o circuito da \autoref{fig:ci_circuito}, c
 	\label{fig:ci_circuito}
 \end{figure}
 
-A partir de $\omega t = \alpha$, enquanto o tirístor está a conduzir, o comportamento do circuito é dado pela \autoref{eq:ci_eqdif}.
+A partir de $\omega t = \alpha$, enquanto o tiristor está a conduzir, o comportamento do circuito é dado pela \autoref{eq:ci_eqdif}.
 
 \begin{equation}
 \label{eq:ci_eqdif}
@@ -326,9 +337,9 @@ i_O &= i_{O\;\text{livre}} + i_{O\;\text{forçado}}
 \end{align}
 \end{subequations}
 
-Quando a tensão de entrada passa à arcada negativa, o tirístor não pode passar ao corte, uma vez que a corrente na bobina é uma variável de estado e não se pode anular.
+Quando a tensão de entrada passa à arcada negativa, o tiristor não pode passar ao corte, uma vez que a corrente na bobina é uma variável de estado e não se pode anular.
 
-Quando a corrente na bobina finalmente se anula ($\omega t = \beta$), o tirístor passa ao corte.
+Quando a corrente na bobina finalmente se anula ($\omega t = \beta$), o tiristor passa ao corte.
 
 Ao contrário do que se tinha no caso da carga resistiva, a tensão na carga irá consequentemente apresentar valores negativos.
 
@@ -444,12 +455,12 @@ Neste projeto foi utilizado três circuitos de potência, retificador de meia on
 \end{figure}
 \pagebreak 
 
-É importante referir que para simulação do circuito de disparos definiu-se que iria ser utilizado um gerador de impulsos com uma frequência   de $50Hz$, e um \textit{drive} que controla o ângulo de disparo do tirístor uma amplitude de 0 a 5V. Na figura \ref{fig:circuit_6} esta representado o sinal do gerador de impulsos com a tensão de entrada.
+É importante referir que para simulação do circuito de disparos definiu-se que iria ser utilizado um gerador de impulsos com uma frequência   de $50$ Hz, e um \textit{drive} que controla o ângulo de disparo do tiristor uma amplitude de 0 a 5 V. Na \autoref{fig:circuit_6} esta representado o sinal do gerador de impulsos com a tensão de entrada.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.35]{img/circuito4}
-	\caption{Tensão de entrada (sinal vermelho)e sinal do gerador de impulsos (sinalazul).}
+	\caption{Tensão de entrada (a vermelho) e sinal do gerador de impulsos (a azul).}
 	\label{fig:circuit_6}
 	\vspace{-0.8em}
 \end{figure}
@@ -457,32 +468,32 @@ Neste projeto foi utilizado três circuitos de potência, retificador de meia on
 \pagebreak
 \subsection{Rectificador de meia onda com carga resistiva, \textit{R}}
 
-A figura \ref{fig:circuit_7}  está representado as formas de onda para a tensão e corrente de entrada.
+	Na \autoref{fig:circuit_7}  está representado as formas de onda para a tensão e corrente de entrada.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito5}
-	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de entrada.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de entrada.}
 	\label{fig:circuit_7}
 	\vspace{-0.8em}
 \end{figure}
 
-As formas de onda referente a saída do dispositivo podem ser visualizadas na figura seguinte.
+As formas de onda referente a saída do dispositivo podem ser visualizadas na \autoref{fig:circuit_8}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito6}
-	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de saida.}
 	\label{fig:circuit_8}
 	\vspace{-0.8em}
 \end{figure}
 
-Já as formas de onda da tensão e da corrente podem ser visualizadas na figura  \ref{fig:circuit_9}
+Já as formas de onda da tensão e da corrente podem ser visualizadas na  \autoref{fig:circuit_9}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito7}
-	\caption{Tensão (sinal vermelho)e corrente (sinalazul) do tirístor.}
+	\caption{Tensão (a vermelho) e corrente (a azul) do tiristor.}
 	\label{fig:circuit_9}
 	\vspace{-0.8em}
 \end{figure}
@@ -490,12 +501,12 @@ Já as formas de onda da tensão e da corrente podem ser visualizadas na figura 
 \pagebreak
 \subsection{Rectificador de meia onda com carga \textit{RL}}
 
-De igual forma é importante visualizar o comportamento da tensão e da corrente no dispositivo com uma carga \textit{RL}. É de referir que os sinais à saída estão representados na figura \ref{fig:circuit_10} e para o tirístor está representado na figura \ref{fig:circuit_11}.
+De igual forma é importante visualizar o comportamento da tensão e da corrente no dispositivo com uma carga \textit{RL}. É de referir que os sinais à saída estão representados na \autoref{fig:circuit_10} e para o tiristor está representado na \autoref{fig:circuit_11}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.35]{img/circuito8}
-	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de saida.}
 	\label{fig:circuit_10}
 	\vspace{-0.8em}
 \end{figure}
@@ -503,35 +514,36 @@ De igual forma é importante visualizar o comportamento da tensão e da corrente
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.35]{img/circuito9}
-	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de tirístor.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de tiristor.}
 	\label{fig:circuit_11}
 	\vspace{-0.8em}
 \end{figure}
 
 \subsection{Rectificador de meia onda com carga \textit{RL} e díodo de roda livre}
-De igual forma é importante visualizar o comportamento da tensão e da corrente no dispositivo com uma carga \textit{RL} e díodo roda livre. É de referir que os sinais à saída estão representados na figura \ref{fig:circuit_12} e para o tirístor está representado na figura \ref{fig:circuit_13}.
+De igual forma é importante visualizar o comportamento da tensão e da corrente no dispositivo com uma carga \textit{RL} e díodo roda livre. É de referir que os sinais à saída estão representados na \autoref{fig:circuit_12} e para o tiristor está representado na \autoref{fig:circuit_13}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito10}
-	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de saida.}
 	\label{fig:circuit_12}
 	\vspace{-0.8em}
 \end{figure}
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito11}
-	\caption{Tensão (sinal vermelho) e corrente (sinalazul) de tirístor.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de tiristor.}
 	\label{fig:circuit_13}
 	\vspace{-0.8em}
 \end{figure}
 \pagebreak
-Com adição do díodo no circuito é importante visualizar o comportamento da corrente e da tensão neste. Isso pode ser visto na figura \ref{fig:circuit_14}
+
+Com adição do díodo no circuito é importante visualizar o comportamento da corrente e da tensão neste. Isso pode ser visto na figura \autoref{fig:circuit_14}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito12}
-	\caption{Tensão (sinal vermelho)e corrente (sinalazul) no díodo de roda livre.}
+	\caption{Tensão (a vermelho) e corrente (a azul) no díodo de roda livre.}
 	\label{fig:circuit_14}
 	\vspace{-0.8em}
 \end{figure}
@@ -540,11 +552,11 @@ Com adição do díodo no circuito é importante visualizar o comportamento da c
 
 \begin{thebibliography}{2}
 	
+	\bibitem{Rashid}
+	Rashid, Muahammad H. (2004), Power Electronics - Circuits, Devices and Applications, \textit{Prentice Hall}	
+	
 	\bibitem{Kassakian}
 	Kassakian, John G. et al (1992, June), Principles of Power Electronics, \textit{Addison-Wesley Publishing Company}
-
-	\bibitem{Rashid}
-	Rashid, Muahammad H. (2004), Power Electronics - Circuits, Devices and Applications, \textit{Prentice Hall}
 	
 	\bibitem{Silva}
 	Silva, Fernando (1998), Eletrónica Industrial, Fundação Calouste Gulbenkian
