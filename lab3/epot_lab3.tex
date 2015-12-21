@@ -175,25 +175,86 @@ Após feitas as alterações ao circuito e reduzida a frequência de trabalho pa
 
 Pode ver-se a azul a tensão aos terminais do díodo e a rosa a corrente na carga.
 
-Está aqui evidenciado o comportamento do circuito. Quando o MOSFET está ao corte, o díodo estará consequentemente à condução, ficando a bobine a carregar. No instante em que o MOSFET passa à condução, o díodo D\textsubscript{1} estará ao corte e a bobine irá descarregar.
+Através da \autoref{fig:tensao_diodo_icarga_buckrl} fica evidenciado o comportamento do circuito. Nota-se que quando o transistor MOSFET está ao corte, o díodo estará consequentemente à condução, pelo que a bobine irá carregar. No instante em que o MOSFET passa à condução, o díodo D\textsubscript{1} estará ao corte e a bobine irá descarregar. 
+
+Este processo de carga e descarga da bobine produz um \textit{ripple} na corrente de saída que está diretamente ligado com a frequência de comutação e o tamanho da bobine; naturalmente é de interesse que este \textit{ripple} seja tão reduzido quanto possível, o que implica jogar com as duas restrições já mencionadas.
 
 \paragraph{Frequência limiar do regime lacunar}\mbox{}\
 
+O regime não lacunar observa-se quando se tem uma frequência de comutação tal que a bobina descarrega até que a corrente caia até zero.
 
+Embora não se tenha tirado este valor no laboratório e a figura correspondente, ao fazer a simulação do circuito em estudo observou-se que a frequência limite para o regime não lacunar seria próxima de $4$ kHz.
 
 \subsubsection{Carga RLC}
 
+Para finalizar o estudo do conversor redutor, estudou-se o seu comportamento para uma carga RLC, colocando-se em paralelo com a resistência e bobina o condensador C6.
+
 \paragraph{Formas de onda da tensão V\textsubscript{DS} e corrente I\textsubscript{D} para $20$ kHz}\mbox{}\
+
+\todo{make sure do grafico}
+
+A figura registada para as formas de onda da tensão V\textsubscript{DS} e corrente I\textsubscript{D} apresenta-se na \autoref{fig:vds_id_buckrlc}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.17]{img/figs/vds_id_buckrlc}
+	\caption{Formas de onda da tensão V\textsubscript{DS} e corrente I\textsubscript{D}.}
+	\label{fig:vds_id_buckrlc}
+	\vspace{-0.8em}
+\end{figure} 
+
+
+\unsure{corrente estão a subir?? wth?}
+
+Tem-se a azul a tensão V\textsubscript{DS}, a rosa a corrente I\textsubscript{D} e a amarelo a tensão na saída.
+
+
 
 \paragraph{Formas de onda da tensão e corrente no Díodo D\textsubscript{1}}\mbox{}\
 
 \paragraph{Formas de onda da tensão na carga e corrente na bobine}\mbox{}\
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.15]{img/figs/tensao_carga_corrente_bobine_ac_rlcbuck}
+	\caption{Formas de onda da tensão na carga e corrente na bobine.}
+	\label{fig:tensao_carga_corrente_bobine_ac_rlcbuck}
+	\vspace{-0.8em}
+\end{figure} 
+
+\unsure{caption}
+
+Observa-se a amarelo a tensão na saída e a rosa a corrente na bobine.
+
+A partir desta figura pode compreender-se bem o comportamento do conversor redutor com uma carga RLC. Tem-se que durante o período em que o MOSFET está em condução, altura em que a tensão na saída é diferente de zero, o díodo estará ao corte e a bobina carrega; observável pelo declive crescente da corrente na saída. 
+
+Quando o MOSFET passa ao corte, tensão na saída igual a zero, o díodo passa à condução pelo que a bobine começa a descarregar; sendo que se tem corrente com declive negativo. Como o observado a rosa é a corrente na bobine, tem-se um valor médio desta igual a zero, tal como esperado quando se está a lidar para este componente. 
+
 \paragraph{Tensão na carga em função do fator de ciclo}\mbox{}\
 
 \paragraph{Efeito da adição de um \textit{Snubber} entre o Dreno e \textit{Source} do MOSFET para $50$ kHz}\mbox{}\
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.175]{img/figs/snubber_buck}
+	\caption{Formas de onda da tensão na carga e corrente na bobine com o osciloscópio com \textit{snubber}.}
+	\label{fig:snubber_buck}
+	\vspace{-0.8em}
+\end{figure}
+
+
+\todo{mudar caption}
+
 \paragraph{Forma de onda da tensão V\textsubscript{AK} do Díodo D\textsubscript{1} para $200$ kHz}\mbox{}\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.175]{img/figs/vak_hf_buck}
+	\caption{Formas de onda da tensão V\textsubscript{AK} do Díodo D\textsubscript{1} para $200$ kHz.}
+	\label{fig:vak_hf_buck}
+	\vspace{-0.8em}
+\end{figure}
+
 
 \subsection{Conversor Ampliador}
 
