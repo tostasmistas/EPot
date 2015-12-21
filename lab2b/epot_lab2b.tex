@@ -83,20 +83,20 @@ Aquilo que distingue o retificador de onda completa do de meia onda é a presen�
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.8]{img/circuito.png}
+	\includegraphics[keepaspectratio=true, scale=0.8]{img/circuito}
 	\caption{Esquema do retificador de onda completa monofásico comandado.}
 	\label{fig:circuit_1}
 	\vspace{-0.8em}
 \end{figure}
 
-O funcionamento desta topologia depende de qual o par de tiristores que está a conduzir a uma dada altura. Fazendo uso da nomenclatura da \autoref{fig:circuit_1} observa-se que T1 e T2 podem ser disparados durante a alternância positiva da tensão de entrada, sendo que T4 e T3 podem ser disparados durante a alternância negativa. \cite{Silva} Para o primeiro caso tem-se que o ângulo de disparo, $\alpha$, pode variar entre $0$ e $\pi$ onde para o segundo caso se faz uso de $\alpha + \pi$. Tal como já foi visto no trabalho anterior a altura em que um tiristor entra ao corte depende do momento em que a corrente aos terminais deste passa por zero, pelo que o funcionamento para uma carga puramente resistiva difere do de uma carga indutiva.
+O funcionamento desta topologia depende de qual o par de tiristores que está a conduzir a uma dada altura. Fazendo uso da nomenclatura da \autoref{fig:circuit_1} observa-se que T1 e T2 podem ser disparados durante a alternância positiva da tensão de entrada, sendo que T4 e T3 podem ser disparados durante a alternância negativa \cite{Silva}. Para o primeiro caso tem-se que o ângulo de disparo, $\alpha$, pode variar entre $0$ e $\pi$ onde para o segundo caso se faz uso de $\alpha + \pi$. Tal como já foi visto no trabalho anterior a altura em que um tiristor entra ao corte depende do momento em que a corrente aos terminais deste passa por zero, pelo que o funcionamento para uma carga puramente resistiva difere do de uma carga indutiva.
 
-Espera-se assim que as formas de onda para a tensão e corrente numa carga indutiva seja tal como se vê na \autopageref{fig:andamento}.
+Espera-se assim que as formas de onda para a tensão e corrente numa carga indutiva seja tal como se vê na \autoref{fig:andamento}.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.8]{img/andamento.png}
-	\caption{Formas de onda para Carga Indutiva.}
+	\includegraphics[keepaspectratio=true, scale=0.8]{img/andamento}
+	\caption{Formas de onda para carga indutiva.}
 	\label{fig:andamento}
 	\vspace{-0.8em}
 \end{figure}
@@ -110,41 +110,108 @@ Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se s
 
 \subsection{Retificador de onda completa totalmente comandado}
 
+
 \subsubsection{Carga resistiva pura (R)}
 
-\paragraph{Formas de onda da tensão e corrente na entrada}
 
-\paragraph{Formas de onda da tensão e corrente na carga}
+\paragraph{Formas de onda da tensão e corrente na entrada} \mbox{}\
 
-\paragraph{Formas de onda da tensão e corrente no tiristor}
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.12]{img/DSC_0181}
+	\caption{Tensão (a amarelo) e corrente (a rosa) na entrada.}
+	\label{fig:tcentrada}
+	\vspace{-0.8em}
+\end{figure}
 
-\paragraph{Característica de comando do conversor}
+\paragraph{Formas de onda da tensão e corrente na carga} \mbox{}\
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.13]{img/DSC_0182}
+	\caption{Tensão (a azul) e corrente (a rosa) na carga.}
+	\label{fig:tccarga}
+	\vspace{-0.8em}
+\end{figure}
+
+\paragraph{Formas de onda da tensão e corrente no tiristor} \mbox{}\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.13]{img/DSC_0183}
+	\caption{Tensão (a amarelo) e corrente (a rosa) no tiristor.}
+	\label{fig:tctiristor}
+	\vspace{-0.8em}
+\end{figure}
+
+\paragraph{Característica de comando do conversor} \mbox{}\
 
 \subsubsection{Carga indutiva RL}
 
-\paragraph{Formas de onda da tensão e corrente na carga para funcionamento lacunar}
+\paragraph{Formas de onda da tensão e corrente na carga para funcionamento lacunar} \mbox{}\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.15]{img/DSC_0184}
+	\caption{Tensão (a azul) e corrente (a rosa) na carga.}
+	\label{fig:tcentradalacuna}
+	\vspace{-0.8em}
+\end{figure}
 
 \todo{dizer porque razão a tensão na carga é negativa por algum tempo}
 
 \todo{tensão medida na carga}
 
-\paragraph{Formas de onda da tensão e corrente no tiristor}
+\paragraph{Formas de onda da tensão e corrente no tiristor} \mbox{}\
 
-\paragraph{Formas de onda da tensão e corrente para funcionamento não lacunar}
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.15]{img/DSC_0185}
+	\caption{Tensão (a amarelo) e corrente (a rosa) no tiristor.}
+	\label{fig:tctiristorlacuna}
+	\vspace{-0.8em}
+\end{figure}
 
-\paragraph{Característica de comando do conversor}
+\paragraph{Formas de onda da tensão e corrente para funcionamento não lacunar} \mbox{}\
+
+\paragraph{Característica de comando do conversor} \mbox{}\
 
 \subsection{Retificador de onda completa semi-comandado}
 
 \subsubsection{Carga indutiva RL}
 
-\paragraph{Formas de onda da tensão e corrente na entrada}
+\paragraph{Formas de onda da tensão e corrente na entrada} \mbox{}\
 
-\paragraph{Formas de onda da tensão e corrente na carga}
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.12]{img/DSC_0190}
+	\caption{Tensão (a amarelo) e corrente (a rosa) na entrada.}
+	\label{fig:tcentradasemi}
+	\vspace{-0.8em}
+\end{figure}
 
-\paragraph{Formas de onda da tensão e corrente no tiristor}
+\paragraph{Formas de onda da tensão e corrente na carga} \mbox{}\
 
-\paragraph{Característica de comando do conversor}
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.13]{img/DSC_0191}
+	\caption{Tensão (a azul) e corrente (a rosa) na carga.}
+	\label{fig:tccargasemi}
+	\vspace{-0.8em}
+\end{figure}
+
+\paragraph{Formas de onda da tensão e corrente no tiristor} \mbox{}\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.12]{img/DSC_0192}
+	\caption{Tensão (a amarelo) e corrente (a rosa) no tiristor.}
+	\label{fig:tctiristorsemi}
+	\vspace{-0.8em}
+\end{figure}
+
+\paragraph{Característica de comando do conversor} \mbox{}\
 
 \todo{porque razão a corrente na carga nunca é negativa}
 
@@ -159,11 +226,11 @@ Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se s
 
 \begin{thebibliography}{2}
 	
-	\bibitem{Kassakian}
-	Kassakian, John G. et al (1992, June), Principles of Power Electronics, \textit{Addison-Wesley Publishing Company}
+	%\bibitem{Kassakian}
+	%Kassakian, John G. et al (1992, June), Principles of Power Electronics, \textit{Addison-Wesley Publishing Company}
 
-	\bibitem{Rashid}
-	Rashid, Muahammad H. (2004), Power Electronics - Circuits, Devices and Applications, \textit{Prentice Hall}
+	%\bibitem{Rashid}
+	%Rashid, Muahammad H. (2004), Power Electronics - Circuits, Devices and Applications, \textit{Prentice Hall}
 	
 	\bibitem{Silva}
 	Silva, Fernando (1998), Eletrónica Industrial, Fundação Calouste Gulbenkian
@@ -172,7 +239,5 @@ Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se s
 
 
 \pagebreak
-
-
 
 \end{document}

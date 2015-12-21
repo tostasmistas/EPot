@@ -108,7 +108,7 @@ Como este está preparado para servir como circuito de disparo para um Retificad
 
 Para que fosse possível estudar o funcionamento do circuito de disparo começou por se observar as formas de onda da tensão amostrada de entrada e dos impulsos gerados.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/AB_1}
 	\caption{Forma de onda da tensão em A e B.}
@@ -116,7 +116,7 @@ Para que fosse possível estudar o funcionamento do circuito de disparo começou
 	\vspace{-0.8em}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.1]{img/figs/AC_1}
 	\caption{Forma de onda da tensão em A e C.}
@@ -128,7 +128,7 @@ Na \autoref{fig:AB_1} pode ver-se a amarelo a tensão amostrada pelo transformad
 
 A posição destes dois impulsos pode ser controlada através do valor do ângulo de disparo $\alpha$ rodando um manipulo presente na placa do Circuito de Disparo. Ao mudar este valor, as formas de onda são observáveis, tanto para a tensão amostrada e o impulso $\alpha$ como para a mesma tensão e o impulso  $\alpha + \pi$, na \autoref{fig:AB_2} e \autoref{fig:AC_2} respectivamente.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/AB_2}
 	\caption{Forma de onda da tensão em A e B para novo $\alpha$.}
@@ -136,7 +136,7 @@ A posição destes dois impulsos pode ser controlada através do valor do ângul
 	\vspace{-0.8em}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/AC_2}
 	\caption{Forma de onda da tensão em A e C para novo $\alpha$.}
@@ -151,7 +151,7 @@ Como a frequência de operação é a da rede, $50$ Hz, os impulsos de disparo d
 
 Para resolver ambos estes problemas utiliza-se um trem de impulsos de \textit{Trigger}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.115]{img/figs/trem_impulsos_A}
 	\caption{Formas de onda do trem de impulso e tensão em A.}
@@ -161,7 +161,7 @@ Para resolver ambos estes problemas utiliza-se um trem de impulsos de \textit{Tr
 
 Colocou-se entre a \textit{Gate} e o Cátodo uma resistência de $33$ $\Omega$ para simular a \textit{Gate} do tiristor. Na \autoref{fig:trem_impulsos_A} pode assim ver-se a azul a queda de tensão nessa resistência e a amarelo o trem de impulsos.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.09]{img/figs/trem_impulsos_B}
 	\caption{Formas de onda do trem de impulso e tensão em B.}
@@ -178,9 +178,9 @@ Na \autoref{fig:trem_impulsos_B} pode também observar-se o trem de impulsos, a 
 
 Para que se possa estudar o funcionamento do Retificador para cargas Resistivas puras utilizou-se um reóstato como carga, regulando-o para perto de meio ficando-se com cerca de $16$ $\Omega$.
 
-\paragraph{Formas de onda da tensão e corrente na entrada}
+\paragraph{Formas de onda da tensão e corrente na entrada}\mbox{}\
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.12]{img/figs/carga_resistiva}
 	\caption{Formas da tensão na entrada e corrente e tensão na carga para carga R.}
@@ -191,16 +191,16 @@ Para que se possa estudar o funcionamento do Retificador para cargas Resistivas 
 
 Na \autoref{fig:carga_resistiva} observa-se o funcionamento do circuito quando sujeito uma carga resistiva pura. A tensão de entrada pode ser vista a amarelo estando a tensão e corrente na carga a azul e roxo respetivamente.
 
-\paragraph{Formas de onda da tensão e corrente na saída}
+\paragraph{Formas de onda da tensão e corrente na saída}\mbox{}\
 
 
 \unsure{pode apagar-se esta secção porque a imagem ja foi mostrada na anterior}
 
-\paragraph{Formas de onda da tensão e corrente no tiristor}
+\paragraph{Formas de onda da tensão e corrente no tiristor}\mbox{}\
 
 \unsure{não temos esta imagem. Podemos roubar a imagem do edson ou ser honestos, dizer que nos esquecemos de tirar a foto e por aqui uma imagem da simualação equivalente}
 
-\paragraph{Valores médio e eficaz da tensão e corrente na carga}
+\paragraph{Valores médio e eficaz da tensão e corrente na carga}\mbox{}\
 
 Os valores médio e eficaz de tensão e corrente na carga podem ser obtidos através das seguintes expressões:
 
@@ -219,7 +219,7 @@ Os valores médio e eficaz de tensão e corrente na carga podem ser obtidos atra
 
 Infelizmente não se mediu os valores necessários no laboratório pelo que estes serão assumidos de forma a exemplificar como seria feito o cálculo teórico.
 
-Por observação da \textcolor{red}{Figura Carga Resistiva} tem-se $A=52 V$ e $\alpha=0,55\pi rad$
+Por observação da \autoref{fig:carga_resistiva} tem-se $A=52 V$ e $\alpha=0,55\pi rad$
 
 Assume-se também que a resistência na carga toma o valor $R=15 \Omega$.
 
@@ -241,11 +241,11 @@ Tal como foi mencionado, não foram registados os valores laboratoriais, no enta
 
 Sendo assim, considerando que o valor de $R$ considerado poderá ser diferente do utilizado no laboratório, cujo máximo seria perto de $100 \Omega$, pode considerar-se que os valores teóricos serão próximos dos reais, fora algumas incertezas.
 
-\paragraph{Característica de comando do conversor}
+\paragraph{Característica de comando do conversor}\mbox{}\
 
 Para se estudar convenientemente o funcionamento do circuito face a variações do ângulo de disparo $\alpha$, registaram-se os valores da tensão na carga em função deste tanto no caso experimental como teórico fazendo uso das expressões da secção anterior. Os resultados obtidos podem ser observados na \autoref{fig:tabela1} e \autoref{fig:grafico1}. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/tabela1}
 	\caption{Valores da tensão na carga teóricos e experimentais em função de $\alpha$}
@@ -253,7 +253,7 @@ Para se estudar convenientemente o funcionamento do circuito face a variações 
 	\vspace{-0.8em}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/grafico1}
 	\caption{Formas de onda da Tensão na carga teóricas e experimentais em função de $\alpha$}
@@ -268,7 +268,7 @@ Verifica-se que existe pouca diferença entre os valores, podendo estas dever-se
 
 Para estudar o comportamento de um retificador de meia onda com uma carga indutiva introduziu-se uma bobina em série com o reóstato.
 
-\paragraph{Formas de onda da tensão e corrente na saída}
+\paragraph{Formas de onda da tensão e corrente na saída}\mbox{}\
 
 \begin{figure}[h]
 	\centering
@@ -340,7 +340,7 @@ Por fim, introduz-se no retificador um díodo de roda livre em antiparalelo com 
 Teoricamente a introdução deste díodo deverá garantir que a tensão na carga não passará de zero devido à adição de uma indutância, pelas razões comentadas anteriormente.
 
 
-\paragraph{Formas de onda da tensão e corrente na saída}
+\paragraph{Formas de onda da tensão e corrente na saída \label{parag:1}}\mbox{}\
 
 \begin{figure}[h]
 	\centering
@@ -354,9 +354,9 @@ Na \autoref{fig:bobine_alfa_dif_zero} tem-se a tensão na entrada do retificador
 
 Observa-se que existe um ligeiro intervalo no qual a tensão na carga ainda é menor que zero, embora um valor muito inferior ao que se tinha no caso da carga RL sem díodo de roda livre. Isto deve-se a que nesse período a tensão observável será igual à de polarização direta do díodo de roda livre, que como está em antiparalelo com a carga, entra em condução na alternância negativa da tensão. 
 
-\paragraph{Formas de onda da tensão e corrente no tiristor}
+\paragraph{Formas de onda da tensão e corrente no tiristor}\mbox{}\
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/tiristor_alfa_zero}
 	\caption{Formas de onda da tensão na entrada e corrente no tiristor para carga indutiva.}
@@ -364,7 +364,7 @@ Observa-se que existe um ligeiro intervalo no qual a tensão na carga ainda é m
 	\vspace{-0.8em}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.43]{img/figs/tiristor_alfa_dif_zero}
 	\caption{Formas de onda de tensão na entrada e corrente no tiristor para carga indutiva com $\alpha$ diferente de zero.}
@@ -376,19 +376,19 @@ Na \autoref{fig:tiristor_alfa_zero} tem-se a tensão na entrada do retificador (
 
 Nestas figuras no entanto não se observa a tensão aos terminais do tiristor (a azul tem-se sim a tensão na carga). O comportamento expectável para esta seria apresentar o valor de tensão de polarização direta enquanto o dispositivo está à condução e a tensão na entrada do retificador enquanto está ao corte.
 
-\paragraph{Formas de onda da tensão e corrente no díodo e na bobina}
+\paragraph{Formas de onda da tensão e corrente no díodo e na bobina}\mbox{}\
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/diodo_alfa_zero}
+	\includegraphics[keepaspectratio=true, scale=0.12]{img/figs/diodo_alfa_zero}
 	\caption{Formas de onda da tensão na entrada e corrente no diodo para carga indutiva.}
 	\label{fig:diodo_alfa_zero}
 	\vspace{-0.8em}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.43]{img/figs/diodo_alfa_dif_zero}
+	\includegraphics[keepaspectratio=true, scale=0.12]{img/figs/diodo_alfa_dif_zero}
 	\caption{Formas de onda de tensão na entrada e corrente no diodo para carga indutiva com $\alpha$ diferente de zero.}
 	\label{fig:diodo_alfa_dif_zero}
 	\vspace{-0.8em}
@@ -406,7 +406,7 @@ Nota-se que a corrente que percorre o díodo é zero até ao momento em que a te
 	\vspace{-0.8em}
 \end{figure}
 
-Na \autoref{fig:bobine_alfa_zero} tem-se a tensão na entrada do retificador (a amarelo), a tensão na carga (a azul) e corrente na bobina (a rosa) para $\alpha = 0$. Na \autoref{fig:bobine_alfa_dif_zero} tem-se o comportamento para $\alpha$ diferente de $0$.
+Na \autoref{fig:bobine_alfa_zero} tem-se a tensão na entrada do retificador (a amarelo), a tensão na carga (a azul) e corrente na bobina (a rosa) para $\alpha = 0$. Na \autoref{fig:bobine_alfa_dif_zero}, presente em \autoref{parag:1}, tem-se o comportamento para $\alpha$ diferente de $0$.
 
 Nota-se que embora a tensão na bobina não tenha sido lida, o seu comportamento é conhecido, devendo ter uma forma tal que o seu valor médio seja nulo. Já a corrente comporta-se tal como para o caso de uma carga indutiva até ao momento em que o díodo entra em condução. Nesse instante a corrente apresenta um comportamento exponencial decrescente; isto é similar ao comportamento da corrente que percorre o díodo de roda livre no mesmo período.
 
