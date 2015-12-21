@@ -2,7 +2,7 @@
 
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
+\usepackage{amsmath,amsthm,mathtools}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{float}
@@ -196,9 +196,11 @@ Na \autoref{fig:carga_resistiva} observa-se o funcionamento do circuito quando s
 
 %\unsure{pode apagar-se esta secção porque a imagem ja foi mostrada na anterior}
 
+\pagebreak
+
 \paragraph{Formas de onda da tensão e corrente no tiristor}\mbox{}\
 
-\unsure{não temos esta imagem. Podemos roubar a imagem do edson ou ser honestos, dizer que nos esquecemos de tirar a foto e por aqui uma imagem da simualação equivalente}
+Infelizmente não foram registadas as formas de onda para esta questão, mas prevê-se que o comportamento seja idêntico ao registado na simulação da \autoref{fig:circuit_9}.
 
 \paragraph{Valores médio e eficaz da tensão e corrente na carga}\mbox{}\
 
@@ -271,8 +273,6 @@ Para se estudar convenientemente o funcionamento do circuito face a variações 
 	\vspace{-0.8em}
 \end{figure}
 
-\todo{falta por a lengeda nos eixos do grafico e as unidades}
-
 Verifica-se que existe pouca diferença entre os valores, podendo estas dever-se maioritariamente com o facto de, para os cálculos teóricos, se considerar que todos os dispositivos são ideais, o que não é válido na realidade.
 
 \subsubsection{Carga indutiva RL}
@@ -299,13 +299,13 @@ Uma vez que o tiristor se encontra em série com a carga (trata-se de um rectifi
 
 Assim, a forma de onda da corrente no tiristor corresponde à corrente da \autoref{fig:carga_indutiva}, e a tensão no dispositivo corresponde à forma de onda complementar à tensão da mesma figura.
 
-\paragraph{Análise teórica do circuito}\mbox{}\
+\paragraph{Ângulo de condução}\mbox{}\
 
-\todo{rever esta parte}
+Uma vez que não foram medidos experimentalmente os valores do ângulo de condução optou-se por fazer um cálculo teórico para dar continuidade à resolução do problema.
 
 A montagem pode ser simplificada para o circuito da \autoref{fig:ci_circuito}, considerando a saída do transformador como uma fonte de tensão alternada.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
 		\draw
@@ -320,6 +320,45 @@ A montagem pode ser simplificada para o circuito da \autoref{fig:ci_circuito}, c
 	\caption{Circuito em análise com carga indutiva}
 	\label{fig:ci_circuito}
 \end{figure}
+
+Sabe-se que o ângulo de fase é dado de acordo com a \autoref{eq:angulofase}.
+
+\begin{equation}
+\label{eq:angulofase}
+\phi =  \arctan \left(\frac{\omega L}{R}\right)
+\end{equation}
+
+Assim, $\phi = 11.83^{\circ}$ e pode-se agora calcular através da \autoref{eq:gamma} os valores do ângulo de condução $\gamma$ para quando o ângulo de disparo é $\alpha = 0^{\circ}$ e $\alpha = 90^{\circ}$.
+
+\begin{equation}
+\begin{gathered}
+0 = \sin \left( \phi - \alpha \right) \times \exp \left( - \frac{R}{L} \times \frac{\gamma}{\omega}\right) + \sin \left( \alpha + \gamma - \phi \right) \leftrightarrow \\ \\
+\leftrightarrow 0 = \sin \left( \arctan \left(\frac{\omega L}{R} \right) - \alpha \right) \times \exp \left( - \frac{R}{L} \times \frac{\gamma}{\omega}\right) + \sin \left( \alpha + \gamma - \arctan \left(\frac{\omega L}{R}\right) \right)
+\label{eq:gamma}
+\end{gathered}
+\end{equation}
+
+Assim, obteve-se os valores apresentados na \autoref{tab:tabela2}.
+
+\begin{table}[!htb]
+	\centering
+	\caption{Valores do ângulo de condução para $\alpha = 0^{\circ}$ e $\alpha = 90^{\circ}$.}
+	\vspace{-3mm}
+	\includegraphics[width=0.5\linewidth]{teoricas/tabela2}
+	\label{tab:tabela2}
+\end{table}
+
+Para os ângulos da tabela anterior determinou-se os valores teóricos médios de $V_o$ e de $I_o$, como se pode ver na \autoref{tab:tabela3}.
+
+\begin{table}[!htb]
+	\centering
+	\caption{Valores teóricos da tensão e da corrente de saída em função dos ângulos de disparo e de condução.}
+	\vspace{-3mm}
+	\includegraphics[width=0.5\linewidth]{teoricas/tabela2}
+	\label{tab:tabela3}
+\end{table}
+
+De referir que os valores teóricos foram calculados recorrendo a \todo{inserir aqui as equaçoes}.
 
 A partir de $\omega t = \alpha$, enquanto o tiristor está a conduzir, o comportamento do circuito é dado pela \autoref{eq:ci_eqdif}.
 
@@ -490,7 +529,7 @@ As formas de onda referente a saída do dispositivo podem ser visualizadas na \a
 	\vspace{-0.8em}
 \end{figure}
 
-Já as formas de onda da tensão e da corrente podem ser visualizadas na  \autoref{fig:circuit_9}.
+Já as formas de onda da tensão e da corrente no tiristor podem ser visualizadas na  \autoref{fig:circuit_9}.
 
 \begin{figure}[h]
 	\centering
