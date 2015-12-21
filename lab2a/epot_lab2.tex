@@ -416,13 +416,125 @@ Na primeira tem-se alternância positiva da tensão; o tiristor está diretament
 
 A segunda fase corresponde à alternância negativa da tensão de entrada; o díodo de roda livre está diretamente polarizado, sendo percorrido pela corrente da carga, passando ao corte assim que a bobina fique descarregada. Já o tiristor está inversamente polarizado, ficando ao corte assim que a corrente passe por zero
 
-\section{Simulação do Trabalho de Laboratório}
+\section{Circuitos de Potência usados}
+Neste projeto foi utilizado três circuitos de potência, retificador de meia onde com carga resistiva, com carga \textit{RL} e com carga \textit{RL} e díodo roda livre. 
 
-\todo{this is our expertise teddy}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito1}
+	\caption{Retificador de meia onda com carga resistica, \textit{R}.}
+	\label{fig:circuit_3}
+	\vspace{-0.8em}
+\end{figure}
 
-\subsection{Circuito de disparo}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito2}
+	\caption{Retificador de meia onda com carga \textit{RL}.}
+	\label{fig:circuit_4}
+	\vspace{-0.8em}
+\end{figure}
 
-\subsection{Circuito de potência}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito3}
+	\caption{Retificador de meia onda com carga \textit{RL} e díodo de roda livre.}
+	\label{fig:circuit_5}
+	\vspace{-0.8em}
+\end{figure}
+\pagebreak 
+
+É importante referir que para simulação do circuito de disparos definiu-se que iria ser utilizado um gerador de impulsos com uma frequência   de $50Hz$, e um \textit{drive} que controla o ângulo de disparo do tirístor uma amplitude de 0 a 5V. Na figura \ref{fig:circuit_6} esta representado o sinal do gerador de impulsos com a tensão de entrada.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.35]{img/circuito4}
+	\caption{Tensão de entrada (sinal vermelho)e sinal do gerador de impulsos (sinalazul).}
+	\label{fig:circuit_6}
+	\vspace{-0.8em}
+\end{figure}
+
+\pagebreak
+\subsection{Rectificador de meia onda com carga resistiva, \textit{R}}
+
+A figura \ref{fig:circuit_7}  está representado as formas de onda para a tensão e corrente de entrada.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito5}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de entrada.}
+	\label{fig:circuit_7}
+	\vspace{-0.8em}
+\end{figure}
+
+As formas de onda referente a saída do dispositivo podem ser visualizadas na figura seguinte.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito6}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\label{fig:circuit_8}
+	\vspace{-0.8em}
+\end{figure}
+
+Já as formas de onda da tensão e da corrente podem ser visualizadas na figura  \ref{fig:circuit_9}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito7}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) do tirístor.}
+	\label{fig:circuit_9}
+	\vspace{-0.8em}
+\end{figure}
+
+\pagebreak
+\subsection{Rectificador de meia onda com carga \textit{RL}}
+
+De igual forma é importante visualizar o comportamento da tensão e da corrente no dispositivo com uma carga \textit{RL}. É de referir que os sinais à saída estão representados na figura \ref{fig:circuit_10} e para o tirístor está representado na figura \ref{fig:circuit_11}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.35]{img/circuito8}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\label{fig:circuit_10}
+	\vspace{-0.8em}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.35]{img/circuito9}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de tirístor.}
+	\label{fig:circuit_11}
+	\vspace{-0.8em}
+\end{figure}
+
+\subsection{Rectificador de meia onda com carga \textit{RL} e díodo de roda livre}
+De igual forma é importante visualizar o comportamento da tensão e da corrente no dispositivo com uma carga \textit{RL} e díodo roda livre. É de referir que os sinais à saída estão representados na figura \ref{fig:circuit_12} e para o tirístor está representado na figura \ref{fig:circuit_13}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito10}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\label{fig:circuit_12}
+	\vspace{-0.8em}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito11}
+	\caption{Tensão (sinal vermelho) e corrente (sinalazul) de tirístor.}
+	\label{fig:circuit_13}
+	\vspace{-0.8em}
+\end{figure}
+\pagebreak
+Com adição do díodo no circuito é importante visualizar o comportamento da corrente e da tensão neste. Isso pode ser visto na figura \ref{fig:circuit_14}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito12}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) no díodo de roda livre.}
+	\label{fig:circuit_14}
+	\vspace{-0.8em}
+\end{figure}
 
 \pagebreak
 
