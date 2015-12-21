@@ -93,59 +93,125 @@ Por fim tem-se o conversor redutor-ampliador, onde é possível obter na saída 
 
 \subsubsection{Carga R}
 
-No estudo do conversor redutor começa-se por considerar uma carga resistiva pura sendo o circuito considerado apresentado na \autoref{fig:Red R}
+No estudo do conversor redutor começa-se por considerar uma carga resistiva pura, sendo o circuito considerado apresentado na \autoref{fig:Red R}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/Redutor R.png}
+	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/Redutor_R}
 	\caption{Esquema do Conversor Redutor com Carga Resistiva.}
 	\label{fig:Red R}
 	\vspace{-0.8em}
 \end{figure}
 
-	Após feitas as ligações necessárias, regulado o Gerador de Funções para que se obtenha o sinal quadrado com as caraterísticas desejadas.
+	Após feitas as ligações necessárias, regula-se o Gerador de Funções para que se obtenha o sinal quadrado com as caraterísticas desejadas e alimenta-se o circuito de \textit{Drive} e potência tal como indicado no guião.
 	
-\paragraph{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{Gate} para $50$ kHz}
+\paragraph{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{Gate} para $50$ kHz}\mbox{}\
 
-\paragraph{Formas de onda da tensão e corrente na carga}
+As forma de onda para a tensão V\textsubscript{GA} e corrente de \textit{Gate} podem ser observadas na \autoref{fig:tensao_corrente_gate_buckR}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/tensao_corrente_gate_buckR}
+	\caption{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{Gate} para Carga Resistiva do conversor Redutor.}
+	\label{fig:tensao_corrente_gate_buckR}
+	\vspace{-0.8em}
+\end{figure} 
+
+Para observar melhor a passagem à condução do transistor MOSFET e o consequente pico de corrente, reduziu-se a escala de tempo sendo o obtido apresentado na \autoref{fig:tensao_corrente_gate_buckR_zoom}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/tensao_corrente_gate_buckR_zoom}
+	\caption{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{Gate} para Carga Resistiva do conversor Redutor.}
+	\label{fig:tensao_corrente_gate_buckR_zoom}
+	\vspace{-0.8em}
+\end{figure} 
+
+Em ambas as imagens tem-se a amarelo a tensão V\textsubscript{GA} e a rosa a corrente de \textit{Gate}.
+
+\paragraph{Formas de onda da tensão e corrente na carga}\mbox{}\
+
+De seguida observaram-se as formas de tensão e corrente na carga, estando o obtido presente na \autoref{fig:tensao_corrente_carga_buckR}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/tensao_corrente_carga_buckR}
+	\caption{Formas de onda da tensão e corrente na saída para Carga Resistiva do conversor Redutor.}
+	\label{fig:tensao_corrente_carga_buckR}
+	\vspace{-0.8em}
+\end{figure} 
+
+A tensão está apresentada a amarelo e a rosa tem-se a corrente.
+
+Observa-se que a tensão na carga não é, no entanto, uma forma quadrada perfeita tal como seria desejado. Isto é provocado por se estar a trabalhar a uma frequência de $50$ kHz, demasiado elevada para que o MOSFET não apresente qualquer atraso. 
+
+As principais fontes para este erro são as componentes incrementais que representam a não idealidade deste componente, pelo que a frequência de operação será limitada.
 
 \subsubsection{Carga RL}
 
-\paragraph{Formas de onda da tensão no Díodo D\textsubscript{1} e corrente na carga para $10$ kHz}
+De seguida coloca-se uma bobine em série com a resistência na saída para que se possa estudar o comportamento do circuito a uma carga RL.
 
-\paragraph{Frequência limiar do regime lacunar}
+O esquema equivalente para este funcionamento está na \autoref{fig:Carga_RL_Buck}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/Carga_RL_Buck}
+	\caption{Esquema do Conversor Redutor com Carga RL.}
+	\label{fig:Carga_RL_Buck}
+	\vspace{-0.8em}
+\end{figure}
+
+\paragraph{Formas de onda da tensão no Díodo D\textsubscript{1} e corrente na carga para $10$ kHz}\mbox{}\
+
+Após feitas as alterações ao circuito e reduzida a frequência de trabalho para $10$ kHz foram observadas as formas de onda da tensão no díodo D\textsubscript{1} e corrente na carga, sendo o obtido presente na \autoref{fig:tensao_diodo_icarga_buckrl}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/tensao_diodo_icarga_buckrl}
+	\caption{Formas de onda da tensão aos terminais de D\textsubscript{1} e corrente na saída para Carga RL do conversor redutor.}
+	\label{fig:tensao_diodo_icarga_buckrl}
+	\vspace{-0.8em}
+\end{figure} 
+
+Pode ver-se a azul a tensão aos terminais do díodo e a rosa a corrente na carga.
+
+Está aqui evidenciado o comportamento do circuito. Quando o MOSFET está ao corte, o díodo estará consequentemente à condução, ficando a bobine a carregar. No instante em que o MOSFET passa à condução, o díodo D\textsubscript{1} estará ao corte e a bobine irá descarregar.
+
+\paragraph{Frequência limiar do regime lacunar}\mbox{}\
+
+
 
 \subsubsection{Carga RLC}
 
-\paragraph{Formas de onda da tensão V\textsubscript{DS} e corrente I\textsubscript{D} para $20$ kHz}
+\paragraph{Formas de onda da tensão V\textsubscript{DS} e corrente I\textsubscript{D} para $20$ kHz}\mbox{}\
 
-\paragraph{Formas de onda da tensão e corrente no Díodo D\textsubscript{1}}
+\paragraph{Formas de onda da tensão e corrente no Díodo D\textsubscript{1}}\mbox{}\
 
-\paragraph{Formas de onda da tensão na carga e corrente na bobine}
+\paragraph{Formas de onda da tensão na carga e corrente na bobine}\mbox{}\
 
-\paragraph{Tensão na carga em função do fator de ciclo}
+\paragraph{Tensão na carga em função do fator de ciclo}\mbox{}\
 
-\paragraph{Efeito da adição de um \textit{Snubber} entre o Dreno e \textit{Source} do MOSFET para $50$ kHz}
+\paragraph{Efeito da adição de um \textit{Snubber} entre o Dreno e \textit{Source} do MOSFET para $50$ kHz}\mbox{}\
 
-\paragraph{Forma de onda da tensão V\textsubscript{AK} do Díodo D\textsubscript{1} para $200$ kHz}
+\paragraph{Forma de onda da tensão V\textsubscript{AK} do Díodo D\textsubscript{1} para $200$ kHz}\mbox{}\
 
 \subsection{Conversor Ampliador}
 
-\paragraph{Formas de onda da tensão V\textsubscript{DS} e da corrente I\textsubscript{D} para $40$ kHz}
+\paragraph{Formas de onda da tensão V\textsubscript{DS} e da corrente I\textsubscript{D} para $40$ kHz}\mbox{}\
 
-\paragraph{Formas de onda na Resistência e corrente em D\textsubscript{1}}
+\paragraph{Formas de onda na Resistência e corrente em D\textsubscript{1}}\mbox{}\
 
-\paragraph{Tensão na carga em função do fator de ciclo}
+\paragraph{Tensão na carga em função do fator de ciclo}\mbox{}\
 
 \subsection{Converor Redutor-Ampliador}
 
-\paragraph{Formas de onda da tensão e corrente aos terminais da bobina para $40$ kHz}
+\paragraph{Formas de onda da tensão e corrente aos terminais da bobina para $40$ kHz}\mbox{}\
 
-\paragraph{Formas de onda da tensão na Resistência e corrente D\textsubscript{1}}
+\paragraph{Formas de onda da tensão na Resistência e corrente D\textsubscript{1}}\mbox{}\
 
-\paragraph{Tensão na carga em função do fator de ciclo}
+\paragraph{Tensão na carga em função do fator de ciclo}\mbox{}\
 
-\paragraph{Rendimento do conversor para um fator de ciclo de $60$ \%}
+\paragraph{Rendimento do conversor para um fator de ciclo de $60$ \%}\mbox{}\
 
 \pagebreak
 
