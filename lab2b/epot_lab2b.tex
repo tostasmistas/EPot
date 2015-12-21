@@ -84,7 +84,7 @@ Aquilo que distingue o retificador de onda completa do de meia onda é a presen�
 \begin{figure}[h]
 	\centering
 	%\includegraphics[keepaspectratio=true, scale=0.8]{img/circuito}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.7, transform shape]
 	\draw
 		(0,0) node[] (origin) {} to[sV] ++(0,2) node[] (source) {}
 		(origin) to[short,-*] ++ (5,0) to[short] ++ (0,2) to[Ty,-*] ++ (0,2) to[short] ++ (2,0) to[generic,l=Carga] ++ (0,-6) to[short] ++ (-2,0) node[] (bottomty) {} to[short] ++(-2,0) to[Ty] ++ (0,2) to[short,-*] ++ (0,2) node[] (topty) {} to[short] (source)
@@ -111,7 +111,7 @@ Espera-se assim que as formas de onda para a tensão e corrente numa carga indut
 
 O resultado é que, ao contrário do retificador de meia onda, tanto para a alternância positiva da tensão de entrada, como para a negativa, se irá ter corrente na carga; obtém-se um comportamento desta corrente muito mais próximo do continuo e um conteúdo harmónico substancialmente inferior. Observa-se também que devido a isto, o valor médio da corrente na entrada será zero.
 
-Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se substitui dois do retificadores por dois díodos. Isto pode ser feito caso a carga não exija inversão da tensão aos seus terminais, sendo neste caso imposição da topologia que a tensão de saída tenha sempre o mesmo sinal, devido à presença dos díodos.
+Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se substitui dois dos retificadores por dois díodos. Isto pode ser feito caso a carga não exija inversão da tensão aos seus terminais, sendo neste caso imposição da topologia que a tensão de saída tenha sempre o mesmo sinal, devido à presença dos díodos.
 
 
 \section{Condução do Trabalho}
@@ -122,7 +122,9 @@ Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se s
 \subsubsection{Carga resistiva pura (R)}
 
 
-\paragraph{Formas de onda da tensão e corrente na entrada} \mbox{}\
+\paragraph{Formas de onda da tensão e corrente na entrada} 
+
+Inicialmente, observou-se a forma de onda da tensão e da corrente na entrada do circuito.
 
 \begin{figure}[H]
 	\centering
@@ -132,8 +134,13 @@ Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se s
 	\vspace{-0.8em}
 \end{figure}
 
-\paragraph{Formas de onda da tensão e corrente na carga} \mbox{}\
+Na \autoref{fig:tcentrada} observam-se quedas de tensão na entrada sempre que tirístores entram à condução. 
 
+Como a carga é resistiva, a corrente é proporcional à tensão. Quando a tensão de entrada se anula, a corrente anula-se e os dispositivos que estão a conduzir passam ao corte. Como os tirístores complementares não são imediatamente activados ($\alpha > 0$), a corrente mantém-se a zero até ao disparo.
+
+\paragraph{Formas de onda da tensão e corrente na carga} 
+
+Na carga é possível observar a rectificação da onda completa, e as características resistivas da mesma.
 
 \begin{figure}[H]
 	\centering
@@ -143,7 +150,9 @@ Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se s
 	\vspace{-0.8em}
 \end{figure}
 
-\paragraph{Formas de onda da tensão e corrente no tiristor} \mbox{}\
+\paragraph{Formas de onda da tensão e corrente no tiristor}
+
+Cada par de tirístores conduz alternadamente com o par complementar.
 
 \begin{figure}[H]
 	\centering
@@ -152,6 +161,10 @@ Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se s
 	\label{fig:tctiristor}
 	\vspace{-0.8em}
 \end{figure}
+
+Na \autoref{fig:tctiristor} observa-se a parte da corrente da carga que corresponde ao tirístor em questão, sendo que durante a condução, o tirístor está em curto-circuito.
+
+Quando o dispositivo passa ao corte, cai sobre si toda a tensão de entrada.
 
 \paragraph{Característica de comando do conversor} \mbox{}\
 
