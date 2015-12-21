@@ -270,9 +270,15 @@ Para estudar o comportamento de um retificador de meia onda com uma carga induti
 
 \paragraph{Formas de onda da tensão e corrente na saída}
 
-\todo{inserir imagem Carga Indutiva}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/carga_indutiva}
+	\caption{Formas de onda de tensão na entrada e tensão e corrente na saída para carga indutiva.}
+	\label{fig:carga_indutiva}
+	\vspace{-0.8em}
+\end{figure}
 
-Na \textcolor{red}{Figura Carga Indutiva} podem ser observadas as formas de onda da tensão (a amarelo) na entrada do retificador e a tensão (a azul) e corrente (a rosa) na carga.
+Na \autoref{fig:carga_indutiva} podem ser observadas as formas de onda da tensão (a amarelo) na entrada do retificador e a tensão (a azul) e corrente (a rosa) na carga.
 
 Ao contrário do que se tinha no caso da carga resistiva observa-se que a tensão na carga irá apresentar valores negativos; isto deve-se a que o tiristor apenas deixa de conduzir quando a corrente for zero e como a bobina introduz uma diferença de fase entre tensão e corrente pode observar-se valores de tensão negativos até que o dispositivo entre ao corte.
 
@@ -290,35 +296,71 @@ Teoricamente a introdução deste díodo deverá garantir que a tensão na carga
 
 \paragraph{Formas de onda da tensão e corrente na saída}
 
-\todo{inserir imagem bobina com alfa diferente de zero}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/bobine_alfa_dif_zero}
+	\caption{Formas de onda da tensão na entrada e tensão e corrente na saída para carga indutiva com $\alpha$ diferente de zero.}
+	\label{fig:bobine_alfa_dif_zero}
+	\vspace{-0.8em}
+\end{figure}
 
-Na \textcolor{red}{Figura bobina com alfa diferente de zero} tem-se a tensão na entrada do retificador (a amarelo) e tensão (a azul) e corrente (a rosa) na carga.
+Na \autoref{fig:bobine_alfa_dif_zero} tem-se a tensão na entrada do retificador (a amarelo) e tensão (a azul) e corrente (a rosa) na carga.
 
 Observa-se que existe um ligeiro intervalo no qual a tensão na carga ainda é menor que zero, embora um valor muito inferior ao que se tinha no caso da carga RL sem díodo de roda livre. Isto deve-se a que nesse período a tensão observável será igual à de polarização direta do díodo de roda livre, que como está em antiparalelo com a carga, entra em condução na alternância negativa da tensão. 
 
 \paragraph{Formas de onda da tensão e corrente no tiristor}
 
-\todo{inserir imagem tiristor com alfa zero}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/tiristor_alfa_zero}
+	\caption{Formas de onda da tensão na entrada e corrente no tiristor para carga indutiva.}
+	\label{fig:tiristor_alfa_zero}
+	\vspace{-0.8em}
+\end{figure}
 
-\todo{inserir imagem tiristor com alfa diferente de zero}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.43]{img/figs/tiristor_alfa_dif_zero}
+	\caption{Formas de onda de tensão na entrada e corrente no tiristor para carga indutiva com $\alpha$ diferente de zero.}
+	\label{fig:tiristor_alfa_dif_zero}
+	\vspace{-0.8em}
+\end{figure}
 
-Na \textcolor{red}{Figura tiristor com alfa zero} tem-se a tensão na entrada do retificador (a amarelo) e corrente (a rosa) no tiristor, para $\alpha = 0$, sendo o comportamento para $\alpha$ diferente de $0$ observável na \textcolor{red}{Figura tiristor com alfa diferente de zero}.
+Na \autoref{fig:tiristor_alfa_zero} tem-se a tensão na entrada do retificador (a amarelo) e corrente (a rosa) no tiristor, para $\alpha = 0$, sendo o comportamento para $\alpha$ diferente de $0$ observável na \autoref{fig:tiristor_alfa_dif_zero}.
 
 Nestas figuras no entanto não se observa a tensão aos terminais do tiristor (a azul tem-se sim a tensão na carga). O comportamento expectável para esta seria apresentar o valor de tensão de polarização direta enquanto o dispositivo está à condução e a tensão na entrada do retificador enquanto está ao corte.
 
 \paragraph{Formas de onda da tensão e corrente no díodo e na bobina}
 
-\todo{inserir imagem diodo com alfa zero}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/diodo_alfa_zero}
+	\caption{Formas de onda da tensão na entrada e corrente no diodo para carga indutiva.}
+	\label{fig:diodo_alfa_zero}
+	\vspace{-0.8em}
+\end{figure}
 
-\todo{inserir imagem diodo com alfa diferente de zero}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.43]{img/figs/diodo_alfa_dif_zero}
+	\caption{Formas de onda de tensão na entrada e corrente no diodo para carga indutiva com $\alpha$ diferente de zero.}
+	\label{fig:diodo_alfa_dif_zero}
+	\vspace{-0.8em}
+\end{figure}
 
-Na \textcolor{red}{Figura diodo com alfa zero} tem-se a tensão na entrada do retificador (a amarelo), a tensão na carga (a azul) e corrente no diodo de roda livre (a rosa) para $\alpha = 0$. Já a \textcolor{red}{Figura diodo com alfa diferente de zero} tem-se o comportamento para $\alpha$ diferente de $0$.
+Na \autoref{fig:diodo_alfa_zero} tem-se a tensão na entrada do retificador (a amarelo), a tensão na carga (a azul) e corrente no diodo de roda livre (a rosa) para $\alpha = 0$. Já a \autoref{fig:diodo_alfa_dif_zero} tem-se o comportamento para $\alpha$ diferente de $0$.
 
 Nota-se que a corrente que percorre o díodo é zero até ao momento em que a tensão na carga toma valores negativos. Nesse instante o díodo fica diretamente polarizado e a corrente observável é a de descarga da bobina, que irá decair de forma exponencial até $0$.
 
-\todo{inserir imagem bobina com alfa zero}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/bobine_alfa_zero}
+	\caption{Formas de onda da tensão na entrada e corrente na bobina para carga indutiva.}
+	\label{fig:bobine_alfa_zero}
+	\vspace{-0.8em}
+\end{figure}
 
-Na \textcolor{red}{Figura bobina com alfa zero} tem-se a tensão na entrada do retificador (a amarelo), a tensão na carga (a azul) e corrente na bobina (a rosa) para $\alpha = 0$. Na \textcolor{red}{Figura bobina com alfa diferente de zero} tem-se o comportamento para $\alpha$ diferente de $0$.
+Na \autoref{fig:bobine_alfa_zero} tem-se a tensão na entrada do retificador (a amarelo), a tensão na carga (a azul) e corrente na bobina (a rosa) para $\alpha = 0$. Na \autoref{fig:bobine_alfa_dif_zero} tem-se o comportamento para $\alpha$ diferente de $0$.
 
 Nota-se que embora a tensão na bobina não tenha sido lida, o seu comportamento é conhecido, devendo ter uma forma tal que o seu valor médio seja nulo. Já a corrente comporta-se tal como para o caso de uma carga indutiva até ao momento em que o díodo entra em condução. Nesse instante a corrente apresenta um comportamento exponencial decrescente; isto é similar ao comportamento da corrente que percorre o díodo de roda livre no mesmo período.
 
