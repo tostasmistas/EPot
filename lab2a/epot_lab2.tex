@@ -321,6 +321,31 @@ A montagem pode ser simplificada para o circuito da \autoref{fig:ci_circuito}, c
 	\label{fig:ci_circuito}
 \end{figure}
 
+
+A partir de $\omega t = \alpha$, enquanto o tiristor está a conduzir, o comportamento do circuito é dado pela \autoref{eq:ci_eqdif}.
+
+\begin{equation}
+\label{eq:ci_eqdif}
+v_O = R\,i_{O} + L \frac{\mathrm{d}}{\mathrm{d}t}i_O
+\end{equation}
+
+A \autoref{eq:ci_eqdif} resulta nas \autoref{eq:ci_eqs}.
+
+\begin{subequations}
+\label{eq:ci_eqs}
+\begin{align}
+i_{O\;\text{livre}} &= A\,e^{-\frac{R}{L}(t - \frac{\alpha}{\omega})}\\
+i_{O\;\text{forçado}} &= \sqrt{2} \frac{V}{Z} \sin{(\omega t - \Phi)}\\
+i_O &= i_{O\;\text{livre}} + i_{O\;\text{forçado}}
+\end{align}
+\end{subequations}
+
+Quando a tensão de entrada passa à arcada negativa, o tiristor não pode passar ao corte, uma vez que a corrente na bobina é uma variável de estado e não se pode anular.
+
+Quando a corrente na bobina finalmente se anula ($\omega t = \beta$), o tiristor passa ao corte.
+
+Ao contrário do que se tinha no caso da carga resistiva, a tensão na carga irá consequentemente apresentar valores negativos.
+
 Sabe-se que o ângulo de fase é dado de acordo com a \autoref{eq:angulofase}.
 
 \begin{equation}
@@ -358,31 +383,21 @@ Para os ângulos da tabela anterior determinou-se os valores teóricos médios d
 	\label{tab:tabela3}
 \end{table}
 
-De referir que os valores teóricos foram calculados recorrendo a \todo{inserir aqui as equaçoes}.
-
-A partir de $\omega t = \alpha$, enquanto o tiristor está a conduzir, o comportamento do circuito é dado pela \autoref{eq:ci_eqdif}.
+De referir que os valores teóricos foram calculados recorrendo às Equações \ref{eq:tensaomedia} a \ref{eq:corrmedia}.
 
 \begin{equation}
-\label{eq:ci_eqdif}
-v_O = R\,i_{O} + L \frac{\mathrm{d}}{\mathrm{d}t}i_O
+\label{eq:tensaomedia}
+\overline{V_O} = \frac{1}{2\pi}\int_\alpha^\beta  \sqrt{2} V_I \sin(\omega t)\,\mathrm{d}\omega t
 \end{equation}
 
-A \autoref{eq:ci_eqdif} resulta nas \autoref{eq:ci_eqs}.
+\begin{equation}
+\overline{V_O} = \frac{\sqrt{2}V_I}{\pi} (\cos(\alpha)-\cos(\beta))
+\end{equation}
 
-\begin{subequations}
-\label{eq:ci_eqs}
-\begin{align}
-i_{O\;\text{livre}} &= A\,e^{-\frac{R}{L}(t - \frac{\alpha}{\omega})}\\
-i_{O\;\text{forçado}} &= \sqrt{2} \frac{V}{Z} \sin{(\omega t - \Phi)}\\
-i_O &= i_{O\;\text{livre}} + i_{O\;\text{forçado}}
-\end{align}
-\end{subequations}
-
-Quando a tensão de entrada passa à arcada negativa, o tiristor não pode passar ao corte, uma vez que a corrente na bobina é uma variável de estado e não se pode anular.
-
-Quando a corrente na bobina finalmente se anula ($\omega t = \beta$), o tiristor passa ao corte.
-
-Ao contrário do que se tinha no caso da carga resistiva, a tensão na carga irá consequentemente apresentar valores negativos.
+\begin{equation}
+\label{eq:corrmedia}
+\overline{I_O} = \frac{\overline{V_O}}{R}
+\end{equation}
 
 
 \subsubsection{Carga indutiva RL e díodo de roda livre}
