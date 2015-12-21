@@ -108,32 +108,68 @@ Como este está preparado para servir como circuito de disparo para um Retificad
 
 Para que fosse possível estudar o funcionamento do circuito de disparo começou por se observar as formas de onda da tensão amostrada de entrada e dos impulsos gerados.
 
-\todo{inserir imagem AB 1}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/AB_1.jpg}
+	\caption{Forma de onda da tensão em A e B.}
+	\label{fig:AB_1}
+	\vspace{-0.8em}
+\end{figure}
 
-\todo{inserir imagem AC 1}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.1]{img/figs/AC_1.jpg}
+	\caption{Forma de onda da tensão em A e C.}
+	\label{fig:AC_1}
+	\vspace{-0.8em}
+\end{figure}
 
-Na \textcolor{red}{Figura AB 1} pode ver-se a amarelo a tensão amostrada pelo transformador e a azul o impulso de \textit{Trigger} gerado para $\alpha$. Já na \textcolor{red}{Figura AC 1} pode observar-se a amarelo novamente a tensão amostrada e a azul o impulso de \textit{Trigger} gerado para $\alpha + \pi$.
+Na \autoref{fig:AB_1} pode ver-se a amarelo a tensão amostrada pelo transformador e a azul o impulso de \textit{Trigger} gerado para $\alpha$. Já na \autoref{fig:AC_1} pode observar-se a amarelo novamente a tensão amostrada e a azul o impulso de \textit{Trigger} gerado para $\alpha + \pi$.
 
-A posição destes dois impulsos pode ser controlada através do valor do ângulo de disparo $\alpha$ rodando um manipulo presente na placa do Circuito de Disparo. Ao mudar este valor, as formas de onda são observáveis, tanto para a tensão amostrada e o impulso $\alpha$ como para a mesma tensão e o impulso  $\alpha + \pi$, na \textcolor{red}{Figura AB 2} e \textcolor{red}{Figura AC 2} respectivamente.
+A posição destes dois impulsos pode ser controlada através do valor do ângulo de disparo $\alpha$ rodando um manipulo presente na placa do Circuito de Disparo. Ao mudar este valor, as formas de onda são observáveis, tanto para a tensão amostrada e o impulso $\alpha$ como para a mesma tensão e o impulso  $\alpha + \pi$, na \autoref{fig:AB_2} e \autoref{fig:AC_2} respectivamente.
 
-\todo{inserir imagem AB 2}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/AB_2.jpg}
+	\caption{Forma de onda da tensão em A e B para novo $\alpha$.}
+	\label{fig:AB_2}
+	\vspace{-0.8em}
+\end{figure}
 
-\todo{inserir imagem AC 2}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.11]{img/figs/AC_2.jpg}
+	\caption{Forma de onda da tensão em A e C para novo $\alpha$.}
+	\label{fig:AC_2}
+	\vspace{-0.8em}
+\end{figure}
 
 
 \subsubsection{Trem de impulsos}
 
-Como a frequência de operação é a frequência da rede, $50$ Hz, os impulsos de disparo devem ter durações de poucos milissegundos, evitando-se efeitos negativos de \textit{latching}, sendo estes especialmente prevalentes no caso de cargas indutivas em que o ângulo de disparo será elevado. No entanto estas durações podem saturar o transformador de impulsos ou provocar perdas elevadas na \textit{Gate} do Tiristor.
+Como a frequência de operação é a da rede, $50$ Hz, os impulsos de disparo devem ter durações de poucos milissegundos, evitando-se efeitos negativos de \textit{latching}, sendo estes especialmente prevalentes no caso de cargas indutivas em que o ângulo de disparo será elevado. No entanto estas durações podem saturar o transformador de impulsos ou provocar perdas elevadas na \textit{Gate} do Tiristor.
 
 Para resolver ambos estes problemas utiliza-se um trem de impulsos de \textit{Trigger}.
 
-\todo{inserir imagem trem de impulsos e A}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.115]{img/figs/trem_impulsos_A.jpg}
+	\caption{Formas de onda do trem de impulso e tensão em A.}
+	\label{fig:trem_impulsos_A}
+	\vspace{-0.8em}
+\end{figure}
 
-Colocou-se entre a \textit{Gate} e o Cátodo uma resistência de $33$ $\Omega$ para simular a \textit{Gate} do tiristor. Na \textcolor{red}{Figura trem de impulsos e A} pode assim ver-se a azul a queda de tensão nessa resistência e a amarelo o trem de impulsos.
+Colocou-se entre a \textit{Gate} e o Cátodo uma resistência de $33$ $\Omega$ para simular a \textit{Gate} do tiristor. Na \autoref{fig:trem_impulsos_A} pode assim ver-se a azul a queda de tensão nessa resistência e a amarelo o trem de impulsos.
 
-\todo{inserir imagem trem de impulsos e B}
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.09]{img/figs/trem_impulsos_B.jpg}
+	\caption{Formas de onda do trem de impulso e tensão em B.}
+	\label{fig:trem_impulsos_B}
+	\vspace{-0.8em}
+\end{figure}
 
-Na \textcolor{red}{Figura trem de impulsos e B} pode também observar-se o trem de impulsos, a amarelo, face ao impulso original correspondente, a azul.
+Na \autoref{fig:trem_impulsos_B} pode também observar-se o trem de impulsos, a amarelo, face ao impulso original correspondente, a azul.
 
 
 \subsection{Estudo do circuito de potência}
