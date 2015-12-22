@@ -239,22 +239,61 @@ Quando o MOSFET passa ao corte, o díodo passa à condução pelo que a bobine c
 
 \paragraph{Tensão na carga em função do fator de ciclo}\mbox{}\
 
+O fator de ciclo relaciona a tensão de entrada com a de saída e a sua expressão para o conversor redutor é conhecida e tal como se apresenta na \autoref{D_buck}.
 
+\begin{equation}
+	D= \frac{V_o}{V_i} \label{D_buck}
+\end{equation}
 
-\paragraph{Efeito da adição de um \textit{Snubber} entre o Dreno e \textit{Source} do MOSFET para $50$ kHz}\mbox{}\
+Sendo assim, fazendo variar o fator de ciclo, e conhecendo o valor da tensão de entrada, que é imposto como igual a $20$ V, pode então obter-se o valor teórico para a tensão de saída através da \autoref{Vo_buck}.
+
+\begin{equation}
+V_o= \frac{D}{V_i} \label{Vo_buck}
+\end{equation}
+
+Sendo assim pode fazer-se uma comparação entre os valores esperados teoricamente e os lidos no laboratório, estando esta comparação presente na \autoref{tab:tabela_buck}
+
+\begin{table}[!htb]
+	\centering
+	\caption{Comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo.}
+	\includegraphics[width=0.8\linewidth]{teoricas/tabela_buck}
+	\label{tab:tabela_buck}
+\end{table}
+
+Para que seja possível observar esta relação de forma mais expedita, apresenta-se também um gráfico para a mesma, visível na \autoref{fig:graf_buck}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=1.0]{teoricas/graf_buck}
+	\caption{Gráfico de comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo.}
+	\label{fig:graf_buck}
+	\vspace{-0.8em}
+\end{figure}
+
+Observa-se assim que através do fator de ciclo é possível controlar o grau de atenuação da tensão de saída face à de entrada, estando o conversor a funcionar tal como desejado, ou seja, um "transformador" redutor de tensão DC.
+
+Nota-se no entanto uma ligeira diferença entre o valor teórico e o experimental, que se deve essencialmente a possíveis perdas e não idealidades dos componentes semicondutores, que não estão consideradas na aplicação da \autoref{D_buck}.
+
+\paragraph{Efeito de um \textit{Snubber} entre o Dreno e \textit{Source} do MOSFET para $50$ kHz}\mbox{}\
+
+De seguida aumentou-se a frequência para que fosse possível evidenciar o efeito do \textit{Snubber} entre o dreno e \textit{Source} do MOSFET. As formas de onda obtidas podem ser vistas na \autoref{fig:snubber_buck}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.175]{img/figs/snubber_buck}
-	\caption{Formas de onda da tensão na carga e corrente na bobine com o osciloscópio com \textit{snubber}.}
+	\caption{Efeito de um \textit{snubber} nas formas de onda tensão de saída e corrente na bobine.}
 	\label{fig:snubber_buck}
 	\vspace{-0.8em}
 \end{figure}
 
+Nesta pode ver-se a amarelo a tensão aos termianis do MOSFET, a azul a tensão na carga e a rosa a corrente na bobine.
 
-\todo{mudar caption}
+Com a presença do \textit{snubber} pretende-se um efeito idêntico ao de um filtro passa baixo, para que seja possível eliminar os picos de alta frequência na tensão. Nota-se no entanto por observação da figura que o efeito é marginal, pelo que a frequência de corte do \textit{snubber}
+deverá ser superior à de operação considerada.
 
 \paragraph{Forma de onda da tensão V\textsubscript{AK} do Díodo D\textsubscript{1} para $200$ kHz}\mbox{}\
+
+Na sequência da subsecção anterior aumentou-se a frequência de operação para $200$ kHz sendo as formas de onda obtidas apresentadas na \autoref{fig:vak_hf_buck}.
 
 \begin{figure}[H]
 	\centering
@@ -264,6 +303,9 @@ Quando o MOSFET passa ao corte, o díodo passa à condução pelo que a bobine c
 	\vspace{-0.8em}
 \end{figure}
 
+Novamente a amarelo tem-se a tensão aos termianis do MOSFET, a azul a tensão aos terminais do díodo e a rosa a corrente na bobine.
+
+Pode ver-se agora que a frequência do pico da tensão no díodo será bastante inferior pelo que esta frequência de operação estará próxima da de corte do \textit{snubber}, pelo que o seu efeito já é apreciável nesta situação.
 
 \subsection{Conversor Ampliador}
 
