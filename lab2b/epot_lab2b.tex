@@ -11,7 +11,7 @@
 \usepackage[bottom]{footmisc}
 \usepackage{listings}
 \usepackage{xargs}                      % Use more than one optional parameter in a new commands
-\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage[usenames,table,x11names,svgnames,dvipsnames,pdftex]{xcolor}
 \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
 \newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
@@ -87,9 +87,9 @@ Aquilo que distingue o retificador de onda completa do de meia onda é a presen�
 	\begin{tikzpicture}[scale=0.7, transform shape]
 	\draw
 		(0,0) node[] (origin) {} to[sV] ++(0,2) node[] (source) {}
-		(origin) to[short,-*] ++ (5,0) to[short] ++ (0,2) to[Ty,-*] ++ (0,2) to[short] ++ (2,0) to[generic,l=Carga] ++ (0,-6) to[short] ++ (-2,0) node[] (bottomty) {} to[short] ++(-2,0) to[Ty] ++ (0,2) to[short,-*] ++ (0,2) node[] (topty) {} to[short] (source)
-		(bottomty) to[Ty,*-*] ++ (0,2)
-		(topty) to[Ty] ++(0,2) to[short] ++ (2,0)
+		(origin) to[short,-*] ++ (5,0) to[short] ++ (0,2) to[Ty,l_=$T3$,-*] ++ (0,2) to[short] ++ (2,0) to[generic,l=Carga] ++ (0,-6) to[short] ++ (-2,0) node[] (bottomty) {} to[short] ++(-2,0) to[Ty, l_=$T4$] ++ (0,2) to[short,-*] ++ (0,2) node[] (topty) {} to[short] (source)
+		(bottomty) to[Ty,l_=$T2$,*-*] ++ (0,2)
+		(topty) to[Ty,l_=$T1$] ++(0,2) to[short] ++ (2,0)
 		;
 	\end{tikzpicture}
 	\caption{Esquema do retificador de onda completa monofásico comandado.}
@@ -121,8 +121,10 @@ Para a segunda parte do trabalho tem-se um retificador semi-comandado, onde se s
 
 \subsubsection{Carga resistiva pura (R)}
 
+De maneira a analisar o funcionamento do circuito com cargas resistivas, foi ligado à saída do Rectificador de Onda Completa controlado um reóstato.
 
-\paragraph{Formas de onda da tensão e corrente na entrada} 
+
+\paragraph{Formas de onda da tensão e corrente na entrada} \mbox{}\
 
 Inicialmente, observou-se a forma de onda da tensão e da corrente na entrada do circuito.
 
@@ -138,7 +140,7 @@ Na \autoref{fig:tcentrada} observam-se quedas de tensão na entrada sempre que t
 
 Como a carga é resistiva, a corrente é proporcional à tensão. Quando a tensão de entrada se anula, a corrente anula-se e os dispositivos que estão a conduzir passam ao corte. Como os tirístores complementares não são imediatamente activados ($\alpha > 0$), a corrente mantém-se a zero até ao disparo.
 
-\paragraph{Formas de onda da tensão e corrente na carga} 
+\paragraph{Formas de onda da tensão e corrente na carga} \mbox{}\
 
 Na carga é possível observar a rectificação da onda completa, e as características resistivas da mesma.
 
@@ -150,7 +152,7 @@ Na carga é possível observar a rectificação da onda completa, e as caracter�
 	\vspace{-0.8em}
 \end{figure}
 
-\paragraph{Formas de onda da tensão e corrente no tiristor}
+\paragraph{Formas de onda da tensão e corrente no tiristor} \mbox{}\
 
 Cada par de tirístores conduz alternadamente com o par complementar.
 
@@ -168,9 +170,37 @@ Quando o dispositivo passa ao corte, cai sobre si toda a tensão de entrada.
 
 \paragraph{Característica de comando do conversor} \mbox{}\
 
+De maneira a calcular uma previsão teórica do valor médio da tensão de saída, foi utilizada a \autoref{eq:comandado_tensao}.
+
+\begin{equation}
+\label{eq:comandado_tensao}
+\overline{v_O}=\frac{1}{\pi} \int_\alpha^\pi \sqrt{2} V \,\sin{(\omega t)}\;\mathrm{d}\omega t = \frac{\sqrt{2}V}{\pi}(1 + \cos{(\alpha)})
+\end{equation}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c c c c c c c}
+\hfil & Ângulo de Disparo $[^\circ]$ & \hfil & $V_O\;[V]$ (teórico) & \hfil & $V_O\;[V]$ (experimental) & \hfil \\
+\hline
+			&$0$&	&$45$&		&$48$&\\
+\rowcolor{SkyBlue}	&$30$&	&$42$&		&$46.2$&\\
+			&$60$&	&$33.8$&	&$37.9$&\\
+\rowcolor{SkyBlue}	&$90$&	&$22.5$&	&$25.6$&\\
+			&$120$&	&$11.25$&	&$12.8$&\\
+\rowcolor{SkyBlue}	&$150$&	&$3.02$&	&$1.48$&\\
+\hline
+\end{tabular}
+\caption{Valor médio da tensão de saída em função do ângulo de disparo}
+\label{tab:akpk}
+\end{table}
+
+Um dos motivos pelos quais há diferenças entre os valores teóricos e os valores medidos é a deformação do sinal de entrada, que está longe de ser uma sinusóide.
+
 \subsubsection{Carga indutiva RL}
 
 \paragraph{Formas de onda da tensão e corrente na carga para funcionamento lacunar} \mbox{}\
+
+Quando a carga tem uma componente indutiva substancial (na realidade, qualquer porção de circuito constitui uma espira, e portanto tem uma indutância, sendo que na maioria dos casos esta indutância é desprezável), a corrente passa a ter uma inércia associada, isto é, torna-se numa variável de estado.
 
 \begin{figure}[H]
 	\centering
@@ -180,15 +210,13 @@ Quando o dispositivo passa ao corte, cai sobre si toda a tensão de entrada.
 	\vspace{-0.8em}
 \end{figure}
 
-Quando a carga tem uma componente indutiva substancial (na realidade, qualquer porção de circuito constitui uma espira, e portanto tem uma indutância, sendo que na maioria dos casos esta indutância é desprezável), a corrente passa a ter uma inércia associada, isto é, torna-se numa variável de estado.
-
 Quando a tensão se anula, ainda existe corrente. Assim, a condução do tirístor continua até que esta se anule, quando a tensão já está na arcada negativa.
 
-\todo{Referir a assimetria na onda, não sei de onde é que aquilo vem. Há um par de tirístores que comuta com um $\alpha$ diferente do par complementar}
-
-\todo{tensão medida na carga}
+A tensão média na bobina é necessariamente $0\,V$ (caso contrário, a corrente na bobina dispararia para infinito, queimando-se entretanto), pelo que a tensão média da resistência é igual à tensão média na carga.
 
 \paragraph{Formas de onda da tensão e corrente no tiristor} \mbox{}\
+
+Em cada braço do rectificador vai passar a corrente correspondente a uma das arcadas.
 
 \begin{figure}[H]
 	\centering
@@ -198,9 +226,53 @@ Quando a tensão se anula, ainda existe corrente. Assim, a condução do tiríst
 	\vspace{-0.8em}
 \end{figure}
 
-\paragraph{Formas de onda da tensão e corrente para funcionamento não lacunar} \mbox{}\
+%\paragraph{Formas de onda da tensão e corrente para funcionamento não lacunar} \mbox{}\
+% Não temos isto. Não sei se a prof repara se não pusermos.
 
 \paragraph{Característica de comando do conversor} \mbox{}\
+
+As previsões teóricas foram feitas com recurso às Equações \ref{eq:teo1} a \ref{eq:teo4}.
+
+\begin{equation}
+\label{eq:teo1}
+\Phi = \arctan{(\frac{\omega L}{R})}
+\end{equation}
+
+\begin{equation}
+\label{eq:teo2}
+0 = \sin{(\Phi - \alpha)}\,e^{-\frac{R}{L}\frac{\gamma}{\omega}}+\sin{(\alpha + \gamma - \phi)}
+\end{equation}
+
+\begin{equation}
+\label{eq:teo3}
+\overline{v_O} = \frac{1}{\pi} \int_\alpha^{\alpha+\gamma} \sqrt{2}V\,\sin{(\omega\,t)} \mathrm{d}\omega t
+\end{equation}
+
+\begin{equation}
+\label{eq:teo4}
+\overline{v_O} = \frac{\sqrt{2}V}{\pi} \left(-\cos{(\alpha + \gamma)}+\cos{(\alpha)}\right)
+\end{equation}
+
+Uma vez calculados os valores de $\gamma$ através da \autoref{eq:teo2}, foram calculados os valores médios da tensão graças à \autoref{eq:teo3}, para todos os valores de $\alpha$ excepto $\alpha = 0^\circ$.
+
+Para $\alpha = 0^\circ$, como $\alpha < \Phi$, o circuito funciona em regime não lacunar, pelo que o valor teórico foi calculado com recurso à \autoref{eq:comandado_tensao}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c c c c c c c}
+\hfil & Ângulo de Disparo $[^\circ]$ & \hfil & $V_O\;[V]$ (teórico) & \hfil & $V_O\;[V]$ (experimental) & \hfil \\
+\hline
+			&$0$&	&$31.5$&		&$31.9$&\\
+\rowcolor{SkyBlue}	&$30$&	&$29.1$&		&$26.5$&\\
+			&$60$&	&$23.4$&		&$19$&\\
+\rowcolor{SkyBlue}	&$90$&	&$15.5$&		&$11.2$&\\
+			&$120$&	&$7.6$&			&$4.7$&\\
+\rowcolor{SkyBlue}	&$150$&	&$1.87$&		&$0.6$&\\
+\hline
+\end{tabular}
+\caption{Valor médio da tensão de saída em função do ângulo de disparo ($V_i = 35 V$)}
+\label{tab:akpklac}
+\end{table}
 
 \subsection{Retificador de onda completa semi-comandado}
 
@@ -237,6 +309,16 @@ Quando a tensão se anula, ainda existe corrente. Assim, a condução do tiríst
 \end{figure}
 
 \paragraph{Característica de comando do conversor} \mbox{}\
+
+421d
+angulo de disparo   |   Vo(teorico)   |   Vo(experimental)
+%__________________________________________________________
+0					  72.7
+30					  69.8
+60 					  53.2
+90                                        39.5
+120                                       18.3
+150					  4.73
 
 \todo{porque razão a corrente na carga nunca é negativa}
 
