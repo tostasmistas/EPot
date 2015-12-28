@@ -222,7 +222,7 @@ Esta corrente irá apresentar o mesmo valor médio que I\textsubscript{D}, no en
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.15]{img/figs/tensao_carga_corrente_bobine_ac_rlcbuck}
-	\caption{Formas de onda da tensão V\textsubscript{DS} (a amarelo), corrente na bobine (a rosa) e tensão ao terminais da bobine (a azul).}
+	\caption{Formas de onda da tensão V\textsubscript{DS} (a amarelo), corrente na bobine (a rosa) e tensão ao terminais do condensador (a azul).}
 	\label{fig:tensao_carga_corrente_bobine_ac_rlcbuck}
 	\vspace{-0.8em}
 \end{figure} 
@@ -231,7 +231,9 @@ Esta corrente irá apresentar o mesmo valor médio que I\textsubscript{D}, no en
 
 A partir desta figura pode-se melhor compreender o comportamento do conversor redutor sujeito a uma carga RLC. Tem-se que durante o período em que o MOSFET está em condução, o díodo estará ao corte e a bobine carrega; observável pelo declive crescente da corrente na saída. 
 
-Quando o MOSFET passa ao corte, o díodo passa à condução pelo que a bobine começa a descarregar; sendo que se tem corrente com declive negativo. Para a corrente na bobina, tem-se um valor médio desta igual a zero, tal como esperado quando se está a lidar com este componente, e nota-se também que o valor médio da tensão aos seus terminais é igualmente zero.
+Quando o MOSFET passa ao corte, o díodo passa à condução pelo que a bobine começa a descarregar; sendo que se tem corrente com declive negativo. 
+
+Nota-se que, embora não se tenha observado as formas de onda da corrente no condensador e tensão na bobine, sabe-se que o valor médio destas grandezas será zero, devido a imposições físicas deste tipo de componentes.
 
 \paragraph{Tensão na carga em função do fator de ciclo}\mbox{}\
 
