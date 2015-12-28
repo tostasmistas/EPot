@@ -7,6 +7,7 @@
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{subfig}
+\usepackage{epstopdf}
 \usepackage{fixltx2e}
 \usepackage[bottom]{footmisc}
 \usepackage{listings}
@@ -64,7 +65,7 @@ Turno de Segunda-feira das 17h00 - 20h00
 
 \vfill
 
-{\large Lisboa,  de Novembro de 2015} 
+{\large Lisboa, 28 de Dezembro de 2015} 
 	
 \end{center}
 \end{titlepage}
@@ -121,7 +122,7 @@ Para a segunda parte do trabalho tem-se um rectificador semi-comandado, onde se 
 
 \subsubsection{Carga resistiva pura (R)}
 
-De maneira a analisar o funcionamento do circuito com cargas resistivas, foi ligado à saída do Rectificador de Onda Completa controlado um reóstato.
+De maneira a analisar o funcionamento do circuito com cargas resistivas, foi ligado à saída do rectificador de onda completa controlado um reóstato.
 
 
 \paragraph{Formas de onda da tensão e corrente na entrada} \mbox{}\
@@ -136,9 +137,9 @@ Inicialmente, observou-se a forma de onda da tensão e da corrente na entrada do
 	\vspace{-0.8em}
 \end{figure}
 
-Na \autoref{fig:tcentrada} observam-se quedas de tensão na entrada sempre que tirístores entram à condução. 
+Na \autoref{fig:tcentrada} observam-se quedas de tensão na entrada sempre que tiristores entram à condução. 
 
-Como a carga é resistiva, a corrente é proporcional à tensão. Quando a tensão de entrada se anula, a corrente anula-se e os dispositivos que estão a conduzir passam ao corte. Como os tirístores complementares não são imediatamente activados ($\alpha > 0$), a corrente mantém-se a zero até ao disparo.
+Como a carga é resistiva, a corrente é proporcional à tensão. Quando a tensão de entrada se anula, a corrente anula-se e os dispositivos que estão a conduzir passam ao corte. Como os tiristores complementares não são imediatamente activados ($\alpha > 0$), a corrente mantém-se a zero até ao disparo.
 
 \paragraph{Formas de onda da tensão e corrente na carga} \mbox{}\
 
@@ -154,7 +155,7 @@ Na carga é possível observar a rectificação da onda completa, e as caracter�
 
 \paragraph{Formas de onda da tensão e corrente no tiristor} \mbox{}\
 
-Cada par de tirístores conduz alternadamente com o par complementar.
+Cada par de tiristores conduz alternadamente com o par complementar.
 
 \begin{figure}[H]
 	\centering
@@ -164,9 +165,9 @@ Cada par de tirístores conduz alternadamente com o par complementar.
 	\vspace{-0.8em}
 \end{figure}
 
-Na \autoref{fig:tctiristor} observa-se a parte da corrente da carga que corresponde ao tirístor em questão, sendo que durante a condução, o tirístor está em curto-circuito.
+Na \autoref{fig:tctiristor} observa-se a parte da corrente da carga que corresponde ao tiristores em questão, sendo que durante a condução, o tiristor está em curto-circuito.
 
-Quando o dispositivo passa ao corte, cai sobre si toda a tensão de entrada.
+Quando o dispositivo passa ao corte, ``cai sobre si'' toda a tensão de entrada.
 
 \paragraph{Característica de comando do conversor} \mbox{}\
 
@@ -180,7 +181,7 @@ De maneira a calcular uma previsão teórica do valor médio da tensão de saíd
 \begin{table}[H]
 \centering
 \begin{tabular}{c c c c c c c}
-\hfil & Ângulo de Disparo $[^\circ]$ & \hfil & $V_O\;[V]$ (teórico) & \hfil & $V_O\;[V]$ (experimental) & \hfil \\
+\hfil & Ângulo de Disparo $[^\circ]$ & \hfil & $V_O$ [V] (teórico) & \hfil & $V_O$ [V] (experimental) & \hfil \\
 \hline
 			&$0$&	&$45$&		&$48$&\\
 \rowcolor{SkyBlue}	&$30$&	&$42$&		&$46.2$&\\
@@ -190,14 +191,14 @@ De maneira a calcular uma previsão teórica do valor médio da tensão de saíd
 \rowcolor{SkyBlue}	&$150$&	&$3.02$&	&$1.48$&\\
 \hline
 \end{tabular}
-\caption{Valor médio da tensão de saída em função do ângulo de disparo($V_i = 50 V$)}
+\caption{Valor médio da tensão de saída em função do ângulo de disparo ($V_i = 50$ V)}
 \label{tab:akpk}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, width=0.8\textwidth]{img/comando1}
-	\caption{Características teórica e experimental}
+	\caption{Característica de comando do rectificador de onda completa totalmente comandado com carga resistiva - teórica e experimental.}
 	\label{fig:comando1}
 	\vspace{-0.8em}
 \end{figure}
@@ -218,9 +219,9 @@ Quando a carga tem uma componente indutiva substancial (na realidade, qualquer p
 	\vspace{-0.8em}
 \end{figure}
 
-Quando a tensão se anula, ainda existe corrente. Assim, a condução do tirístor continua até que esta se anule, quando a tensão já está na arcada negativa.
+Quando a tensão se anula, ainda existe corrente. Assim, a condução do tiristor continua até que esta se anule, quando a tensão já está na arcada negativa.
 
-A tensão média na bobina é necessariamente $0\,V$ (caso contrário, a corrente na bobina dispararia para infinito, queimando-se entretanto), pelo que a tensão média da resistência é igual à tensão média na carga.
+A tensão média na bobina é necessariamente $0$ V (caso contrário, a corrente na bobina dispararia para infinito, queimando-se entretanto), pelo que a tensão média da resistência é igual à tensão média na carga.
 
 \paragraph{Formas de onda da tensão e corrente no tiristor} \mbox{}\
 
@@ -268,7 +269,7 @@ Para $\alpha = 0^\circ$, como $\alpha < \Phi$, o circuito funciona em regime nã
 \begin{table}[H]
 \centering
 \begin{tabular}{c c c c c c c}
-\hfil & Ângulo de Disparo $[^\circ]$ & \hfil & $V_O\;[V]$ (teórico) & \hfil & $V_O\;[V]$ (experimental) & \hfil \\
+\hfil & Ângulo de Disparo $[^\circ]$ & \hfil & $V_O$ [V] (teórico) & \hfil & $V_O$ [V] (experimental) & \hfil \\
 \hline
 			&$0$&	&$31.5$&		&$31.9$&\\
 \rowcolor{SkyBlue}	&$30$&	&$29.1$&		&$26.5$&\\
@@ -278,14 +279,14 @@ Para $\alpha = 0^\circ$, como $\alpha < \Phi$, o circuito funciona em regime nã
 \rowcolor{SkyBlue}	&$150$&	&$1.87$&		&$0.6$&\\
 \hline
 \end{tabular}
-\caption{Valor médio da tensão de saída em função do ângulo de disparo ($V_i = 35 V$)}
+\caption{Valor médio da tensão de saída em função do ângulo de disparo ($V_i = 35$ V)}
 \label{tab:akpklac}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, width=0.8\textwidth]{img/comando2}
-	\caption{Características teórica e experimental}
+	\caption{Característica de comando do rectificador de onda completa totalmente comandado com carga indutiva RL - teórica e experimental.}
 	\label{fig:comando2}
 	\vspace{-0.8em}
 \end{figure}
@@ -312,7 +313,7 @@ Uma vez mais, o sinal de entrada não é uma sinusóide perfeita (longe disso), 
 	\vspace{-0.8em}
 \end{figure}
 
-De maneira a observar o funcionamento do Rectificador semi-comandado, os tirístores $T2$ e $T4$, isto é, os correspondentes ao troço inferior de cada braço do rectificador, foram substituídos por díodos.
+De maneira a observar o funcionamento do rectificador semi-comandado, os tiristores $T2$ e $T4$, isto é, os correspondentes ao troço inferior de cada braço do rectificador, foram substituídos por díodos.
 
 \subsubsection{Carga indutiva RL}
 
@@ -326,7 +327,9 @@ De maneira a observar o funcionamento do Rectificador semi-comandado, os tiríst
 	\vspace{-0.8em}
 \end{figure}
 
-Na entrada do circuito, é possível observar pequenos picos na tensão sempre que um dispositivo (tirístor ou díodo) passam da condução ao corte, e vice versa.
+Na entrada do circuito, é possível observar pequenos picos na tensão sempre que um dispositivo (tiristor ou díodo) passam da condução ao corte, e vice versa.
+
+\pagebreak
 
 \paragraph{Formas de onda da tensão e corrente na carga} \mbox{}\
 
@@ -338,11 +341,11 @@ Na entrada do circuito, é possível observar pequenos picos na tensão sempre q
 	\vspace{-0.8em}
 \end{figure}
 
-Na carga verifica-se que a tensão é sempre positiva, ao contrário da situação anterior. Uma vez que continua a haver a mesma inércia da corrente (causada pela bobina), a justificação pela qual a tensão deixa de tomar valores negativos só se pode dever à substituição dos dois tirístores por díodos.
+Na carga verifica-se que a tensão é sempre positiva, ao contrário da situação anterior. Uma vez que continua a haver a mesma inércia da corrente (causada pela bobina), a justificação pela qual a tensão deixa de tomar valores negativos só se pode dever à substituição dos dois tiristores por díodos.
 
-Após constatar esse facto, é fácil perceber que os tirístores necessitam impulso de gate para conduzir, que os díodos, evidentemente, não precisam.
+Após constatar esse facto, é fácil perceber que os tiristores necessitam impulso de \textit{gate} para conduzir, que os díodos, evidentemente, não precisam.
 
-Assim, quando a tensão de alimentação passa à arcada negativa, a continuidade da corrente da carga é assegurada pelos díodos (na situação anterior, como os tirístores não tinham impulso de gate nesse instante, o mesmo não se verificava).
+Assim, quando a tensão de alimentação passa à arcada negativa, a continuidade da corrente da carga é assegurada pelos díodos (na situação anterior, como os tiristores não tinham impulso de \textit{gate} nesse instante, o mesmo não se verificava).
 
 \paragraph{Formas de onda da tensão e corrente nos díodos} \mbox{}\
 
@@ -361,7 +364,7 @@ Assim, quando a tensão de alimentação passa à arcada negativa, a continuidad
 
 De maneira a calcular o valor médio da tensão na carga, foi utilizada uma expressão semelhante à \autoref{eq:teo3} da questão anterior, mas uma vez que independentemente do ângulo de condução $\gamma$, a tensão é cortada para $\omega t = \pi$, o limite superior de integração da tensão é $\pi$.
 
-A expressão resultante é portanto idêntica à da tensão média para o rectificador de onda completa totalmente controlado (\autoref{eq:comandado_tensao}).
+A expressão resultante é portanto idêntica à da tensão média para o rectificador de onda completa totalmente controlado, \autoref{eq:comandado_tensao}.
 
 \begin{table}[H]
 \centering
@@ -384,7 +387,7 @@ A expressão resultante é portanto idêntica à da tensão média para o rectif
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, width=0.8\textwidth]{img/comando3}
-	\caption{Características teórica e experimental}
+	\caption{Característica de comando do rectificador de onda completa semi-comandado com carga indutiva RL - teórica e experimental.}
 	\label{fig:comando3}
 	\vspace{-0.8em}
 \end{figure}
@@ -393,7 +396,7 @@ Na \autoref{fig:comando3} verifica-se uma melhor correspondência entre a previs
 
 \paragraph{Conclusões} \mbox{}\
 
-A corrente na carga nunca é negativa, uma vez que isso exigiria que pelo menos um dos dois díodos (ou, no caso anterior, pelo menos um dos dois tirístores) conduzisse enquanto inversamente polarizados. Isso levaria à destruição do dispositivo.
+A corrente na carga nunca é negativa, uma vez que isso exigiria que pelo menos um dos dois díodos (ou, no caso anterior, pelo menos um dos dois tiristores) conduzisse enquanto inversamente polarizados. Isso levaria à destruição do dispositivo.
 
 %\todo{valor médio da tensão na carga para ângulo de diaspor deo 60º} Isso está feito na característica de comando
 
@@ -410,12 +413,12 @@ Um filtro de saída teria de ser um filtro de 1ª ordem na forma de uma bobina e
 \section{Simulações}
 \subsection{Circuitos de Potência usados}
 
-Neste projeto foram utilizados três circuitos de potência: um rectificador de onda completa totalmente comandado, quer com carga resistiva, quer com carga \textit{RL}, e um rectificador de onda completa semi-comandado com carga \textit{RL}. 
+Neste projeto foram utilizados três circuitos de potência: um rectificador de onda completa totalmente comandado, quer com carga resistiva, quer com carga RL, e um rectificador de onda completa semi-comandado com carga RL. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito1}
-	\caption{Rectificador de onda completa com comando total e carga resistiva, \textit{R}.}
+	\caption{Rectificador de onda completa com comando total e carga resistiva R.}
 	\label{fig:circuit_3}
 	\vspace{-0.8em}
 \end{figure}
@@ -423,7 +426,7 @@ Neste projeto foram utilizados três circuitos de potência: um rectificador de 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito2}
-	\caption{Rectificador de onda completa com comando total e carga \textit{RL}.}
+	\caption{Rectificador de onda completa com comando total e carga RL.}
 	\label{fig:circuit_4}
 	\vspace{-0.8em}
 \end{figure}
@@ -431,19 +434,19 @@ Neste projeto foram utilizados três circuitos de potência: um rectificador de 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito3}
-	\caption{Rectificador onda completa semi-comandado e carga \textit{RL}.}
+	\caption{Rectificador onda completa semi-comandado e carga RL.}
 	\label{fig:circuit_5}
 	\vspace{-0.8em}
 \end{figure}
 \pagebreak 
 
-É importante referir que para a simulação do circuito de disparos se definiu que iria ser utilizado um \textit{drive} que impulsos com uma frequência  de $50Hz$. Pode-se controlar o ângulo de  disparo com uma fonte DC interactiva. Na \autoref{fig:circuit_6} está representado o sinal do gerador de impulsos com a tensão de entrada.
+É importante referir que, para a simulação do circuito de disparos, se definiu que iria ser utilizado um \textit{drive} que impulsos com uma frequência  de $50$ Hz. Pode-se controlar o ângulo de  disparo com uma fonte DC interactiva. Na \autoref{fig:circuit_6} está representado o sinal do gerador de impulsos com a tensão de entrada.
 \vspace{17mm}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito4}
-	\caption{Tensão de entrada (sinal vermelho) e sinal da gate do tirístor (sinal azul), bem como o seu complementar (sinal a verde).}
+	\caption{Tensão de entrada (a vermelho) e sinal da \textit{gate} do tiristor (a azul), bem como o seu complementar (a verde).}
 	\label{fig:circuit_6}
 	\vspace{-0.8em}
 \end{figure}
@@ -455,7 +458,7 @@ A \autoref{fig:circuit_7} tem representadas as formas de onda para a tensão e c
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito5}
-	\caption{Tensão (sinal vermelho) e corrente (sinal azul) de entrada.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de entrada.}
 	\label{fig:circuit_7}
 	\vspace{-0.8em}
 \end{figure}
@@ -466,17 +469,17 @@ As formas de onda referentes à saída, isto é, à carga, podem ser visualizada
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito6}
-	\caption{Tensão (sinal vermelho) e corrente (sinal azul) de saída.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de saída.}
 	\label{fig:circuit_8}
 	\vspace{-0.8em}
 \end{figure}
 
-Já as formas de onda da tensão e da corrente de um dos tirístores podem ser visualizadas na \autoref{fig:circuit_9}
+Já as formas de onda da tensão e da corrente de um dos tiristores podem ser visualizadas na \autoref{fig:circuit_9}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito7}
-	\caption{Tensão (sinal vermelho) e corrente (sinal azul) do tirístor.}
+	\caption{Tensão (a vermelho) e corrente (a azul) do tiristor.}
 	\label{fig:circuit_9}
 	\vspace{-0.8em}
 \end{figure}
@@ -485,13 +488,13 @@ Já as formas de onda da tensão e da corrente de um dos tirístores podem ser v
 
 \subsubsection{Rectificador de onda completa com comando total e carga \textit{RL}}
 
-De igual forma é importante visualizar o comportamento da tensão e da corrente no circuito com uma carga \textit{RL}. Os sinais à saída estão representados na \autoref{fig:circuit_10}, e para o tirístor estão representados na \autoref{fig:circuit_11}.
+De igual forma é importante visualizar o comportamento da tensão e da corrente no circuito com uma carga RL. Os sinais à saída estão representados na \autoref{fig:circuit_10}, e para o tiristor estão representados na \autoref{fig:circuit_11}.
 \pagebreak
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito8}
-	\caption{Tensão (sinal vermelho) e corrente (sinal azul) de saida.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de saída.}
 	\label{fig:circuit_10}
 	\vspace{-0.8em}
 \end{figure}
@@ -499,7 +502,7 @@ De igual forma é importante visualizar o comportamento da tensão e da corrente
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito9}
-	\caption{Tensão (sinal vermelho) e corrente (sinal azul) de tirístor.}
+	\caption{Tensão (a vermelho) e corrente (a azul) do tiristor.}
 	\label{fig:circuit_11}
 	\vspace{-0.8em}
 \end{figure}
@@ -509,13 +512,13 @@ De igual forma é importante visualizar o comportamento da tensão e da corrente
 
 \subsubsection{Rectificador de onda completa semi-comandado com carga \textit{RL}}
 
-De igual forma é importante visualizar o comportamento da tensão e da corrente no rectificador com uma carga \textit{RL} e díodos de roda livre. Os sinais à saída estão representados na \autoref{fig:circuit_12}, e no tirístor estão representados na \autoref{fig:circuit_13}.
+De igual forma é importante visualizar o comportamento da tensão e da corrente no rectificador com uma carga \textit{RL} e díodos de roda livre. Os sinais à saída estão representados na \autoref{fig:circuit_12}, e no tiristor estão representados na \autoref{fig:circuit_13}.
 
 \pagebreak
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito10}
-	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\caption{Tensão (a vermelho) e corrente (a azul) de saída.}
 	\label{fig:circuit_12}
 	\vspace{-0.8em}
 \end{figure}
@@ -523,11 +526,12 @@ De igual forma é importante visualizar o comportamento da tensão e da corrente
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito11}
-	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de tirístor.}
+	\caption{Tensão (a vermelho) e corrente (a azul) do tiristor.}
 	\label{fig:circuit_13}
 	\vspace{-0.8em}
 \end{figure}
 
+\pagebreak
 
 \begin{thebibliography}{2}
 	

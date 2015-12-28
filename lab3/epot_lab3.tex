@@ -64,7 +64,7 @@ Turno de Segunda-feira das 17h00 - 20h00
 
 \vfill
 
-{\large Lisboa,  de Novembro de 2015} 
+{\large Lisboa, 28 de Dezembro de 2015} 
 	
 \end{center}
 \end{titlepage}
@@ -76,15 +76,15 @@ Turno de Segunda-feira das 17h00 - 20h00
 
 O objetivo deste trabalho é estudar o funcionamento das três principais topologias de conversores CC/CC, sendo estas o conversor redutor, conversor ampliador e redutor-ampliador.
 
-Este tipo de conversores pode ser visto como o equivalente em corrente continua de um transformador cuja relação de transformação é variável. Quer isto dizer que através de um conversor CC/CC é possível converter uma certa fonte de tensão continua com valor fixo para uma fonte de tensão com valor variável, fazendo-se uma elevação ou redução do valor. \cite{Rashid}
+Este tipo de conversores pode ser visto como o equivalente em corrente contínua de um transformador cuja relação de transformação é variável. Quer isto dizer que, através de um conversor CC/CC, é possível converter uma certa fonte de tensão contínua com valor fixo para uma fonte de tensão com valor variável, fazendo-se uma elevação ou redução do valor \cite{Rashid}. 
 
-Sendo assim pode considerar-se que este trabalho está dividido em três partes sendo que em cada uma destas se estuda o funcionamento de uma topologia diferente.
+Sendo assim, pode-se considerar que este trabalho está dividido em três partes sendo que em cada uma se estuda o funcionamento de uma topologia diferente.
 
 A primeira topologia a considerar é o conversor redutor. O objetivo neste caso é obter-se à saída uma tensão inferior à de entrada, sendo que se pode controlar esta diferença através do fator de ciclo.
 
 De seguida estuda-se o conversor ampliador, onde o objetivo é o contrário da anterior topologia, querendo-se obter à saída uma tensão superior à de entrada. Novamente esta relação pode ser controlada através do fator de ciclo.
 
-Por fim tem-se o conversor redutor-ampliador, onde é possível obter na saída um valor inferior ou superior da tensão de entrada. Novamente o parâmetro de controlo aqui é o fator de ciclo, onde abaixo de um certo valor se obtém uma redução da tensão e acima uma ampliação desta. Em condições de operação semelhantes este conversor não consegue obter uma redução de tensão tão grande quanto o conversor redutor e o mesmo pode ser dito entre a ampliação e o conversor ampliador.
+Por fim, tem-se o conversor redutor-ampliador, onde é possível obter na saída um valor inferior ou superior da tensão de entrada. Novamente o parâmetro de controlo aqui é o fator de ciclo, onde, abaixo de um certo valor, se obtém uma redução da tensão e acima uma ampliação desta. Em condições de operação semelhantes este conversor não consegue obter uma redução de tensão tão grande quanto o conversor redutor e o mesmo pode ser dito entre a ampliação e o conversor ampliador.
 
 
 \section{Condução do Trabalho}
@@ -98,58 +98,58 @@ No estudo do conversor redutor começa-se por considerar uma carga resistiva pur
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/Redutor_R}
-	\caption{Esquema do Conversor Redutor com Carga Resistiva.}
+	\caption{Esquema do conversor redutor com carga resistiva.}
 	\label{fig:Red_R}
 	\vspace{-0.8em}
 \end{figure}
 
-	Após feitas as ligações necessárias, regula-se o Gerador de Funções para que se obtenha o sinal quadrado com as caraterísticas desejadas e alimenta-se o circuito de \textit{Drive} e potência tal como indicado no guião.
+	Após feitas as ligações necessárias, regula-se o gerador de funções para que se obtenha o sinal quadrado com as caraterísticas desejadas e alimenta-se o circuito de \textit{drive} e potência tal como indicado no guião.
 	
-\paragraph{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{Gate} para $50$ kHz}\mbox{}\
+\paragraph{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{gate} para $50$ kHz}\mbox{}\
 
-As forma de onda para a tensão V\textsubscript{GA} e corrente de \textit{Gate} podem ser observadas na \autoref{fig:tensao_corrente_gate_buckR}.
+As forma de onda para a tensão V\textsubscript{GA} e corrente de \textit{gate} podem ser observadas na \autoref{fig:tensao_corrente_gate_buckR}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/tensao_corrente_gate_buckR}
-	\caption{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{Gate} para Carga Resistiva do conversor Redutor.}
+	\caption{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{gate} para carga resistiva do conversor redutor.}
 	\label{fig:tensao_corrente_gate_buckR}
 	\vspace{-0.8em}
 \end{figure} 
 
-Para observar melhor a passagem à condução do transistor MOSFET e o consequente pico de corrente, reduziu-se a escala de tempo sendo o obtido apresentado na \autoref{fig:tensao_corrente_gate_buckR_zoom}.
+Para observar melhor a passagem à condução do transistor MOSFET e o consequente pico de corrente, reduziu-se a escala de tempo, sendo o obtido apresentado na \autoref{fig:tensao_corrente_gate_buckR_zoom}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/tensao_corrente_gate_buckR_zoom}
-	\caption{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{Gate} para Carga Resistiva do conversor Redutor.}
+	\caption{Formas de onda da tensão V\textsubscript{GA} e corrente de \textit{gate} para carga resistiva do conversor redutor.}
 	\label{fig:tensao_corrente_gate_buckR_zoom}
 	\vspace{-0.8em}
 \end{figure} 
 
-Em ambas as imagens tem-se a amarelo a tensão V\textsubscript{GA} e a rosa a corrente de \textit{Gate}.
+Em ambas as imagens tem-se a amarelo a tensão V\textsubscript{GA} e a rosa a corrente de \textit{gate}.
 
 \paragraph{Formas de onda da tensão e corrente na carga}\mbox{}\
 
-De seguida observaram-se as formas de tensão e corrente na carga, estando o obtido presente na \autoref{fig:tensao_corrente_carga_buckR}.
+De seguida observar-se na \autoref{fig:tensao_corrente_carga_buckR} as formas de tensão e corrente na carga.
+
+\pagebreak
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/tensao_corrente_carga_buckR}
-	\caption{Formas de onda da tensão e corrente na saída para Carga Resistiva do conversor Redutor.}
+	\caption{Formas de onda da tensão (a amarelo) e corrente (a rosa) na saída para carga resistiva do conversor redutor.}
 	\label{fig:tensao_corrente_carga_buckR}
 	\vspace{-0.8em}
 \end{figure} 
 
-A tensão está apresentada a amarelo e a rosa tem-se a corrente.
+A partir da \autoref{fig:tensao_corrente_carga_buckR} e \autoref{fig:tensao_corrente_gate_buckR} pode melhor compreender-se o funcionamento deste conversor.
 
-A partir da \autoref{fig:tensao_corrente_carga_buckR} e \autoref{fig:tensao_corrente_gate_buckR} pode compreender-se bem o funcionamento deste conversor.
-
-Nota-se que a tensão de saída tem um valor inferior ao de entrada, tendo sido lido $114$ V para a entrada e aproximadamente $20$ V na carga, estando o conversor a reduzir efetivamente a tensão, tal como desejado. Estando-se a trabalhar com uma carga puramente resistiva, não existe qualquer desfasagem entre tensão e corrente na carga, sendo que esta apenas existe quando o transistor MOSFET está à condução.
+De notar que a tensão de saída tem um valor inferior ao de entrada, tendo sido lido $114$ V para a entrada e aproximadamente $20$ V na carga, estando o conversor a reduzir efetivamente a tensão, tal como desejado. Estando-se a trabalhar com uma carga puramente resistiva, não existe qualquer desfasagem entre tensão e corrente na carga, sendo que esta apenas existe quando o transistor MOSFET está à condução.
 
 Observa-se que a tensão na carga não é, no entanto, uma forma quadrada perfeita tal como seria desejado. Isto é provocado por se estar a trabalhar a uma frequência de $50$ kHz, demasiado elevada para que o MOSFET não apresente qualquer atraso. 
 
-As principais fontes para este erro são as componentes incrementais que representam a não idealidade deste componente, pelo que a frequência de operação será limitada.
+As principais fontes para este erro são as componentes incrementais, que representam a não idealidade deste componente, pelo que a frequência de operação será limitada.
 
 \subsubsection{Carga RL}
 
@@ -160,7 +160,7 @@ O esquema equivalente para este funcionamento está na \autoref{fig:Carga_RL_Buc
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/Carga_RL_Buck}
-	\caption{Esquema do Conversor Redutor com Carga RL.}
+	\caption{Esquema do conversor redutor com Carga RL.}
 	\label{fig:Carga_RL_Buck}
 	\vspace{-0.8em}
 \end{figure}
@@ -172,16 +172,14 @@ Após feitas as alterações ao circuito e reduzida a frequência de trabalho pa
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/tensao_diodo_icarga_buckrl}
-	\caption{Formas de onda da tensão aos terminais de D\textsubscript{1} e corrente na saída para Carga RL do conversor redutor.}
+	\caption{Formas de onda da tensão aos terminais de D\textsubscript{1} (a azul) e corrente (a rosa) na saída para carga RL do conversor redutor.}
 	\label{fig:tensao_diodo_icarga_buckrl}
 	\vspace{-0.8em}
 \end{figure} 
 
-Pode ver-se a azul a tensão aos terminais do díodo e a rosa a corrente na carga.
-
 Através da \autoref{fig:tensao_diodo_icarga_buckrl} fica evidenciado o comportamento do circuito. Nota-se que quando o transistor MOSFET está ao corte, o díodo estará consequentemente à condução, pelo que a bobine irá carregar. No instante em que o MOSFET passa à condução, o díodo D\textsubscript{1} estará ao corte e a bobine irá descarregar. 
 
-Este processo de carga e descarga da bobine produz um \textit{ripple} na corrente de saída que está diretamente ligado com a frequência de comutação e o tamanho da bobine; naturalmente é de interesse que este \textit{ripple} seja tão reduzido quanto possível, o que implica jogar com as duas restrições já mencionadas.
+Este processo de carga e descarga da bobine produz um \textit{ripple} na corrente de saída que está diretamente ligado com a frequência de comutação e o tamanho da bobine; naturalmente é de interesse que este \textit{ripple} seja tão reduzido quanto possível, o que implica ``jogar'' com as duas restrições já mencionadas.
 
 \paragraph{Frequência limiar do regime lacunar}\mbox{}\
 
@@ -200,14 +198,12 @@ O pretendido era observar as formas de onda da tensão V\textsubscript{DS} e cor
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.17]{img/figs/vds_id_buckrlc}
-	\caption{Formas de onda da tensão V\textsubscript{DS} e corrente I\textsubscript{D}.}
+	\caption{Formas de onda da tensão V\textsubscript{DS} (a amarelo), corrente de dreno I\textsubscript{D} (a rosa) e tensão na carga (a azul).}
 	\label{fig:vds_id_buckrlc}
 	\vspace{-0.8em}
 \end{figure} 
 
-Aqui observa-se a azul a tensão na carga, a amarelo a tensão V\textsubscript{DS} e a rosa a corrente de dreno I\textsubscript{D}.
-
-Tendo em conta que o Díodo apenas está a conduzir quando o MOSFET está ao corte, nota-se que a tensão na saída é zero quando o transistor está ON e o contrário quando OFF; tal como se observa para os sinais a amarelo e azul na \autoref{fig:vds_id_buckrlc}.
+Tendo em conta que o díodo apenas está a conduzir quando o MOSFET está ao corte, nota-se que a tensão na saída é zero quando o transistor está ON e o contrário quando OFF; tal como se observa para os sinais a amarelo e a azul na \autoref{fig:vds_id_buckrlc}.
 
 A rosa tem-se, tal como já foi dito, a corrente I\textsubscript{D}, sendo esta a mesma que irá carregar a bobine enquanto o MOSFET está a conduzir e o díodo ao corte.
 
@@ -217,25 +213,25 @@ Infelizmente não se obteve as formas de onda pretendidas nesta secção no enta
 
 A tensão aos terminais do díodo é tal como se observa a azul na \autoref{fig:vds_id_buckrlc}, fora alguma possível queda de tensão na bobine, e a corrente neste é a complementar do que se observa a rosa na mesma figura.
 
-Esta corrente irá apresentar o mesmo valor médio que I\textsubscript{D}, no entanto como apenas irá haver corrente a percorrer no díodo quando o transistor MOSFET está ao corte, os períodos em que esta será diferente de zero serão os mesmos em que a corrente de dreno é zero. Observa-se ainda que enquanto que I\textsubscript{D} corresponde ao carregamento da bobine, a corrente que atravessa o díodo corresponde à descarga, pelo que o seu declive será negativo.
+Esta corrente irá apresentar o mesmo valor médio que I\textsubscript{D}, no entanto, como apenas irá haver corrente a percorrer no díodo quando o transistor MOSFET está ao corte, os períodos em que esta será diferente de zero serão os mesmos em que a corrente de dreno é zero. Observa-se ainda que enquanto que I\textsubscript{D} corresponde ao carregamento da bobine, a corrente que atravessa o díodo corresponde à descarga, pelo que o seu declive será negativo.
+
+\pagebreak
 
 \paragraph{Formas de onda da tensão na carga e corrente na bobine}\mbox{}\
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.15]{img/figs/tensao_carga_corrente_bobine_ac_rlcbuck}
-	\caption{Formas de onda da tensão e corrente na bobine.}
+	\caption{Formas de onda da tensão V\textsubscript{DS} (a amarelo), corrente na bobine (a rosa) e tensão ao terminais da bobine (a azul).}
 	\label{fig:tensao_carga_corrente_bobine_ac_rlcbuck}
 	\vspace{-0.8em}
 \end{figure} 
 
 \unsure{caption}
 
-Observa-se a amarelo a tensão V\textsubscript{DS} e a tensão e corrente aos terminais da bobine a azul e rosa respetivamente.
+A partir desta figura pode-se melhor compreender o comportamento do conversor redutor sujeito a uma carga RLC. Tem-se que durante o período em que o MOSFET está em condução, o díodo estará ao corte e a bobine carrega; observável pelo declive crescente da corrente na saída. 
 
-A partir desta figura pode compreender-se bem o comportamento do conversor redutor sujeito a uma carga RLC. Tem-se que durante o período em que o MOSFET está em condução, o díodo estará ao corte e a bobine carrega; observável pelo declive crescente da corrente na saída. 
-
-Quando o MOSFET passa ao corte, o díodo passa à condução pelo que a bobine começa a descarregar; sendo que se tem corrente com declive negativo. Como o observado a rosa é a corrente na bobina, tem-se um valor médio desta igual a zero, tal como esperado quando se está a lidar com este componente, e nota-se também que o valor médio da tensão aos seus terminais é igualmente zero.
+Quando o MOSFET passa ao corte, o díodo passa à condução pelo que a bobine começa a descarregar; sendo que se tem corrente com declive negativo. Para a corrente na bobina, tem-se um valor médio desta igual a zero, tal como esperado quando se está a lidar com este componente, e nota-se também que o valor médio da tensão aos seus terminais é igualmente zero.
 
 \paragraph{Tensão na carga em função do fator de ciclo}\mbox{}\
 
@@ -251,7 +247,7 @@ Sendo assim, fazendo variar o fator de ciclo, e conhecendo o valor da tensão de
 V_o= \frac{D}{V_i} \label{Vo_buck}
 \end{equation}
 
-Pode então fazer-se uma comparação entre os valores esperados teoricamente e os lidos no laboratório, estando esta comparação presente na \autoref{tab:tabela_buck}
+Pode então fazer-se uma comparação entre os valores esperados teoricamente e os lidos no laboratório, estando esta comparação presente na \autoref{tab:tabela_buck}.
 
 \begin{table}[!htb]
 	\centering
@@ -260,23 +256,23 @@ Pode então fazer-se uma comparação entre os valores esperados teoricamente e 
 	\label{tab:tabela_buck}
 \end{table}
 
-Para que seja possível observar esta relação de forma mais expedita, apresenta-se também um gráfico para a mesma, visível na \autoref{fig:graf_buck}
+Para que seja possível observar esta relação de forma mais expedita, apresenta-se também um gráfico para a mesma, visível na \autoref{fig:graf_buck}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=1.0]{teoricas/graf_buck}
-	\caption{Gráfico de comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor Redutor.}
+	\caption{Gráfico de comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor redutor.}
 	\label{fig:graf_buck}
 	\vspace{-0.8em}
 \end{figure}
 
-Observa-se assim que através do fator de ciclo é possível controlar o grau de atenuação da tensão de saída face à de entrada, estando o conversor a funcionar tal como desejado, ou seja, um "transformador" redutor de tensão DC.
+Observa-se assim que, através do fator de ciclo, é possível controlar o grau de atenuação da tensão de saída face à de entrada, estando o conversor a funcionar tal como desejado, ou seja, um ``transformador'' redutor de tensão DC.
 
 Nota-se no entanto uma ligeira diferença entre o valor teórico e o experimental, que se deve essencialmente a possíveis perdas e não idealidades dos componentes semicondutores, que não estão consideradas na aplicação da \autoref{D_buck}.
 
 \paragraph{Efeito de um \textit{Snubber} entre o Dreno e \textit{Source} do MOSFET para $50$ kHz}\mbox{}\
 
-De seguida aumentou-se a frequência para que fosse possível evidenciar o efeito do \textit{Snubber} entre o dreno e \textit{Source} do MOSFET. As formas de onda obtidas podem ser vistas na \autoref{fig:snubber_buck}.
+De seguida aumentou-se a frequência para que fosse possível evidenciar o efeito do \textit{snubber} entre o dreno e \textit{source} do MOSFET. As formas de onda obtidas podem ser vistas na \autoref{fig:snubber_buck}.
 
 \begin{figure}[H]
 	\centering
@@ -286,10 +282,9 @@ De seguida aumentou-se a frequência para que fosse possível evidenciar o efeit
 	\vspace{-0.8em}
 \end{figure}
 
-Nesta pode ver-se a amarelo a tensão aos termianis do MOSFET, a azul a tensão na carga e a rosa a corrente na bobine.
+Na figura anterior pode ver-se a amarelo a tensão aos terminais do MOSFET, a azul a tensão na carga e a rosa a corrente na bobine.
 
-Com a presença do \textit{snubber} pretende-se um efeito idêntico ao de um filtro passa baixo, para que seja possível eliminar os picos de alta frequência na tensão. Nota-se no entanto por observação da figura que o efeito é marginal, pelo que a frequência de corte do \textit{snubber}
-deverá ser superior à de operação considerada.
+Com a presença do \textit{snubber} pretende-se um efeito idêntico ao de um filtro passa baixo, para que seja possível eliminar os picos de alta frequência na tensão. Nota-se no entanto, por observação da figura, que o efeito é marginal, pelo que a frequência de corte do \textit{snubber} deverá ser superior à de operação considerada.
 
 \paragraph{Forma de onda da tensão V\textsubscript{AK} do Díodo D\textsubscript{1} para $200$ kHz}\mbox{}\
 
@@ -297,24 +292,24 @@ Na sequência da subsecção anterior aumentou-se a frequência de operação pa
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.15]{img/figs/vak_hf_buck}
+	\includegraphics[keepaspectratio=true, scale=0.14]{img/figs/vak_hf_buck}
 	\caption{Formas de onda da tensão V\textsubscript{AK} do Díodo D\textsubscript{1} para $200$ kHz.}
 	\label{fig:vak_hf_buck}
 	\vspace{-0.8em}
 \end{figure}
 
-Novamente a amarelo tem-se a tensão aos termianis do MOSFET, a azul a tensão aos terminais do díodo e a rosa a corrente na bobine.
+Novamente, a amarelo tem-se a tensão aos termianis do MOSFET, a azul a tensão aos terminais do díodo e a rosa a corrente na bobine.
 
 Pode ver-se agora que a frequência do pico da tensão no díodo será bastante inferior pelo que esta frequência de operação estará próxima da de corte do \textit{snubber}, pelo que o seu efeito já é apreciável nesta situação.
 
 \subsection{Conversor Ampliador}
 
-O próximo conversor a estudar será o Ampliador, estando o seu esquema equivalente presente na \autoref{fig:boost}.
+O próximo conversor a estudar será o ampliador, estando o seu esquema equivalente presente na \autoref{fig:boost}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=1]{teoricas/boost}
-	\caption{Esquema equivalente do conversor Ampliador.}
+	\includegraphics[keepaspectratio=true, scale=0.7]{teoricas/boost}
+	\caption{Esquema equivalente do conversor ampliador.}
 	\label{fig:boost}
 	\vspace{-0.8em}
 \end{figure}
@@ -327,7 +322,7 @@ Na \autoref{fig:tensao_vds_corrente_diodo_boost} podem ver-se as formas de onda 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=0.14]{img/figs/tensao_vds_corrente_diodo_boost}
+	\includegraphics[keepaspectratio=true, scale=0.13]{img/figs/tensao_vds_corrente_diodo_boost}
 	\caption{Formas de onda da tensão V\textsubscript{DS} e corrente I\textsubscript{D}.}
 	\label{fig:tensao_vds_corrente_diodo_boost}
 	\vspace{-0.8em}
@@ -342,12 +337,10 @@ De seguida observaram-se as formas de onda na resistência e corrente no díodo 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.175]{img/figs/tensao_resistencia_corrente_diodo_boost}
-	\caption{Formas de onda da tensão na resistência e corrente no díodo.}
+	\caption{Formas de onda da tensão na resistência (a azul) e corrente (a rosa) no díodo.}
 	\label{fig:tensao_resistencia_corrente_diodo_boost}
 	\vspace{-0.8em}
 \end{figure}
-
-Neste caso tem-se a azul a tensão na resistência e a rosa a corrente no díodo.
 
 A partir da \autoref{fig:tensao_vds_corrente_diodo_boost} e da \autoref{fig:tensao_resistencia_corrente_diodo_boost} fica evidenciado o funcionamento deste conversor. 
 
@@ -376,7 +369,7 @@ Pode assim fazer-se uma comparação entre os valores obtidos em laboratório e 
 
 \begin{table}[!htb]
 	\centering
-	\caption{Comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor Ampliador.}
+	\caption{Comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor ampliador.}
 	\includegraphics[width=0.8\linewidth]{teoricas/tabela_boost}
 	\label{tab:tabela_bost}
 \end{table}
@@ -386,7 +379,7 @@ De forma a que melhor se observe a comparação entre os resultados, apresenta-s
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=1.0]{teoricas/graf_boost}
-	\caption{Gráfico de comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor Ampliador.}
+	\caption{Gráfico de comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor ampliador.}
 	\label{fig:graf_boost}
 	\vspace{-0.8em}
 \end{figure}
@@ -395,7 +388,7 @@ Tal como no conversor redutor, nota-se que existe uma ligeira discrepância que 
 
 \subsection{Converor Redutor-Ampliador}
 
-O último conversor a considerar neste trabalho laboratorial é o Redutor-Ampliador, cujo circuito equivalente está presente na \autoref{fig:Buck_Boost}.
+O último conversor a considerar neste trabalho laboratorial é o redutor-ampliador, cujo circuito equivalente está presente na \autoref{fig:Buck_Boost}.
 
 \begin{figure}[H]
 	\centering
@@ -423,25 +416,23 @@ Nesta figura tem-se a amarelo a tensão V\textsubscript{DS}, a tensão e a corre
 
 \paragraph{Formas de onda da tensão na Resistência e corrente no Díodo D\textsubscript{1}}\mbox{}\
 
-Em seguida leu-se as formas de onda da tensão na resistência e corrente no Díodo D\textsubscript{1}, estando estas na \autoref{fig:tensao_resistencia_corrente_d1_buck_boost}.
+Em seguida leu-se as formas de onda da tensão na resistência e corrente no Díodo D\textsubscript{1}, estando estas representadas na \autoref{fig:tensao_resistencia_corrente_d1_buck_boost}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.14]{img/figs/tensao_resistencia_corrente_d1_buck_boost}
-	\caption{Formas de onda da tensão na Resistência e corrente no Díodo D\textsubscript{1}.}
+	\caption{Formas de onda da tensão na resistência e corrente no díodo D\textsubscript{1}.}
 	\label{fig:tensao_resistencia_corrente_d1_buck_boost}
 	\vspace{-0.8em}
 \end{figure}
 
 Tem-se a azul a tensão na resistência, a rosa a corrente no díodo e novamente a amarelo a tensão V\textsubscript{DS}.
 
-Com as duas figuras anteriores é agora possível compreender o funcionamento deste conversor.
+Com as duas figuras anteriores é agora possível compreender o funcionamento deste conversor. Durante o período em que o MOSFET está à condução, V\textsubscript{DS} diferente de zero, o díodo está ao corte, corrente no díodo igual a zero, pelo que a corrente está confinada à malha $1$ da \autoref{fig:Buck_Boost} e a bobine carrega, corrente na bobine apresente declive positivo. Nota-se também que durante este período o condensador descarrega, evidenciado pelo declive negativo da tensão na resistência.
 
-Durante o período em que o MOSFET está à condução, V\textsubscript{DS} diferente de zero, o díodo está ao corte, corrente no díodo igual a zero, pelo que a corrente está confinada à malha $1$ da \autoref{fig:Buck_Boost} e a bobine carrega, corrente na bobine apresente declive positivo. Nota-se também que durante este período o condensador descarrega, evidenciado pelo declive negativo da tensão na resistência.
+No período em que o MOSFET está ao corte, V\textsubscript{DS} igual a zero, D\textsubscript{1} está a conduzir, corrente no díodo é diferente de zero, estando a corrente confinada à malha 2, fazendo a bobine descarregar, declive negativo da corrente na bobine, enquanto que o condensador por sua vez carrega, tensão na resistência apresenta declive positivo.
 
-No período em que o MOSFET está ao corte, V\textsubscript{DS} igual a zer, D\textsubscript{1} está a conduzir, corrente no díodo é diferente de zero, estando a corrente confinada à malha 2, fazendo a bobine descarrega, declive negativo da corrente na bobine, enquanto que o condensador por sua vez carrega, tensão na resistência apresenta declive positivo.
-
-Nota-se que existe um desacoplamento entre a entrada e a saída garantidos pela posição do MOSFET. Também se observa que a tensão de saída será simétrica da de entrada, assim imposta pela orientação do díodo D\textsubscript{1}; esta orientação é necessária para que quando o transistor está ON o díodo está OFF, tendo-se o funcionamento desejado.
+Nota-se que existe um desacoplamento entre a entrada e a saída, garantidos pela posição do MOSFET. Também se observa que a tensão de saída será simétrica da de entrada, assim imposta pela orientação do díodo D\textsubscript{1}; esta orientação é necessária para que quando o transistor está a ON o díodo esteja OFF, tendo-se o funcionamento desejado.
 
 
 \paragraph{Tensão na carga em função do fator de ciclo}\mbox{}\
@@ -464,7 +455,7 @@ Segue-se uma comparação entre os valores obtidos em laboratório e teoricament
 
 \begin{table}[!htb]
 	\centering
-	\caption{Comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor Redutor-Ampliador.}
+	\caption{Comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor redutor-ampliador.}
 	\includegraphics[width=0.8\linewidth]{teoricas/tabela_buck_boost}
 	\label{tab:tabela_buck_bost}
 \end{table}
@@ -473,42 +464,42 @@ Para que seja possível comparar os resultados, apresenta-se também o gráfico 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[keepaspectratio=true, scale=1.0]{teoricas/graf_buck_boost}
-	\caption{Gráfico de comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor Redutor-Ampliador.}
+	\includegraphics[keepaspectratio=true, scale=0.8]{teoricas/graf_buck_boost}
+	\caption{Gráfico de comparação entre valores teóricos e experimentais da tensão de saída em função do fator de ciclo para o conversor redutor-ampliador.}
 	\label{fig:graf_buck_boost}
 	\vspace{-0.8em}
 \end{figure}
 
 Nota-se que existe uma ligeira discrepância nos resultados obtidos novamente, que se considera ser devida a perdas nos componentes e não idealidades dos semicondutores não contabilizadas na expressão teórica. Outra fonte de erro é também ter-se considerado que a tensão de entrada é $10$ V mas a utilizada no laboratório pode ter sido ligeiramente diferente.
 
-\paragraph{Rendimento do conversor para um fator de ciclo de $60$ \%}\mbox{}\
+\paragraph{Rendimento do conversor para um fator de ciclo de $60\%$}\mbox{}\
 
-Considerando agora um fator de ciclo de $60$ \% leu-se os valores médios da corrente e tensão na entrada e saída do circuito. Os valores obtidos para cada uma destas grandezas foi:
+Considerando agora um fator de ciclo de $60\%$ leu-se os valores médios da corrente e tensão na entrada e saída do circuito. Os valores obtidos para cada uma destas grandezas foi:
 
 \begin{equation}
-V_i = 10 ~ V
+V_i = 10 ~ \text{V}
 \end{equation} 
 \vspace{-0,8 cm}
 \begin{equation}
-V_o = -15 ~ V
+V_o = -15 ~ \text{V}
 \end{equation} 
 \vspace{-0,8 cm}
 \begin{equation}
-I_i = 1 ~ A
+I_i = 1 ~  ~ \text{A}
 \end{equation} 
 \vspace{-0,8 cm}
 \begin{equation}
-I_o =-0,470 ~ A
+I_o =-0,470  ~ \text{A}
 \end{equation} 
 
 Tendo estes valores é agora possível obter o valor da potência na entrada e saída do conversor.
 
 \begin{equation}
-P_i = V_i . I_i = 10 . 1 = 10 ~ W
+P_i = V_i . I_i = 10 . 1 = 10  ~ \text{W}
 \end{equation}
 \vspace{-0,8 cm}
 \begin{equation}
-P_o = V_o . I_o = -15 . -0,470 = 7,05 ~ W
+P_o = V_o . I_o = -15 . -0,470 = 7,05  ~ \text{W}
 \end{equation}
 
 Tendo isto é possível obter-se o rendimento deste conversor.
@@ -525,11 +516,11 @@ Algumas formas de conseguir melhores rendimentos seria considerar outra frequên
 
 \begin{thebibliography}{2}
 	
+	\bibitem{Rashid}
+	Rashid, Muahammad H. (2004), Power Electronics - Circuits, Devices and Applications, \textit{Prentice Hall}	
+	
 	\bibitem{Kassakian}
 	Kassakian, John G. et al (1992, June), Principles of Power Electronics, \textit{Addison-Wesley Publishing Company}
-
-	\bibitem{Rashid}
-	Rashid, Muahammad H. (2004), Power Electronics - Circuits, Devices and Applications, \textit{Prentice Hall}
 	
 	\bibitem{Silva}
 	Silva, Fernando (1998), Eletrónica Industrial, Fundação Calouste Gulbenkian
