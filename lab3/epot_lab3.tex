@@ -145,7 +145,7 @@ De seguida observar-se na \autoref{fig:tensao_corrente_carga_buckR} as formas de
 
 A partir da \autoref{fig:tensao_corrente_carga_buckR} e \autoref{fig:tensao_corrente_gate_buckR} pode melhor compreender-se o funcionamento deste conversor.
 
-De notar que a tensão de saída tem um valor inferior ao de entrada, tendo sido lido $114$ V para a entrada e aproximadamente $20$ V na carga, estando o conversor a reduzir efetivamente a tensão, tal como desejado. Estando-se a trabalhar com uma carga puramente resistiva, não existe qualquer desfasagem entre tensão e corrente na carga, sendo que esta apenas existe quando o transistor MOSFET está à condução.
+De notar que a tensão de saída tem um valor inferior ao de entrada, tendo sido lido $114$ V para a entrada e aproximadamente $20$ V na carga, estando o conversor a reduzir efetivamente a tensão, tal como desejado. Estando-se a trabalhar com uma carga puramente resistiva, não existe qualquer desfasagem entre tensão e corrente na carga.
 
 Observa-se que a tensão na carga não é, no entanto, uma forma quadrada perfeita tal como seria desejado. Isto é provocado por se estar a trabalhar a uma frequência de $50$ kHz, demasiado elevada para que o MOSFET não apresente qualquer atraso. 
 
@@ -177,7 +177,7 @@ Após feitas as alterações ao circuito e reduzida a frequência de trabalho pa
 	\vspace{-0.8em}
 \end{figure} 
 
-Através da \autoref{fig:tensao_diodo_icarga_buckrl} fica evidenciado o comportamento do circuito. Nota-se que quando o transistor MOSFET está ao corte, o díodo estará consequentemente à condução, pelo que a bobine irá carregar. No instante em que o MOSFET passa à condução, o díodo D\textsubscript{1} estará ao corte e a bobine irá descarregar. 
+Através da \autoref{fig:tensao_diodo_icarga_buckrl} fica evidenciado o comportamento do circuito. Nota-se que quando o transistor MOSFET está ao corte, o díodo estará consequentemente à condução, pelo que a bobine irá descarregar. No instante em que o MOSFET passa à condução, o díodo D\textsubscript{1} estará ao corte e a bobine irá carregar. 
 
 Este processo de carga e descarga da bobine produz um \textit{ripple} na corrente de saída que está diretamente ligado com a frequência de comutação e o tamanho da bobine; naturalmente é de interesse que este \textit{ripple} seja tão reduzido quanto possível, o que implica ``jogar'' com as duas restrições já mencionadas.
 
@@ -185,7 +185,7 @@ Este processo de carga e descarga da bobine produz um \textit{ripple} na corrent
 
 O regime lacunar observa-se quando se tem uma frequência de comutação tal, que a bobina descarrega até que a corrente caia até zero.
 
-Embora não se tenha tirado este valor no laboratório e a figura correspondente, \todo{mencionar qual a figura da simulação} ao fazer a simulação do circuito em estudo observou-se que a frequência limite para o regime lacunar seria próxima de $4$ kHz.
+Embora não se tenha tirado este valor no laboratório e a figura correspondente, ao fazer a simulação do circuito em estudo observou-se que a frequência limite para o regime lacunar seria próxima de $4$ kHz, como na \autoref{fig:circuit_7}  .
 
 \subsubsection{Carga RLC}
 
@@ -193,17 +193,17 @@ Para finalizar o estudo do conversor redutor, estudou-se o seu comportamento par
 
 \paragraph{Formas de onda da tensão V\textsubscript{DS} e corrente I\textsubscript{D} para $20$ kHz}\mbox{}\
 
-O pretendido era observar as formas de onda da tensão V\textsubscript{DS} e corrente I\textsubscript{D}. No entanto durante o laboratório o lido foi tal como se apresenta na \autoref{fig:vds_id_buckrlc}.
+O pretendido era observar as formas de onda da tensão V\textsubscript{GS} e corrente I\textsubscript{D}. No entanto durante o laboratório o lido foi tal como se apresenta na \autoref{fig:vds_id_buckrlc}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true, scale=0.17]{img/figs/vds_id_buckrlc}
-	\caption{Formas de onda da tensão V\textsubscript{AK} (a amarelo), corrente de dreno I\textsubscript{D} (a rosa) e tensão na carga (a azul).}
+	\caption{Formas de onda da tensão no diodo (a amarelo), corrente de dreno I\textsubscript{D} (a rosa) e tensão na V\textsubscript{DS} (a azul).}
 	\label{fig:vds_id_buckrlc}
 	\vspace{-0.8em}
 \end{figure} 
 
-Tendo em conta que o díodo apenas está a conduzir quando o MOSFET está ao corte, nota-se que a tensão na saída é zero quando o transistor está ON e o contrário quando OFF; tal como se observa para os sinais a amarelo e a azul na \autoref{fig:vds_id_buckrlc}.
+Tendo em conta que o díodo apenas está a conduzir quando o MOSFET está ao corte, nota-se que a tensão na saída é zero quando o transistor está OFF e o contrário quando está ON; tal como se observa para os sinais a amarelo e a azul na \autoref{fig:vds_id_buckrlc}.
 
 A rosa tem-se, tal como já foi dito, a corrente I\textsubscript{D}, sendo esta a mesma que irá carregar a bobine enquanto o MOSFET está a conduzir e o díodo ao corte.
 
@@ -227,7 +227,7 @@ Esta corrente irá apresentar o mesmo valor médio que I\textsubscript{D}, no en
 	\vspace{-0.8em}
 \end{figure} 
 
-\unsure{caption}
+
 
 A partir desta figura pode-se melhor compreender o comportamento do conversor redutor sujeito a uma carga RLC. Tem-se que durante o período em que o MOSFET está em condução, o díodo estará ao corte e a bobine carrega; observável pelo declive crescente da corrente na saída. 
 
@@ -246,7 +246,7 @@ O fator de ciclo relaciona a tensão de entrada com a de saída e a sua express�
 Sendo assim, fazendo variar o fator de ciclo, e conhecendo o valor da tensão de entrada, que é imposto como igual a $20$ V, pode então obter-se o valor teórico para a tensão de saída através da \autoref{Vo_buck}.
 
 \begin{equation}
-V_o= \frac{D}{V_i} \label{Vo_buck}
+V_o= D V_i \label{Vo_buck}
 \end{equation}
 
 Pode então fazer-se uma comparação entre os valores esperados teoricamente e os lidos no laboratório, estando esta comparação presente na \autoref{tab:tabela_buck}.
@@ -284,7 +284,7 @@ De seguida aumentou-se a frequência para que fosse possível evidenciar o efeit
 	\vspace{-0.8em}
 \end{figure}
 
-Na figura anterior pode ver-se a amarelo a tensão aos terminais do díodo, a azul a tensão na carga e a rosa a corrente na bobine.
+Na figura anterior pode ver-se a amarelo a tensão aos terminais do díodo, a azul a tensão V\textsubscript{GS} e a rosa a corrente na bobine.
 
 Com a presença do \textit{snubber} pretende-se um efeito idêntico ao de um filtro passa baixo, para que seja possível eliminar os picos de alta frequência na tensão. Nota-se no entanto, por observação da figura, que o efeito é marginal, pelo que a frequência de corte do \textit{snubber} deverá ser superior à de operação considerada.
 
@@ -330,7 +330,7 @@ Na \autoref{fig:tensao_vds_corrente_diodo_boost} podem ver-se as formas de onda 
 	\vspace{-0.8em}
 \end{figure}
 
-A amarelo tem-se a tensão V\textsubscript{AK} aos terminais do Díodo, a azul a tensão na bobine e a rosa a corrente I\textsubscript{D}.
+A azul tem-se a tensão V\textsubscript{AK} aos terminais do Díodo, a amarelo a tensão na bobine e a rosa a corrente I\textsubscript{D}.
 
 \paragraph{Formas de onda na Resistência e corrente em D\textsubscript{1}}\mbox{}\
 
@@ -346,7 +346,7 @@ De seguida observaram-se as formas de onda na resistência e corrente no díodo 
 
 A partir da \autoref{fig:tensao_vds_corrente_diodo_boost} e da \autoref{fig:tensao_resistencia_corrente_diodo_boost} fica evidenciado o funcionamento deste conversor. 
 
-Observa-se que quando o MOSFET está à condução, tensão V\textsubscript{DS} diferente de zero, o díodo está ao corte e a bobine carrega, corrente I\textsubscript{D} com declive positivo, pois esta estará confinada à malha $1$ da \autoref{fig:boost}. Simultaneamente nota-se que o condensador descarrega, tensão na resistência com declive negativo.
+Observa-se que quando o MOSFET está à condução, tensão V\textsubscript{G S} diferente de zero, o díodo está ao corte e a bobine carrega, corrente I\textsubscript{D} com declive positivo, pois esta estará confinada à malha $1$ da \autoref{fig:boost}. Simultaneamente nota-se que o condensador descarrega, tensão na resistência com declive negativo.
 
 Quando o MOSFET passa ao corte, o díodo passa à condução, tensão V\textsubscript{DS} igual a zero, ficando a corrente confinada à malha $2$ da \autoref{fig:boost}. Nesta situação a bobine descarrega, corrente no díodo com declive negativo, e carrega o condensador, tensão na resistência com declive positivo.
 
@@ -512,13 +512,151 @@ P_o = \frac{P_o}{P_i} = \frac{7,05}{10} = 0,705 ~ W
 
 Nota-se que este rendimento é algo reduzido, mesmo tendo em conta possíveis perdas, pode não ser o mais indicado para algumas aplicações.
 
-Algumas formas de conseguir melhores rendimentos seria considerar outra frequência de operação ou outros componentes de filtragem e semicondutores.
+Algumas formas de conseguir melhores rendimentos seria considerar outra frequência de operação ou outros componentes de filtragem e semicondutores e tecnologia resonante 
 
 \pagebreak
 
 \section{Simulações}
 
 Infelizmente ainda não foi possível simular as três topologias estudadas neste laboratório com resultados satisfatórios, no entanto tencionamos fazê-lo o mais prontamente possível.
+
+\subsection{Conversor BUCK}
+Foi utilizado três configurações do conversor \textit{BUCK} com objetivo de o compreender melhor, em primeiro lugar é realizado a simulação para uma carga resistiva, \textit{R} ,depois para uma carga resistiva e indutiva, \textit{RL}, e por fim para uma carga capacitiva, indutiva e resistiva, \textit{RLC}.
+\subsubsection{Carga Resistiva, \textit{R}}
+O circuito utilizado na simulação é referido na imagem \autoref{fig:circuit_3}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.6]{img/circuito1}
+	\caption{Circuito do conversor \textit{BUCK} com carga resitiva, \textit{R}.}
+	\label{fig:circuit_3}
+	\vspace{-0.8em}
+\end{figure}
+
+O sinal de controlo de comando é representado por uma onda quadrada de $50kHz$ com um \textit{duty cycle} de 50\%. Assim sendo pode-se visualizar na \autoref{fig:circuit_4} a tensão e corrente na carga.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.4]{img/circuito2}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\label{fig:circuit_4}
+	\vspace{-0.8em}
+\end{figure}
+
+\pagebreak
+\subsubsection{Carga Resistiva e inductiva, \textit{RL}}
+
+De igual forma pode-se apresentar o circuito de simulação que está referenciado na \autoref{fig:circuit_5}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.6]{img/cicruitorl}
+	\caption{Circuito do conversor \textit{BUCK} com carga resitiva e inductiva, \textit{RL}.}
+	\label{fig:circuit_5}
+	\vspace{-0.8em}
+\end{figure}
+
+Alterando a frequência do sinal de comando para $10kHz$ obtém-se o seguinte resultado da tensão e da corrente na carga.
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.3]{img/circuito6}
+	\caption{Tensão (sinal vermelho)e corrente (sinalazul) de saida.}
+	\label{fig:circuit_6}
+	\vspace{-0.8em}
+\end{figure}
+
+Para o regime não lacunar, quando a corrente na carga passa por zero, corresponde a uma frequência do sinal de controlo aproximado a $8.3kHz$ obtende-se o seguinte resultado.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.3]{img/lacunar}
+	\caption{Tensão (sinal a vermelho) e corrente (sinal a azul) na saída.}
+	\label{fig:circuit_7}
+	\vspace{-0.8em}
+\end{figure}
+
+
+\pagebreak
+\subsubsection{Carga Resistiva, inductiva e capacitiva, \textit{RLC}}
+
+Foi acrescentado um condensador de 15 $nF$ em paralelo com a carga \textit{RL}  obtendo-se assim o seguinte circuito de simulação.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.5]{img/circuito8}
+	\caption{Circuito do conversor \textit{BUCK} com carga resitiva, inductiva e capacitiva, \textit{RLC}.}
+	\label{fig:circuit_8}
+	\vspace{-0.8em}
+\end{figure}
+
+Obtendo-se o seguinte resultado para a tensão e corrente na carga.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.35]{img/circuito9}
+	\caption{Tensão (sinal vermelho)e corrente (sinal azul) na carga.}
+	\label{fig:circuit_9}
+	\vspace{-0.8em}
+\end{figure}
+
+\subsection{Conversor \textit{Boost}}
+
+Outro conversor estudado é o conversor \textit{Boost}. Na \autoref{fig:circuit_10} está representado o circuito de simulação utilizado.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.55]{img/circuito10}
+	\caption{Circuito do conversor \textit{Boost}.}
+	\label{fig:circuit_10}
+	\vspace{-0.8em}
+\end{figure}
+
+\pagebreak
+A forma de onda da corrente e da tensão na bobine podem ser visualizados na \autoref{fig:circuit_11}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.35]{img/circuito11}
+	\caption{Tensão (sinal vermelho)e corrente (sinal azul) na bobine.}
+	\label{fig:circuit_11}
+	\vspace{-0.8em}
+\end{figure}
+
+\subsection{ Converor CC-CC Reductor-Amplificador \textit{Buck-Boost}}
+
+Outro conversor CC-CC aqui simulado é o \textit{Buck-Boost}. Na \autoref{fig:circuit_12} está definido o circuito usado na simulação.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.55]{img/circuito12}
+	\caption{Circuito do conversor \textit{Buck-Boost}.}
+	\label{fig:circuit_12}
+	\vspace{-0.8em}
+\end{figure}
+
+De seguida é apresentado o resultado da simulação do circuito apresentado para confirmar o correcto funcionamento do circuito. Inicialmente é apresentado as formas de ondas da tensão e corrente na bobine.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.35]{img/bbbobine}
+	\caption{Simulação do circuito conversor \textit{Buck-Boost}, onde é apresentado a tensão na carga (Vermelho), a corrente na bobine (Azul) e o sinal de controlo (Verde).}
+	\label{fig:circuit_1}
+	\vspace{-0.8em}
+\end{figure}
+
+Confirmando o correcto funcionamento do circuito é apresentado as formas de onda no diode da tensão e corrente.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[keepaspectratio=true, scale=0.35]{img/bbdiode}
+	\caption{Simulação do circuito conversor \textit{Buck-Boost}, onde é apresentado a tensão na carga (Verde), a corrente no diode (Azul) e o sinal de controlo (Vermelho).}
+	\label{fig:circuit}
+	\vspace{-0.8em}
+\end{figure}
 
 \pagebreak
 
